@@ -1,0 +1,57 @@
+##############################################################
+Fresh Fuel Loading Model VS Recipe
+##############################################################
+
+
+
+##############################################################
+Fuel Shortage Response
+##############################################################
+
+TO REWRITE...
+                     
+2                                         Shortage is a Really important data 
+                  Missed Load, Wait for material and start                              
+                       
+
+
+
+
+3           Variable Capacity Factor    vs. Constant Capacity Factor                        Connected to economic evaluation
+                  Actual outage modeled                             
+                  Seasonal changes in demand                                
+                                            
+4           Accurate physics of mixed cores vs. Assuming constant core                      
+                                            
+5           Exact startup composition   vs. Single composition at beginning of operation                        
+                                            
+6           Reprocessing As-Needed  vs. Constant Reprocessing   if decay modeled, it may matter                 
+                                            
+7           Isotopic Decay  vs. No Decay    First in First Out for all materials                    
+                                            
+8           Constant XS vs. Updated XS                      
+                                            
+9           Fuel type switching method                              
+                 Smooth Transition, brutal transition, etc.                                 
+                                            
+            Constrained Processing (Fab, Enr, Rep, etc.)    vs. Unconstrained Processing                        
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+            Coarse time steps   vs. Fine time steps                     
+                                            
+            Fleet-based reactors    vs. Agent-based reactors                        
+                                            
+                                            
+                                            
+            Batchwise fuel management   vs. Simulated continuous reloading      related to MSRs maybe               
+                vs.  continuous reloading vs 1 batch reloading          what's the free parameter?          
+                                            
+                                            
+            Specific Reactor Technologies (e.g., MSRs)                              
