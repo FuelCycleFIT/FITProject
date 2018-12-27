@@ -38,19 +38,19 @@ If your repo is properly defined, you should have folowing remotes :
 
 ## 2. Codes
 
-### 1.a. RPC
+### 2.a. RPC
 
 Each institution describes RPC that they use with main publications.
 
-### 1.b. FCC
+### 2.b. FCC
 
 Each institution describes FCC that they use with main publications.
 
-## 2. List of features to test
+## 3. List of features to test
 
 In this part, we list all the features we want to test and we write an associated description.
 
-## 3. Exercices Nomenclature and small description
+## 4. Exercices Nomenclature and small description
 
 Nomenclature has three informations : 
 
