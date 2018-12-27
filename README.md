@@ -54,9 +54,9 @@ In this part, we list all the features we want to test and we write an associate
 
 Nomenclature has three informations : 
 
-- The tested feature number FeatI
-- The exercise number ExJ
-- The case number CaseK
+- The tested feature number Feat_I
+- The exercise number Ex_J
+- The case number Case_K
 
 Example : Feat1_Ex1_Case1
 

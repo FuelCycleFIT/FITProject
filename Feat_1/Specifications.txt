@@ -1,0 +1,23 @@
+TO WRITE...
+
+Reactor requirement
+
+2 - Pu vector
+
+    - Reference Pu
+        => Pu from ...
+    - Vector Pu #1
+        => Pu from ...
+    - Vector Pu #2
+        => Pu from PWR UOX - High BU (High U5) and High Cooling time ( => Pu9 + Pu1 small)
+
+3 - Reference calculation
+
+4 - Output #2
+
+Etc…
+
+5 - Extension in fuel cycle simulation
+
+    In order to have the impact at the fleet scale
+
