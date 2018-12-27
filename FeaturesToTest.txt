@@ -8,9 +8,9 @@ Fresh Fuel Loading Model VS Recipe
 Fuel Shortage Response
 ##############################################################
 
-TO REWRITE...
+Currently copy past from excel table... TO REWRITE...
                      
-2                                         Shortage is a Really important data 
+2 Shortage is a Really important data 
                   Missed Load, Wait for material and start                              
                        
 
