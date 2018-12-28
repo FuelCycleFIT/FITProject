@@ -114,7 +114,7 @@ Feat_1
 
 The scheme of the scenario is as following :
 
-![alt text](https://github.com/FuelCycleFIT/thiollie/FIG/Feat_1.png)
+![alt text](https://github.com/thiollie/FITProject/blob/master/FIG/Feat_1.png)
 
 
 Ex1
