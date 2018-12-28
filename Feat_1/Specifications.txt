@@ -2,6 +2,9 @@ TO WRITE...
 
 Reactor requirement
 
+Reactor criteria for building the reference run.
+
+
 2 - Pu vector
 
     - Reference Pu
