@@ -114,13 +114,8 @@ Feat_1
 
 The scheme of the scenario is as following :
 
-```mermaid
-graph LR
-A(Stock U dep) --> C(Fabrication Plant)
-B(Stock Pu) --> C(Fabrication Plant)
-C -- Fresh Fuel --> D(Reactor)
-D -- Spent fuel --> Stock
-```
+![alt text](https://github.com/FuelCycleFIT/FITProject/FIG/Feat_1.png)
+
 
 Ex1
 
