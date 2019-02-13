@@ -13,7 +13,7 @@ The FIT project aims to **improve the confidence in fuel cycle simulators output
 - Comparison with experimental data
 - Code testing or comparison
 
-FIT project is related to this last item. The purpose of the FIT Benchmarks is to **test the impact of FCC functionality** and how this **impact is propagated** in the fuel cycle calculation.
+FIT project is based on code feature testing. The purpose of the FIT Benchmarks is to **test the impact of FCC functionality** and how this **impact is propagated** in the fuel cycle calculation.
 
 ## Abbreviations and definitions
 
@@ -27,7 +27,11 @@ A FLM aims to adapt the fresh fuel composition according to the reactor requirem
 
 Recipe : 
 
-The fresh fuel composition in the reactor at Beginning Of Cycle (BOC) is always the same. For instance, the reactor load a MOX fuel with 7% (mass) of plutonium with always the same isotopic composition. It is possible to use recipe interpolation, closest composition, etc.  
+A recipe approach aims to tune the fuel cycle calculation in order to have a well known isotopic vector already precisely calculated from a RPC. The fresh fuel composition in the reactor at Beginning Of Cycle (BOC) is always the same. For instance, the reactor load a MOX fuel with 7% (mass) of plutonium with always the same isotopic composition. It is possible to use recipe interpolation, closest composition, etc.  
+
+FF : Fixed Fraction
+
+We call Fixed Fraction approach a fuel cycle calculation for which each fresh fuel loading is based on the same constant fissile fraction, whatever the isotopic vector is. For instance, a PWR MOX is always loading a fresh fuel at 7% of plutonium. This approach is of course a strong approximation for recyled fuels.
 
 ## List of features to be tested
 
