@@ -128,11 +128,9 @@ The main aim of the SMURE package is to perform nuclear reactor time-evolution u
 
 You can also refer to following publication : 
 
-    *Méplan O., Nuttin A., Laulan O., David S., Michel-Sendis F. et al.:
-    MURE : MCNP Utility for Reactor Evolution - Description of the methods,
-    first applications and results, Proceedings of the ENC 2005 (CD-Rom)
-    ENC 2005 - European Nuclear Conference. 
-    Nuclear Power for the XXIst Century : From basic research to high-tech industry, France*
+*Méplan O., Nuttin A., Laulan O., David S., Michel-Sendis F. et al.: MURE : MCNP Utility for Reactor Evolution
+Description of the methods, first applications and results, Proceedings of the ENC 2005 (CD-Rom) ENC 2005
+European Nuclear Conference. Nuclear Power for the XXIst Century : From basic research to high-tech industry, France*
 
 ### FCC
 
