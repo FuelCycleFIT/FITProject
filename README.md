@@ -53,11 +53,11 @@ We call Fixed Fraction approach a fuel cycle calculation for which each fresh fu
 
 In this part, the features to be tested in the framework of FIT project are listed and described. The list is not exhaustive and all participants can add new features. 
 
-1. Update the fuel composition vs. Fixed Fraction
+1. **Update the fuel composition vs. Fixed Fraction**
 
 This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a FLM or a Recipe approach. This approach is compared to a Fixed Fraction (FF) fuel, which means the fissile fraction is constant whatever the composition is.
 
-2. Fuel Shortage Response
+2. **Fuel Shortage Response**
 
 Here, we'll try to assess the impact of the fuel shortage response in the FCC. Usually, the response would be : 
 - An emty cycle
@@ -65,24 +65,24 @@ Here, we'll try to assess the impact of the fuel shortage response in the FCC. U
 - Needed material is created
 - ETC.
 
-3. Variable Capacity Factor vs. Constant Capacity Factor
+3. **Variable Capacity Factor vs. Constant Capacity Factor**
 
 This item is connected to economic evaluation. Variable capacity factor could be due to actual outage modeled, seasonal changes in demand, etc.
 
-4. Accurate physics of mixed cores vs. Assuming constant core
-5. Exact startup composition   vs. Single composition at beginning of operation
-6. Reprocessing As-Needed  vs. Constant Reprocessing   if decay modeled, it may matter
-7. Isotopic Decay  vs. No Decay First in First Out for all materials
-8. Constant XS vs. Updated XS
-9. Fuel type switching method
+4. **Accurate physics of mixed cores vs. Assuming constant core**
+5. **Exact startup composition   vs. Single composition at beginning of operation**
+6. **Reprocessing As-Needed  vs. Constant Reprocessing   if decay modeled, it may matter**
+7. **Isotopic Decay  vs. No Decay First in First Out for all materials**
+8. **Constant XS vs. Updated XS**
+9. **Fuel type switching method**
 
 Smooth Transition, brutal transition, etc.                                 
                                             
-10. Constrained Processing (Fab, Enr, Rep, etc.) vs. Unconstrained Processing
-11. Coarse time steps   vs. Fine time steps
-12. Fleet-based reactors vs. Agent-based reactors
-13. Batchwise fuel management vs. Simulated continuous reloading related to MSRs maybe
-14. Batchwise fuel management vs. Continuous reloading vs 1 batch reloading
+10. **Constrained Processing (Fab, Enr, Rep, etc.) vs. Unconstrained Processing**
+11. **Coarse time steps   vs. Fine time steps**
+12. **Fleet-based reactors vs. Agent-based reactors**
+13. **Batchwise fuel management vs. Simulated continuous reloading related to MSRs maybe**
+14. **Batchwise fuel management vs. Continuous reloading vs 1 batch reloading**
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
