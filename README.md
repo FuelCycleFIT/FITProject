@@ -52,6 +52,37 @@ We call Fixed Fraction approach a fuel cycle calculation for which each fresh fu
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
 
+### Update the fuel composition vs. Fixed Fraction
+
+This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a FLM or a Recipe approach. This approach is compared to a Fixed Fraction (FF) fuel, which means the fissile fraction is constant whatever the composition is.
+
+### Fuel Shortage Response
+
+Here, we'll try to assess the impact of the fuel shortage response in the FCC. Usually, the response would be : 
+- An emty cycle
+- Reactor is shut down until there is enough material
+- Needed material is created
+- ETC.
+
+### Variable Capacity Factor vs. Constant Capacity Factor
+
+This item is connected to economic evaluation. Variable capacity factor could be due to actual outage modeled, seasonal changes in demand, etc.
+
+### Accurate physics of mixed cores vs. Assuming constant core
+### Exact startup composition   vs. Single composition at beginning of operation
+### Reprocessing As-Needed  vs. Constant Reprocessing   if decay modeled, it may matter
+### Isotopic Decay  vs. No Decay First in First Out for all materials
+### Constant XS vs. Updated XS
+### Fuel type switching method
+
+Smooth Transition, brutal transition, etc.                                 
+                                            
+### Constrained Processing (Fab, Enr, Rep, etc.) vs. Unconstrained Processing
+### Coarse time steps   vs. Fine time steps
+### Fleet-based reactors vs. Agent-based reactors
+### Batchwise fuel management vs. Simulated continuous reloading related to MSRs maybe
+### Batchwise fuel management vs. Continuous reloading vs 1 batch reloading
+
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 ## FIT project roadmap
