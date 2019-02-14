@@ -1,12 +1,31 @@
-coucouc
+In this part, the feature **Update the fuel composition vs. Fixed Fraction** is assessed. The roadmap for this exercice is as following :
+
+1. Reactor fuel and design
+
+Given the different tools, methods, and specialization of each institution, it will not be possible for every institution to model the same reactor exactly the same way and fairly compare results across different codes (this would be a code-to-code comparison, which is not the purpose of the FIT Benchmarks). This is why we will allow each participant to model the specific reactor/fuel design(s) with which they are more familiar and for which they may already have models, as long as they fit the general guideline (specification) that one of these models is for a fast spectrum (e.g., metallic fuel in SFR) and another one is for a thermal spectrum (e.g., MOX fuel in PWR).
+
+2. Facilities 
+
+For this exercice, following facilities are required : 
+
+- A fissile stock with a plutonium vector
+- A fertile stock with a depleted uranium vector
+- A reactor
+
+3. Plutonium vector composition
 
 
-ca va??
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
 
 
-For each tested features, the FIT benchmark is based on a set of RPC and FCC calculations. The roadmap is presented from the first tested feature : 
-    
-    Update the fuel composition vs. Fixed Fraction
+
+
+
 
 1. Reference calculation from RPC run 
 
