@@ -19,7 +19,12 @@ FIT project is based on code feature testing. The purpose of the FIT Benchmarks 
 
 RPC : Reactor Physics Code
 
+A Reactor Physics Code is used to simulate the neutron behavior in a unit cell, a fuel assembly or a nuclear core. It can be deterministic or stochastic and is also plugged with a Bateman Solver for solving evolution equations. The input is the description of the system and the initial fuel composition. The output is the evolution of the isotopic composition or other data, such as reactivity or mean cross sections. 
+
 FCC : Fuel Cycle Code
+
+A Fuel Cycle Code is a dynamic fuel cycle simulation tool. The aim is to model an evolving electro-nuclear fleet. The main output is the evolution of isotopes everywhere in all facilities.
+
 
 FLM : Fuel Loading Model
 
