@@ -2,7 +2,7 @@ In this part, the feature **Update the fuel composition vs. Fixed Fraction** is 
 
 0. FCC requirements
 
-For running this exercise, the FCC should have a Fuel Loading Model ([FLM](##aaa)) 
+For running this exercise, the FCC should have a Fuel Loading Model ([FLM](## aaa)) 
 
 
 1. Reactor design and fuel
