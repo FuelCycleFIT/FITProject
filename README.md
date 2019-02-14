@@ -2,7 +2,11 @@
 
 The repository contains work related to FIT (Functionnality Isolation Test) project.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## Introduction
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 Since the 90’s, a lot of different fuel cycle tools have been developed by several institutions (industrial, engineering, academic, etc.). Several level of complexity could be reached, from the simple spread sheet to the complex simulation framework. Also, all the tools can reach different level of capabilities and flexibility and could be adapted for one specific problem to any problems related to the fuel cycle.
 
@@ -15,7 +19,11 @@ The FIT project aims to **improve the confidence in fuel cycle simulators output
 
 FIT project is based on code feature testing. The purpose of the FIT Benchmarks is to **test the impact of FCC functionality** and how this **impact is propagated** in the fuel cycle calculation.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## Abbreviations and definitions
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 RPC : Reactor Physics Code
 
@@ -24,7 +32,6 @@ A Reactor Physics Code is used to simulate the neutron behavior in a unit cell, 
 FCC : Fuel Cycle Code
 
 A Fuel Cycle Code is a dynamic fuel cycle simulation tool. The aim is to model an evolving electro-nuclear fleet. The main output is the evolution of isotopes everywhere in all facilities.
-
 
 FLM : Fuel Loading Model
 
@@ -38,10 +45,18 @@ FF : Fixed Fraction
 
 We call Fixed Fraction approach a fuel cycle calculation for which each fresh fuel loading is based on the same constant fissile fraction, whatever the isotopic vector is. For instance, a PWR MOX is always loading a fresh fuel at 7% of plutonium. This approach is of course a strong approximation for recyled fuels.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## List of features to be tested
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## FIT project roadmap
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 For each tested features, the FIT benchmark is based on a set of RPC and FCC calculations. The roadmap is presented from the first tested feature : 
     
@@ -71,7 +86,11 @@ Now we switch the fresh fuel composition to be built from the tested isotopic ve
 
 Finally, a FCC long term calculation (up to 100 years) is done in order to have a connexion between results and « real scientific question ».   
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## The github repository
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 You can download the github repository from the following command : 
 
@@ -93,7 +112,11 @@ If your repo is properly defined, you should have folowing remotes :
 
 From this point, you should be able to push modifications on your fork and to request merge on the upstream repository.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## Codes
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 ### RPC
 
@@ -103,11 +126,19 @@ Each institution describes RPC that they use with main publications.
 
 Each institution describes FCC that they use with main publications.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## List of features to test
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 In this part, we list all the features we want to test and we write an associated description.
 
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 ## Exercices Nomenclature and small description
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
 
 Nomenclature has three informations : 
 
