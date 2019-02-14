@@ -1,6 +1,9 @@
-In this part, the feature **Update the fuel composition vs. Fixed Fraction** is assessed. Specifications details are low in odrer to let a high degree of freedom in the solving. 
+In this part, the feature **Update the fuel composition vs. Fixed Fraction** is assessed. Specifications details are low in order to let a high degree of freedom in the solving. 
 
-The roadmap for this exercice is as following :
+0. FCC requirements
+
+For running this exercise, the FCC should have a Fuel Loading Model (FLM [link](##-Abbreviations-and-definitions)) 
+
 
 1. Reactor design and fuel
 
@@ -8,35 +11,45 @@ Given the different tools, methods, and specialization of each institution, it w
 
 2. Facilities 
 
-For this exercice, following facilities are required : 
+For this exercise, following facilities are required : 
 
 - A fissile stock with a plutonium vector
 - A fertile stock with a depleted uranium vector
+- A fabrication plant
 - A reactor
+- a storage for the spent fuel
+
+The scheme of the scenario is as following :
+
+![alt text](https://github.com/thiollie/FITProject/blob/master/FIG/Feat_1.png)
 
 3. Time frame
 
-The simulation has to be run on a full reactor cycle duration. The relation between the fuel cycle time Dt, the reactor power Pth, heavy nuclides mass M and the burn-up BU is then given by : 
+The simulation has to be run on a full reactor cycle duration. The relation between the fuel cycle time Dt, the reactor power Pth, heavy nuclide mass M and the burn-up BU is then given by : 
 
 BU = Pth x Dt / M
 
-3. Plutonium vector range
+At t = 0, the fabrication plant build the fresh fuel according to reactor requirements. The fabrication time is zero and the reactor is loaded instantaneously. A complete fuel cycle is run and the spent fuel is sent to storage when the required BU is reached.
 
-Each user can use plutonium vector as long as it is included inside the following range : 
+4. Plutonium vector range
 
+The plutonium vectors that could be tested in the framework of this exercise have to be "realistic". We propose the following table with minimum and maximum isotopic fraction and total fraction in the fuel. 
 
-| Weight (%)   | Reference |  Cool |
-|-----------|:-------------:|------:|
-| Pu-238  |  left-aligned | $1600 |
-| Pu-239  |    centered   |   $12 |
-| Pu-240  | right-aligned |    $1 |
-| Pu-241  | right-aligned |    $1 |
-| Pu-242  | right-aligned |    $1 |
-| Am-241  | right-aligned |    $1 |
+| Isotope   | Min. Fraction |  Max. Fraction |
+|-----------|:-------------:|---------------:|
+| Pu / Fuel |               |                |
+|-----------|:-------------:|---------------:|
+| Pu-238    |               |                |
+| Pu-239    |               |                |
+| Pu-240    |               |                |
+| Pu-241    |               |                |
+| Pu-242    |               |                |
+| Am-241    |               |                |
+|-----------|:-------------:|---------------:|
 
+Each user can use plutonium vector as long as it is included inside this range.
 
-
-
+5. 
 
 
 1. Reference calculation from RPC run 
@@ -77,9 +90,6 @@ This will define the tree in the FIT repository.
 
 Feat_1
 
-The scheme of the scenario is as following :
-
-![alt text](https://github.com/thiollie/FITProject/blob/master/FIG/Feat_1.png)
 
 
 Ex1
