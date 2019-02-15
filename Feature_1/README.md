@@ -60,34 +60,3 @@ Of course, all methodology will be public and it is possible for each participan
 
 ## output
 
-
-
-
-
-
-
-
-
-
-
-Nomenclature has three informations : 
-
-- The tested feature number Feat_I
-- The exercise number Ex_J
-- The case number Case_K
-
-Example : Feat1_Ex1_Case1
-
-This will define the tree in the FIT repository.
-
-Feat_1
-
-
-
-Ex1
-
-The first exercice is related to a PWR loaded with MOX fuel.
-
-Ex2
-
-The first exercice is related to a SFR loaded with MOX fuel.
