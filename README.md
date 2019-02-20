@@ -1,4 +1,4 @@
-# FITProject
+# FIT Project Description
 
 The repository contains work related to FIT (Functionnality Isolation Test) project.
 
@@ -19,35 +19,10 @@ The FIT project aims to **improve the confidence in fuel cycle simulators output
 
 FIT project is based on code feature testing. The purpose of the FIT Benchmarks is to **test the impact of FCC functionality** and how this **impact is propagated** in the fuel cycle calculation.
 
-[//]: # (-------------------------------------------------------------------------------------------------------)
-[//]: # (-------------------------------------------------------------------------------------------------------)
-## Abbreviations and definitions
-[//]: # (-------------------------------------------------------------------------------------------------------)
-[//]: # (-------------------------------------------------------------------------------------------------------)
-
-RPC : Reactor Physics Code
-
-A Reactor Physics Code is used to simulate the neutron behavior in a unit cell, a fuel assembly or a nuclear core. It can be deterministic or stochastic and is also plugged with a Bateman Solver for solving evolution equations. The input is the description of the system and the initial fuel composition. The output is the evolution of the isotopic composition or other data, such as reactivity or mean cross sections. 
-
-FCC : Fuel Cycle Code
-
-A Fuel Cycle Code is a dynamic fuel cycle simulation tool. The aim is to model an evolving electro-nuclear fleet. The main output is the evolution of isotopes everywhere in all facilities.
-
-FLM : Fuel Loading Model
-
-A FLM aims to adapt the fresh fuel composition according to the reactor requirements. For instance, the fissile fraction is calculated from the fissile stock quality in order to reach the required burnup of the reactor. FLM could be based on neural network, Plutonium equivalent, etc. This relation is usually built from physics constraint and upstream reactor calculation. It is possible to increase the complexity of the FLM according to the level of physics constraints. Here, FLM means there is a process that connect the fresh fuel composition to the available materials, whatever the complexity is.
-
-Recipe : 
-
-A recipe approach aims to tune the fuel cycle calculation in order to have a well known isotopic vector already precisely calculated from a RPC. The fresh fuel composition in the reactor at Beginning Of Cycle (BOC) is always the same. For instance, the reactor load a MOX fuel with 7% (mass) of plutonium with always the same isotopic composition. It is possible to use recipe interpolation, closest composition, etc.  
-
-FF : Fixed Fraction
-
-We call Fixed Fraction approach a fuel cycle calculation for which each fresh fuel loading is based on the same constant fissile fraction, whatever the isotopic vector is. For instance, a PWR MOX is always loading a fresh fuel at 7% of plutonium. This approach is of course a strong approximation for recyled fuels.
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
-## List of features to be tested
+## List of features
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
@@ -109,6 +84,26 @@ If your repo is properly defined, you should have folowing remotes :
     upstream    https://github.com/FuelCycleFIT/FITProject.git (push)
 
 From this point, you should be able to push modifications on your fork and to request merge on the upstream repository.
+
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
+## Participants
+[//]: # (-------------------------------------------------------------------------------------------------------)
+[//]: # (-------------------------------------------------------------------------------------------------------)
+
+- CNRS / IN2P3 (Xavier Doligez, Marc Ernoult and Nicolas Thiollière) - CLASS
+- Madison University (Paul Wilson and Baptiste Mouginot) - CYCLUS
+- University of South Carolina (Robert Flanagan) - CYCLUS
+- University of Illinois at Urbana-Champaign (Katy Huff) - CYCLUS
+- Argonne National Lab (Bo Feng) - DYMOND
+- Oak Ridge National Lab (Eva E. Davidson) - ORION
+- Idaho National Lab (Ross Hays) - VISION
+- CIEMAT (Aris Villacorta, Fransisco Alvarez) - Tr_Evol / Evol_code
+- TRACTEBEL (Hubert Druenne, Bart Vermeeren) - ANICCA
+- Univ. of technology and economics of Budapest (Mate Halasz, Màté Szieberth) - SITON
+- Hungarian Academy of Sciences (Aron Brolly) - SITON
+- Universidad Católica del Maule (Ivan Merino) - ANICCA
+
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
