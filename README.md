@@ -8,16 +8,11 @@ The repository contains work related to FIT (Functionnality Isolation Test) proj
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
-Since the 90’s, a lot of different fuel cycle tools have been developed by several institutions (industrial, engineering, academic, etc.). Several level of complexity could be reached, from the simple spread sheet to the complex simulation framework. Also, all the tools can reach different level of capabilities and flexibility and could be adapted for one specific problem to any problems related to the fuel cycle.
+Since the 1990’s, many different fuel cycle systems tools have been developed by several institutions (industrial, engineering, academic, etc.). These tools vary in terms complexity, from a simple spreadsheet model to a complex simulation code framework. These tools have evolved and new tools have been developed to leverage more increasingly powerful computational advancements. Many of these tools have the option to be used at different levels of detail and have the flexibility to be adapted for one specific problem or to any problem related to the nuclear fuel cycle.
 
-Dynamic fuel cycle simulators are used for several applications. they are part of the technical evaluation of innovative systems deployment. Also, they help to identify drivers / parameters interactions in fuel cycle fleet physics. Finally, this kind of tools produces data for further assessments (economy, safety, non-proliferation, etc.). For thoses reasons, fuel cycle simulators can be viewed as decision support helping tool.
+The fuel cycle systems tools of interest in this activity are dynamic fuel cycle simulators. They are an essential part of the technical evaluation of the future deployment of innovative nuclear systems. Also, they help identify drivers and interactions between parameters in fuel cycle fleet physics. Finally, these tools produce data for further assessments (economy, safety, non-proliferation, etc.) that can be internal or external to the tool. For these reasons, fuel cycle simulators can be viewed as vital tools to inform and support decisions related to the nuclear fuel cycle of a country or multiple countries.
 
-The FIT project aims to **improve the confidence in fuel cycle simulators output**. For this purpose, several technics are available : 
-- Uncertainty assessement and propagation
-- Comparison with experimental data
-- Code testing or comparison
-
-FIT project is based on code feature testing. The purpose of the FIT Benchmarks is to **test the impact of FCC functionality** and how this **impact is propagated** in the fuel cycle calculation.
+Many of these tools were developed independently by a single institution and oftentimes by a single individual with limited feedback from an established user community or from other developers. There have been multiple international fuel cycle code benchmarks in the past but these were dedicated to comparing detailed time-dependent results for fully-described fuel cycle system evolutions over time with limited comparisons of specific tool functionalities. The goal of this project is to also improve the confidence in the calculations of these fuel cycle simulators, but with more of a focus on comparing different tool functionalities in isolation, hence the name Functionality Isolation Tests (FIT). The purpose of the project is to test the impact of a Fuel Cycle Code (FCC) functionality and how this impact is propagated over time in the fully-described fuel cycle system calculations.
 
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
@@ -26,38 +21,48 @@ FIT project is based on code feature testing. The purpose of the FIT Benchmarks 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
-In this part, the features to be tested in the framework of FIT project are listed and described. The list is not exhaustive and all participants can add new features. 
+In this part, the functionalities to be tested in the framework of the FIT project are listed and described. The list is not exhaustive and all participants can add new functionalities. 
 
-1. **Update the fuel composition vs. Fixed Fraction**
+11. Updated Fuel Composition vs. Fixed Fraction
 
-This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a FLM or a Recipe approach. This approach is compared to a Fixed Fraction (FF) fuel, which means the fissile fraction is constant whatever the composition is.
+This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a Fuel Loading Model (FLM) or a Recipe approach. This approach is compared to a Fixed Fraction (FF) approach, which means the fissile fraction is constant regardless of the isotopic composition of the fissile material.
 
-2. **Fuel Shortage Response**
+2. Fuel Shortage Response
 
-Here, we'll try to assess the impact of the fuel shortage response in the FCC. Usually, the response would be : 
-- An emty cycle
+Here, we'll try to assess the impact of the fuel shortage response in the FCC. Usually, the response would be: 
+An empty cycle
+
 - Reactor is shut down until there is enough material
 - Needed material is created
-- ETC.
+- Etc.
 
-3. **Variable Capacity Factor vs. Constant Capacity Factor**
+3. Variable Capacity Factor vs. Constant Capacity Factor
 
 This item is connected to economic evaluation. Variable capacity factor could be due to actual outage modeled, seasonal changes in demand, etc.
 
-4. **Accurate physics of mixed cores vs. Assuming constant core**
-5. **Exact startup composition   vs. Single composition at beginning of operation**
-6. **Reprocessing As-Needed  vs. Constant Reprocessing   if decay modeled, it may matter**
-7. **Isotopic Decay  vs. No Decay First in First Out for all materials**
-8. **Constant XS vs. Updated XS**
-9. **Fuel type switching method**
+4. Accurate physics of mixed cores vs. Assuming constant core
+
+5. Exact startup composition   vs. Single composition at beginning of operation
+
+6. Reprocessing As-Needed vs. Constant Reprocessing   if decay modeled, it may matter
+
+7. Isotopic Decay vs. No Decay First in First Out for all materials
+
+8. Constant XS vs. Updated XS
+
+9. Fuel type switching method
 
 Smooth Transition, brutal transition, etc.                                 
                                             
-10. **Constrained Processing (Fab, Enr, Rep, etc.) vs. Unconstrained Processing**
-11. **Coarse time steps   vs. Fine time steps**
-12. **Fleet-based reactors vs. Agent-based reactors**
-13. **Batchwise fuel management vs. Simulated continuous reloading related to MSRs maybe**
-14. **Batchwise fuel management vs. Continuous reloading vs 1 batch reloading**
+10. Constrained Processing (Fab, Enr, Rep, etc.) vs. Unconstrained Processing
+
+11. Coarse time steps   vs. Fine time steps
+
+12. Fleet-based reactors vs. Agent-based reactors
+
+13. Batchwise fuel management vs. Simulated continuous reloading related to MSRs maybe
+
+14. Batchwise fuel management vs. Continuous reloading vs 1 batch reloading
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
@@ -87,7 +92,7 @@ From this point, you should be able to push modifications on your fork and to re
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
-## Participants
+## Participants and codes
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
@@ -104,14 +109,13 @@ From this point, you should be able to push modifications on your fork and to re
 - Hungarian Academy of Sciences (Aron Brolly) - SITON
 - Universidad Católica del Maule (Ivan Merino) - ANICCA
 
-
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 ## Codes
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
-Each institution describes RPC and FCC that they use with main publications.
+Each institution describes the FCC that they will use for this project along with the Reactor Physics Code (RPC), if appropriate.
 
 ### RPC
 
