@@ -1,6 +1,6 @@
 # FIT Project Description
 
-The repository contains work related to FIT (Functionnality Isolation Test) project.
+The repository contains work related to FIT (Functionality Isolation Test) project.
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
@@ -23,7 +23,7 @@ Many of these tools were developed independently by a single institution and oft
 
 In this part, the functionalities to be tested in the framework of the FIT project are listed and described. The list is not exhaustive and all participants can add new functionalities. 
 
-11. Updated Fuel Composition vs. Fixed Fraction
+1. Updated Fuel Composition vs. Fixed Fraction
 
 This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a Fuel Loading Model (FLM) or a Recipe approach. This approach is compared to a Fixed Fraction (FF) approach, which means the fissile fraction is constant regardless of the isotopic composition of the fissile material.
 
@@ -80,7 +80,7 @@ From that point you can fork the repository from github web site and define upst
     git remote set-url origin https://github.com/[YourAccount]/FITProject.git
     git remote add upstream https://github.com/FuelCycleFIT/FITProject.git
 
-If your repo is properly defined, you should have folowing remotes :
+If your repo is properly defined, you should have the following remotes :
 
     git remote -v
     origin  https://github.com/[YourAccount]/FITProject.git (fetch)
@@ -97,7 +97,7 @@ From this point, you should be able to push modifications on your fork and to re
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
 - CNRS / IN2P3 (Xavier Doligez, Marc Ernoult and Nicolas Thiollière) - CLASS
-- Madison University (Paul Wilson and Baptiste Mouginot) - CYCLUS
+- University of Wisconsin - Madison (Paul Wilson and Baptiste Mouginot) - CYCLUS
 - University of South Carolina (Robert Flanagan) - CYCLUS
 - University of Illinois at Urbana-Champaign (Katy Huff) - CYCLUS
 - Argonne National Lab (Bo Feng) - DYMOND
