@@ -23,7 +23,7 @@ Many of these tools were developed independently by a single institution and oft
 
 In this part, the functionalities to be tested in the framework of the FIT project are listed and described. The list is not exhaustive and all participants can add new functionalities. 
 
-11. Updated Fuel Composition vs. Fixed Fraction
+1. Updated Fuel Composition vs. Fixed Fraction
 
 This specification aims to compare the impact of the fuel composition update according to fissile isotopic composition. This can be done via a Fuel Loading Model (FLM) or a Recipe approach. This approach is compared to a Fixed Fraction (FF) approach, which means the fissile fraction is constant regardless of the isotopic composition of the fissile material.
 
