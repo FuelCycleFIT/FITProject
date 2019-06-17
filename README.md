@@ -97,7 +97,7 @@ From this point, you should be able to push modifications on your fork and to re
 [//]: # (-------------------------------------------------------------------------------------------------------)
 
 - CNRS / IN2P3 (Xavier Doligez, Marc Ernoult and Nicolas Thiollière) - CLASS
-- Madison University (Paul Wilson and Baptiste Mouginot) - CYCLUS
+- University of Wisconsin - Madison (Paul Wilson and Baptiste Mouginot) - CYCLUS
 - University of South Carolina (Robert Flanagan) - CYCLUS
 - University of Illinois at Urbana-Champaign (Katy Huff) - CYCLUS
 - Argonne National Lab (Bo Feng) - DYMOND
@@ -139,3 +139,15 @@ The code CLASS is a dynamic fuel cycle simulation tool developed by CNRS/IN2P3 (
 The CLASS model is a collection of C++ classes that describes facilities in a nuclear fleet. The CLASS model has been built around the reactor class that drives radioactive material flows from reactor front to back end.
 
 The latest shared version is the [official Version 5.1](https://gitlab.in2p3.fr/sens/CLASS/tree/CLASS_V5_Official_Release).
+
+#### CYCLUS - Developed by UW-Madison, UIUC, U. South Carolina :
+
+[Cyclus](http://www.fuelcycle.org) is the next-generation agent-based nuclear fuel cycle simulator, providing flexibility to users and developers through a dynamic resource exchange solver and plug-in, user-developed agent framework.
+
+The goal of Cyclus is to enable a broad spectrum of fuel cycle simulation while providing a low barrier to entry for new users and agent developers. Cyclus engages with potential module developers and encourages them to join a vibrant community in an expanding ecosystem. Users and developers are always welcome and encouraged to use or contribute to the Cyclus project.
+
+The Cyclus project is distributed as a variety of components:
+   * the [Cyclus kernel](http://github.com/cyclus/cyclus)
+   * a reference set of facility models in [Cycamore](http://github.com/cyclus/cycamore)
+   * some additional facility models in [Recycle](http://github.com/cyclus/recycle)
+
