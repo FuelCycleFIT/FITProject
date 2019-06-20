@@ -1,7 +1,0 @@
-Reactor_type           SFR
-Thermal_power_(GW)     3.60
-Electrical_power_(GW)  1.44
-Load_factor            0.9
-Core_mass_(tHM)        45.0
-Burn_up_(GWd/tHM)      136
-#reference https://www.oecd-nea.org/science/docs/2012/nsc-wpfc-doc2012-16.pdf
