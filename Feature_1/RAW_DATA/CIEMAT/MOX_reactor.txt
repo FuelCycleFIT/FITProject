@@ -1,0 +1,7 @@
+Reactor_type           PWR_MOX
+Thermal_power_(GW)     3.0
+Electrical_power_(GW)  1.0
+Load_factor            0.9
+Core_mass_(tHM)        72.0
+Burn_up_(GWd/tHM)      41
+#reference https://inis.iaea.org/collection/NCLCollectionStore/_Public/37/001/37001621.pdf
