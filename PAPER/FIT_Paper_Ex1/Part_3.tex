@@ -1,9 +1,36 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Exercice definition}
+\section{Exercise definition}
 
+\subsection{Philosophy}
 
+Fuel fabrication models can impacts fuel cycle simulation in different ways.
+This exercise aims to understand some of their impacts on an overall fuel cycle
+calculation. Change in the plutonium content in a newly built MOX fuel will
+impacts the fuel cycle in 3 majors ways:
+\begin{itemize}
+    \item the global amount of plutonium in the simulation, variation in the
+        plutonium content in the MOX fuel, might lead in a increase of the
+        amount of plutonium burnt in the PWR reactor, or a change in the
+        breeding/burning ratio in a SFR reactor, impacting the overall amount of
+        plutonium in the simulation.
+    \item the location of the plutonium, indeed the amount of plutonium in the
+        MOX fuel will shift the localisation of the plutonium form the front-end
+        the back-end of the cycle, which could change its availability for
+        other use (deployment of new reactor, fabrication of other fuels\ldots),
+    \item the variation of the global amount of plutonium relative to the amount
+        loaded in the fuel, the breeding/burning ratio of the plutonium will
+        change the amount of plutonium in reactor.
+\end{itemize}
+
+This might not be exhaustive list of fuel fabrication models impact on a fuel
+cycle, but this work will only focus on them and will not consider potential
+consequence on the fuel composition change after depletion due to
+over/under-estimate the amount of plutonium in the MOX fuel.
+
+In order to investigate those impacts across multiple fuel cycle simulation
+tool and associated models, the following experience has been designed.
 
 % -----------------------------------------------------------------------------------------
 \subsection{Specification}
@@ -11,6 +38,10 @@
 % -----------------------------------------------------------------------------------------
 \subsection{Methodology}
 
+Moreover, even if the author understand that an well under-estimate plutonium
+content in the MOX fuel, may compromise the reactor well operation, it is
+assumed in the following that all fuel loading models used (fixed fraction or
+more complex fuel loaded models), will produced proper MOX fuels.
 % -----------------------------------------------------------------------------------------
 \subsection{Output observables}
 
