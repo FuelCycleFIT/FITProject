@@ -23,3 +23,5 @@
 *.out
 *.synctex.gz
 .DS_Store
+~$*
+FITPaperEx1.pdf

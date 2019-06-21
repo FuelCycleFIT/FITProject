@@ -1,15 +1,85 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Exercice definition}
+\section{Exercise definition}
 
+\subsection{Philosophy}
 
+Fuel fabrication models can impacts fuel cycle simulation in different ways.
+This exercise aims to understand some of their impacts on an overall fuel cycle
+calculation. Change in the plutonium content in a newly built MOX fuel will
+impacts the fuel cycle in 3 majors ways:
+\begin{itemize}
+    \item the global amount of plutonium in the simulation, variation in the
+        plutonium content in the MOX fuel, might lead in a increase of the
+        amount of plutonium burnt in the PWR reactor, or a change in the
+        breeding/burning ratio in a SFR reactor, impacting the overall amount of
+        plutonium in the simulation.
+    \item the location of the plutonium, indeed the amount of plutonium in the
+        MOX fuel will shift the localisation of the plutonium form the front-end
+        the back-end of the cycle, which could change its availability for
+        other use (deployment of new reactor, fabrication of other fuels\ldots),
+    \item the variation of the global amount of plutonium relative to the amount
+        loaded in the fuel, the breeding/burning ratio of the plutonium will
+        change the amount of plutonium in reactor.
+\end{itemize}
+
+This might not be exhaustive list of fuel fabrication models impact on a fuel
+cycle, but this work will only focus on them and will not consider potential
+consequence on the fuel composition change after depletion due to
+over/under-estimate the amount of plutonium in the MOX fuel.
+
+In order to investigate those impacts across multiple fuel cycle simulation tool
+and associated models, the following experience has been designed.
 
 % -----------------------------------------------------------------------------------------
 \subsection{Specification}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Methodology}
+\subsection{Method}
+In order to investigate the influence of fuel fabrication models on fuel cycle
+simulations, the following experiment have been designed. Following the FIT
+project spirit, no code to code comparison will be done. For each simulator used
+to solve this problem, fuel models will be compared within the same simulator,
+allowing to evaluate difference between two almost identical simulation: same
+simulator, reactor description, depletion algorithm, \ldots the only difference
+being the fuel fabrication model used.
+
+The experiment consists in running a small fuel cycle, composed by a infinite
+plutonium source, a fuel fabrication and a reactor, for multiple plutonium
+isotopic compositions (about 1000). Each plutonium isotopic will be run twice,
+one using a fuel fabrication model using a fixed fraction, always the same
+defined in the experiment specification, and a second one using an advanced fuel
+loading model (based on plutonium equivalent theory\ref{} or pre-trained neural
+networks). 
+
+The different plutonium composition are sampled uniformly on a predefined
+user-space (that may vary depending of the simulator used). Moreover, even if
+it is understood that an largely under/over-estimated plutonium content in the
+MOX fuel, may compromise the reactor well operation, it is assumed in the
+following that all fuel loading models used (fixed fraction or more complex fuel
+loaded models), will produced proper MOX fuels.
+
+In order to measure the influence of the used of fixed fraction versus a fuel
+loading models on the global amount of plutonium in the simulation, the location
+of the plutonium and the speed of variation of the plutonium inventory, three
+estimators have been defined.
+
+\subsection{Estimators}
+\subsubsection{Estimator 1}
+The first estimator aims to the difference on the plutonium enrichment in the MOX
+fuel between the \gls{FLM} and \gls{FF} which directly impacts the amount of
+plutonium present in the back-end part of the fuel cycle. The estimator 1 has
+been defined as:
+\begin{equation}
+    \delta{\lambda_{i}} =
+        \frac{\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FML} 
+              - \left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}}
+             {\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}},
+\end{equation}
+
+where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
+\gls{EOC} for the plutonium compisiton $i$ for the \gls{FLM} or the \gls{FF}. 
 
 % -----------------------------------------------------------------------------------------
 \subsection{Output observables}
