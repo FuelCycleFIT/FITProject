@@ -29,14 +29,40 @@ cycle, but this work will only focus on them and will not consider potential
 consequence on the fuel composition change after depletion due to
 over/under-estimate the amount of plutonium in the MOX fuel.
 
-In order to investigate those impacts across multiple fuel cycle simulation
-tool and associated models, the following experience has been designed.
+In order to investigate those impacts across multiple fuel cycle simulation tool
+and associated models, the following experience has been designed.
 
 % -----------------------------------------------------------------------------------------
 \subsection{Specification}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Methodology}
+\subsection{Method}
+In order to investigate the influence of fuel fabrication models on fuel cycle
+simulations, the following experiment have been designed. Following the FIT
+project spirit, no code to code comparison will be done. For each simulator used
+to solve this problem, fuel models will be compared within the same simulator,
+allowing to evaluate difference between two almost identical simulation: same
+simulator, reactor description, depletion algorithm, \ldots the only difference
+being the fuel fabrication model used.
+
+The experiment consists in running a small fuel cycle, composed by a infinite
+plutonium source, a fuel fabrication and a reactor, for multiple plutonium
+isotopic compositions (about 1000). Each plutonium isotopic will be run twice,
+one using a fuel fabrication model using a fixed fraction, always the same
+defined in the experiment specification, and a second one using an advanced fuel
+loading model (based on plutonium equivalent theory\ref{} or pre-trained neural
+networks). 
+
+
+
+
+Each couple of simulation will be compared one to an other, 
+
+
+multiple
+plutoniom composition, the answer of the different fuel 
+
+
 
 Moreover, even if the author understand that an well under-estimate plutonium
 content in the MOX fuel, may compromise the reactor well operation, it is
