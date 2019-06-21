@@ -51,7 +51,7 @@ isotopic compositions (about 1000). Each plutonium isotopic will be run twice,
 one using a fuel fabrication model using a fixed fraction, always the same
 defined in the experiment specification, and a second one using an advanced fuel
 loading model (based on plutonium equivalent theory\ref{} or pre-trained neural
-networks). 
+networks).
 
 The different plutonium composition are sampled uniformly on a predefined
 user-space (that may vary depending of the simulator used). Moreover, even if
@@ -72,14 +72,45 @@ fuel between the \gls{FLM} and \gls{FF} which directly impacts the amount of
 plutonium present in the back-end part of the fuel cycle. The estimator 1 has
 been defined as:
 \begin{equation}
-    \delta{\lambda_{i}} =
-        \frac{\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FML} 
-              - \left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}}
-             {\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}},
+    \delta{\lambda}(i) =
+        \frac{\left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FML}
+              - \left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FF}}
+              {\left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FF}},
 \end{equation}
 
 where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
-\gls{EOC} for the plutonium compisiton $i$ for the \gls{FLM} or the \gls{FF}. 
+\gls{EOC} for the plutonium composition $i$ for the \gls{FLM} or the \gls{FF}.
+
+\subsubsection{Estimator 2}
+The second estimator aims to relative speed of plutonium amount evolution in the
+reactor between the \gls{FLM} and the \gls{FF}. The estimator 2 is defined as:
+\begin{equation}
+    \delta{\frac{\Delta M}{M}}(i) =
+        \frac{\left(\frac{\Delta M}{M}(i)\right)_{FML}
+              - \left(\frac{\Delta M}{M}(i)\right)_{FF}}
+             {\left(\frac{\Delta M}{M}(i)\right)_{FF}},
+\end{equation}
+where $\frac{\Delta M}{M}_{i}$ is defined as:
+\begin{equation}
+    \frac{\Delta M}{M}(i) = \frac{M_{Pu}^{BOC}(i) -
+    M_{Pu}^{EOC}(i)}{M_{Pu}^{BOC}(i)}
+\end{equation}
+
+
+\subsubsection{Estimator 3}
+
+
+\begin{equation}
+    \delta{\frac{\Delta M}{T}}(i) =
+        \frac{\left(\frac{\Delta M}{T}(i)\right)_{FML}
+              - \left(\frac{\Delta M}{T}(i)\right)_{FF}}
+             {\left(\frac{\Delta M}{T}(i)\right)_{FF}},
+\end{equation}
+where $\frac{\Delta M}{T}_{i}$ is defined as:
+\begin{equation}
+    \frac{\Delta M}{T}(i) = \frac{M_{Pu}^{BOC}(i) -
+    M_{Pu}^{EOC}(i)}{T}
+\end{equation}
 
 % -----------------------------------------------------------------------------------------
 \subsection{Output observables}
