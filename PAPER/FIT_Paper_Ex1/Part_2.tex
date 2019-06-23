@@ -83,33 +83,3 @@ The originality and the efficiency of the FIT project lies in the large number o
 \end{table}
 
 FIT project aims to be built on exercises related to test a specific functionality. Some tools can be used to test a functionality if they are designed for. The participation to an exercise also depends on the availability of participants. For those reasons, not all the codes and institutions are involved in an exercise.
-
-% -----------------------------------------------------------------------------------------
-\subsection{Description of the tested feature}
-
-In the present work, we focus on the impact of using a \gls{FLM} or a \gls{FF} approach. 
-
-A \gls{FLM} approach consists to adapt the fresh fuel composition according to
-the reactor requirements and the available isotopes. A \gls{FLM} means there is a
-process that connects the fresh fuel composition to the available materials,
-whatever the complexity of the model. For instance, the fissile fraction is
-calculated from the fissile stock quality in order to reach the required burn-up
-of the reactor. A \gls{FLM} could be based on neural network, Plutonium
-equivalence model, analytic functions, built-in depletion, etc. A \gls{FLM} is
-usually built from physics constraints and reactor physics calculations. 
-
-A \gls{FF} approach consists in using the same constant fissile
-fraction at each fresh fuel loading whatever the isotopic vector of the
-available fissile material is. Using a PWR MOX which is always loaded with a
-fresh fuel that contains 7\% of plutonium regardless the $^{239}$Pu content is a
-\gls{FF} approach. 
-
-The present work aims to quantify the impact of using \gls{FLM} versus \gls{FF}
-approach considering this last one as the reference. In a fuel cycle code, the
-\gls{FF} approach is the easiest method to handle fresh fuel loading in a reactor. The
-user simply define explicitly the fuel composition that is used in all the
-simulation. Developing \gls{FLM} may be an important development process that
-may require time and effort. Testing the impact of using \gls{FLM} rather than
-\gls{FF} approach aims to show applications that need \gls{FLM} and study that can be
-solved with \gls{FF} approach.
-
