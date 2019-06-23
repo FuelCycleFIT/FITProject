@@ -1,27 +1,27 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Presentation Of The FIT Project}
+\section{Framework and Description Of The FIT Project}
 
 The FIT (Functionality Isolation Test) Project is an international effort
 devoted to improve the fuel cycle tools confidence. This section aims to
-precisely describe the project.
-
+precisely describe and to present the framework of the project.
 
 % -----------------------------------------------------------------------------------------
-\subsection{Goals of the projet}
+\subsection{Nuclear fuel cycle dynamic simulation tool}
 
-A nuclear fuel cycle is a very complex system in which isotopes evolution can be
-impacted by various parameters such as reactor technology deployment, fuel
-reprocessing strategies, etc. A fuel cycle code calculates radio-nuclides
-evolution in nuclear facilities from the description of a nuclear fleet. The
-material evolution is estimated during the irradiation process in reactors and
-during cooling phases is other facilities. Taking into account all the physics
-phenomena and industrial practices requires a huge effort in code development.
-For this reason, fuel cycle tools integrates many simulation simplifications. A
-lot of fuel cycle tools are developed and used worldwide~\cite{COSI6_2015,
-VanDenDurpel2015, Huff2016} with large level of complexity or range of
-applications. The FIT Project was initiated in 2017 and aims to improve the
+Fuel cycle simulation codes~\cite{NEA2016} are developed since many years by several research and engineering institutions or consulting firms for many purposes. In the case of research and engineering institutions in charge of supporting the operated nuclear installations, fuel cycle codes are used to help and to optimize the industrial operations. For research and engineering institutions concerned by energetic transition, fuel cycle tools are used to study and analyze future trajectories for prospective reflexions on the electric component of the transition. Also, for institutions in charge of educational and training purposes in the nuclear field, this kind of tool helps understanding the physics that drive a nuclear fleet and can be used as an educational support. Consulting firms develop and use those tool to provide enlightened advices to politics. For those reasons, a fuel cycle tool can be seen as a decision making tool since results and analyses are directly or indirectly used by industrial and political worlds.
+
+A fuel cycle simulation is based on a computer code used to model and calculate the evolution of isotopes of interest in nuclear facilities, strategic stocks and waste disposal. An important effort in tool development concerns physics model that aims to reproduce complex physics or industrial processes. A nuclear fuel cycle is then a very complex system in which isotopes evolution can be impacted by various parameters such as reactor technology deployment, fuel reprocessing strategies, etc. A fuel cycle code calculates radio-nuclides evolution in nuclear facilities from the description of a nuclear fleet. The material evolution is estimated during the irradiation process in reactors and during cooling phases is other facilities. Taking into account all the physics phenomena and industrial practices requires a huge effort in code development. For this reason, fuel cycle tools integrates many simulation simplifications.
+
+Bias or uncertainties in fuel cycle outputs are difficult to quantify because of the multiple level of simplifications imposed by the complexity of the simulated system. If comparison with operated nuclear fleet is complex, such a process of validation is not possible for prospective study based on innovative reactors. Uncertainty or bias come from many sources. Nuclear data uncertainty has an impact on reactor calculation output used to tune fuel cycle codes~\cite{Krivtchik_2014}. Also, fuel cycle codes reactor management is usually based on simplified reactor calculations that produces a bias on neutronic data produced and used by fuel cycle simulators~\cite{Somaini_2017}. At the scale of the scenario, simplifications are also required too without always knowing precisely the precise impact of the simplification. 
+
+Some international effort~\cite{NEA2016} propose to benchmark fuel cycle codes in order to compare output data at the scale of an operated nuclear fleet. Results produced in the framework of those works are decisive to test the ability of multiple codes to be in agreement. Nevertheless, comparison are focused on aggregated data and deviations between codes may be hard to interpret. The FIT project is built in complementarity with international benchmarks and aims to provide informations to improve confidence in data produced by fuel cycle tools.
+
+% -----------------------------------------------------------------------------------------
+\subsection{Goals of the FIT projet}
+
+ The FIT Project was initiated in 2017 and aims to improve the
 quality of data produced by fuel cycle tools. 
 
 Increasing the ability to reproduce an operated nuclear fleet involves
@@ -93,6 +93,9 @@ with used fuel cycle code.
   \hline
   Fuel cycle code & Institution \\
   \hline
+  ANICCA\cite{} & TRACTEBEL (BEL) \\
+   & Univ. Católica del Maule (CHL) \\
+  \hline
   CLASS\cite{} & CNRS / IN2P3 (FRA) \\
   \hline
   CYCLUS\cite{} & Univ. of Wisconsin Madison (USA) \\
@@ -100,16 +103,13 @@ with used fuel cycle code.
   \hline
   DYMOND\cite{} & Argonne National Lab (USA) \\
   \hline
-  ORION\cite{} & Oak Ridge National Lab (USA) \\
+  JOSSETTE\cite{} & BME (HUN) \\
   \hline
-  VISION\cite{} & Idaho National Lab (USA) \\
+  ORION\cite{} & Oak Ridge National Lab (USA) \\
   \hline
   Tr\_Evol\cite{} & CIEMAT (ESP) \\
   \hline
-  ANICCA\cite{} & TRACTEBEL (BEL) \\
-   & Univ. Católica del Maule (CHL) \\
-  \hline
-  JOSSETTE\cite{} & BME (HUN) \\
+  VISION\cite{} & Idaho National Lab (USA) \\
   \hline
 \end{tabular}
 \label{Tab:Code}
