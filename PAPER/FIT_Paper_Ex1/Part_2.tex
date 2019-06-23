@@ -19,18 +19,11 @@ Bias or uncertainties in fuel cycle outputs are difficult to quantify because of
 Some international effort~\cite{NEA2016} propose to benchmark fuel cycle codes in order to compare output data at the scale of an operated nuclear fleet. Results produced in the framework of those works are decisive to test the ability of multiple codes to be in agreement. Nevertheless, comparison are focused on aggregated data and deviations between codes may be hard to interpret. The FIT project is built in complementarity with international benchmarks and aims to provide informations to improve confidence in data produced by fuel cycle tools.
 
 % -----------------------------------------------------------------------------------------
-\subsection{Goals of the FIT projet}
+\subsection{Goals and intended impact of the FIT project}
 
- The FIT Project was initiated in 2017 and aims to improve the
-quality of data produced by fuel cycle tools. 
+The FIT Project was initiated in 2017 and aims to improve the confidence into data produced by fuel cycle tools. The first goal is to animate a community of fuel cycle specialists focused on the question of the confidence in outputs. The second goal is to determine the minimum level of details a fuel cycle simulator should have according to the type of study and the required confidence level. The project relies on the wide variety of fuel cycle simulators with a wide range of complexity level are developed
 
-Increasing the ability to reproduce an operated nuclear fleet involves
-increasing the complexity if the simulation tool by developing new
-functionalities. We call fuel cycle code functionality a computer translation of
-a physical or a technical process observed in a nuclear fleet. The
-Table\ref{Tab:Funct} lists some examples of functionalities that could be
-developed in replacement of a reference treatment, which is the fuel cycle code
-current state.
+Increasing the ability to reproduce an operated nuclear fleet involves increasing the complexity of the simulation tool by developing new functionalities. A fuel cycle code functionality is the translation into computer software language of a physical or technical process related to nuclear facilities. The Table\ref{Tab:Funct} lists some examples of functionalities that could be developed in replacement of a reference treatment represented by the fuel cycle code current state.
 
 \begin{table}[h]
 \centering
@@ -51,41 +44,14 @@ current state.
 \caption{Examples of simplified and more complex functionalities.}
 \end{table}
 
-The FIT project goals is to determine which functionalities are required
-according to the question that needs to be answered and the precision level to
-reach. Indeed, the starting point of a fuel cycle study is a technical question
-such as "In a PWR fleet in which plutonium from spent UOX fuel is reprocessed in
-MOX fuel, what is the PWR-MOX fraction that perfectly balances the plutonium
-produced by PWR-UOX?". The user identify then the set of output data needed to
-answer the technical question. In the example above, the user needs to assess
-the plutonium inventory contained in facilities between the UOX spent fuel and
-the PWR MOX fuel. For illustrating, we use the first functionality of the
-Table~\ref{Tab:Funct}. The FIT project would provide in this case the impact of
-using a model to calculate the reactor fresh fuel composition versus using a
-constant fresh fuel composition. According to this impact, the user can decide
-if a new functionality devoted to the fresh fuel composition assessment is
-needed or not. The user can also decide to use another tool that already include
-this functionality. In addition, FIT project results could also be used to
-evaluate if a functionality not present in a study could have an impact on the
-observable that is used to solve the question.
+The FIT project approach consists of isolating a functionality effect from a simple basic exercise designed for this purpose. The effect of the functionality is then quantified by specific estimators that are computed with the functionality enabled and the reference case. Each participant propose a resolution for the exercise and some conclusions can be built according to the level of agreement of participants.
 
-The FIT project approach is very different from fuel cycle code benchmarks, as
-for example the NEA benchmark~\cite{NEA2016}, since there is no code to code
-comparison. The specificity here is to take advantage of the multiple tools
-developed since many years with different approaches. A functionality effect is
-isolated from a simple basic exercise designed for this purpose. Comparisons are
-done between the exercise resolution obtained from the reference case and from
-the functionality enabled. The impact of the functionality is calculated for
-each participant code. This methodology provide various quantification of a
-functionality impact on the fuel cycle. Some practical conclusions can be built
-if there is an agreement between results.
+With this methodology, the FIT project could give informations on which functionalities are required according to the question that needs to be answered and the precision level to reach. A fuel cycle code user starts from a technical question, such as "In a PWR fleet in which plutonium from spent UOX fuel is reprocessed in MOX fuel, what is the PWR-MOX fraction that perfectly balances the plutonium produced by PWR-UOX?". The user identify then the set of output data needed to answer the technical question. In the example above, the user needs to assess the plutonium inventory contained in facilities between the UOX spent fuel and the PWR MOX fuel. The user can then use the FIT project results to decide what are the code required functionalities or which functionalities will produce non reliable result. 
 
 % -----------------------------------------------------------------------------------------
 \subsection{Fuel cycle tools and institutions}
 
-The originality and the efficiency of the FIT project lies in the large number
-of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution
-with used fuel cycle code.
+The originality and the efficiency of the FIT project lies in the large number of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution with used fuel cycle code.
 
 \begin{table}[h]
 \centering
@@ -96,7 +62,7 @@ with used fuel cycle code.
   ANICCA\cite{} & TRACTEBEL (BEL) \\
    & Univ. Católica del Maule (CHL) \\
   \hline
-  CLASS\cite{} & CNRS / IN2P3 (FRA) \\
+  CLASS\cite{Thiolliere_2018} & CNRS / IN2P3 (FRA) \\
   \hline
   CYCLUS\cite{} & Univ. of Wisconsin Madison (USA) \\
   & Univ. of Illinois (USA) \\
@@ -109,45 +75,11 @@ with used fuel cycle code.
   \hline
   Tr\_Evol\cite{} & CIEMAT (ESP) \\
   \hline
-  VISION\cite{} & Idaho National Lab (USA) \\
+  VISION\cite{jacobson2009vision} & Idaho National Lab (USA) \\
   \hline
 \end{tabular}
 \label{Tab:Code}
 \caption{List of institutions and fuel cycle codes involved in FIT project.}
 \end{table}
 
-FIT project aims to be built on exercises related to test a specific
-functionality. Some tools can be used to test a functionality if they are
-designed for. The participation to an exercise also depends on the availability
-of participants. For this reasons, not all the codes and institutions are
-involved in an exercise.
-
-% -----------------------------------------------------------------------------------------
-\subsection{Description of the tested feature}
-
-In the present work, we focus on the impact of using a \gls{FLM} or a \gls{FF} approach. 
-
-A \gls{FLM} approach consists to adapt the fresh fuel composition according to
-the reactor requirements and the available isotopes. A \gls{FLM} means there is a
-process that connects the fresh fuel composition to the available materials,
-whatever the complexity of the model. For instance, the fissile fraction is
-calculated from the fissile stock quality in order to reach the required burn-up
-of the reactor. A \gls{FLM} could be based on neural network, Plutonium
-equivalence model, analytic functions, built-in depletion, etc. A \gls{FLM} is
-usually built from physics constraints and reactor physics calculations. 
-
-A \gls{FF} approach consists in using the same constant fissile
-fraction at each fresh fuel loading whatever the isotopic vector of the
-available fissile material is. Using a PWR MOX which is always loaded with a
-fresh fuel that contains 7\% of plutonium regardless the $^{239}$Pu content is a
-\gls{FF} approach. 
-
-The present work aims to quantify the impact of using \gls{FLM} versus \gls{FF}
-approach considering this last one as the reference. In a fuel cycle code, the
-\gls{FF} approach is the easiest method to handle fresh fuel loading in a reactor. The
-user simply define explicitly the fuel composition that is used in all the
-simulation. Developing \gls{FLM} may be an important development process that
-may require time and effort. Testing the impact of using \gls{FLM} rather than
-\gls{FF} approach aims to show applications that need \gls{FLM} and study that can be
-solved with \gls{FF} approach.
-
+FIT project aims to be built on exercises related to test a specific functionality. Some tools can be used to test a functionality if they are designed for. The participation to an exercise also depends on the availability of participants. For those reasons, not all the codes and institutions are involved in an exercise.
