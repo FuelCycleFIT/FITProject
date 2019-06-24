@@ -52,14 +52,13 @@ different estimators defined in the section\ref{subsec:estimator}.
 
 \paragraph{Plutonium fraction at \gls{BOC}}
 
-Estimator 1 aims to quantify bias introduced by the use of a \gls{FF} model on the
-plutonium enrichment calculation for fresh fuel. It measures the amount of
-plutonium taken from UOX spent fuel for MOX fuel fabrication. An important
-positive bias means that the \gls{FF} model underestimate the mass of spent UOX fuel
-that has to be processed for the MOX fuel fabrication. As the \gls{FF} was tuned on a
-classical plutonium composition, in the middle of the isotopic space available
-for sampling, Figure~\ref{fig:Est1_PWR} presents some histograms more or less
-centered on 0.
+Estimator 1 aims to quantify bias introduced by the use of a \gls{FF} model on
+the plutonium enrichment calculation for fresh fuel. It measures the amount of
+plutonium used for \gls{MOX} fuel fabrication. An important positive bias means
+that the \gls{FF} model underestimate the mass of spent fuel to be processed for
+the MOX fuel fabrication. As the \gls{FF} was tuned on a standart plutonium
+composition, in the middle of the isotopic space used for sampling,
+Figure~\ref{fig:Est1_PWR} presents some histograms almost centered on 0.
         
 
 \begin{figure}[h]
@@ -71,14 +70,14 @@ centered on 0.
 \end{figure}
 
 The standard deviation of the distribution is also a relevant quantity as it
-quantifies the dispersion of the calculation bias. They are presented in
-table~\ref{table:Est1_PWR} A small standard deviation implies a narrow
-distribution and means small calculation biases due to the use of \gls{FF} model. As
-we can see on the plot, none of the used software for this work shows a small
-standard deviation. This means that, in the range of the plutonium composition
-sampled, the use of a \gls{FF} model induce strong calculation bias in the fresh MOX
-fuel plutonium fraction, hence strong bias in the mass of spent fuel that have
-to be reprocessed for the MOX fuel fabrication.
+quantifies the dispersion of the calculation bias (i.e. i\textit{estimator 1}).
+They are presented in table~\ref{table:Est1_PWR}. A small standard deviation
+implies a narrow distribution and means small calculation biases due to the use
+of \gls{FF} model. As we can see on the plot, none of the used software for this
+work shows a small standard deviation. Meaning that, within the range of the
+sampled plutonium composition, the use of a \gls{FF} model induce ``large'' bias
+on the fresh \gls{MOX} fuel plutonium fraction, leading to ``large`` bias on the
+mass of reprocessed spent fuel for the \gls{MOX} fuel fabrication.
 
 \begin{table}[h]
 	\begin{center}
