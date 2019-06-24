@@ -46,7 +46,7 @@ impacts the fuel cycle in 3 majors ways:
         breeding/burning ratio in a SFR reactor, impacting the overall amount of
         plutonium in the simulation.
     \item the location of the plutonium, indeed the amount of plutonium in the
-        MOX fuel will shift the localisation of the plutonium form the front-end
+        MOX fuel will shift the localization of the plutonium form the front-end
         the back-end of the cycle, which could change its availability for
         other use (deployment of new reactor, fabrication of other fuels\ldots),
     \item the variation of the global amount of plutonium relative to the amount
@@ -65,12 +65,7 @@ and associated models, the following experience has been designed.
 % -----------------------------------------------------------------------------------------
 \subsection{Exercise specifications}
 
-The exercise is divided in two independant parts related to the reactor involved : 
-
-\begin{itemize}
-\item Pressurized Water Reactor (PWR)
-\item Sodium Fast Reactor (SFR)
-\end{itemize}
+The exercise is divided in two independent parts related to the reactor involved. \gls{PWR} and \gls{SFR} will be considered in this work.
 
 The schematic representation of the fuel cycle is shown on Figure~\ref{fig:FuelCycle}. The fuel cycle includes a fissile stock that contains enough plutonium to operate one reactor cycle and a fertile stock filled of depleted uranium. A fresh fuel fabrication plant that uses the heavy elements of the stocks build the fresh fuel of the reactor (PWR or SFR) according the its technical requirements. The reactor spent fuel is sent to a dedicated stock.
 
@@ -90,39 +85,32 @@ The time frame of the simulation corresponds to the reactor cycle. From the rela
 
 At t = 0, the fabrication plant builds the fresh fuel according to reactor requirements. To avoid plutonium isotopes decay, the fabrication time is zero and the reactor is thus loaded instantaneously. A complete fuel cycle is run and the spent fuel is sent to stock when the required BU is reached.
 
-Concerning the plutonium vector used to build the MOX fuel, a large range has been imposed on plutonium isotopes. Indeed, the impact of a \gls{FLM} in relation to \gls{FF} approach on a fuel cycle calculation will increase with the plutonium fraction deviation from a reference case. Perfectly well tuned scenario for which plutonium stocks are well known and approximately constant with time can be properly solved with a \gls{FF} approach since the \gld{FLM} would produce similar results. A wide range of scenario applications is considered here. From the plutonium vector produced from a small burn-up discharge CANDU to a multi-reprocessed plutonium in PWR 
+Concerning the plutonium vector used to build the MOX fuel, a large range has been imposed for plutonium isotopes. Indeed, the impact of a \gls{FLM} in relation to \gls{FF} approach on a fuel cycle calculation will increase with the plutonium fraction deviation from a reference case. To take an example, let consider a small fissile content plutonium. A \gls{FF} approach would for instance load the fuel at 6\% of plutonium in the fresh fuel since a \gls{FLM} approach would give 12\%. On the other hand, if the plutonium vector used to build the fuel is very close from the reference plutonium used to design the \gls{FF} approach, \gls{FF} and \gls{FLM} would produce similar results. Perfectly well tuned scenario for which plutonium stocks are well known and approximately constant with time can be properly solved with a \gls{FF} approach. 
 
-From CANDU 
+A wide range of scenario applications is considered here. For instance, the plutonium vector produced from a small burn-up discharge CANDU is characterized by a high fissile fraction~\cite{Guillemin_2010}. The multi-recycling of the plutonium into PWR may produce a high even isotopes fraction in the plutonium vector~\cite{Courtin_2016}. Very specific plutonium isotopic fraction can be seen from scenarios involving SFR reactors. Also, industrial parameters, such has spent fuel cooling time, may have a strong impact on $^{241}$Pu fraction. For those reasons, the plutonium isotopic range has been chosen very large to be representative of a wide range of applications although being realistic enough. The Table~\ref{Tab:PuVector} present minimum and maximum isotopic fraction of plutonium isotopes used in the framework of this work.
 
-
- 
-
-
-Pas la pour étudier des scénarios très contraint et donc très tuné... Pour un scénario très contraint, FF is clearly enough. Pas la peine de passer du temps pour développer un FLM
-
-Scenario exploratoire donc plein de possibilité
-Candu avec Pu9 pur
-PWR mono et multi mox
-SFR symbiotic 
-Temps de refroidissement variable et decay du Pu241
-
-Donc super large!
-
-
-The plutonium vectors that could be tested in the framework of this exercise have to be "realistic". We propose the following table with minimum and maximum isotopic fraction and total fraction in the fuel. 
-
-Isotope Min. Fraction (wgt. %)  Max. Fraction (wgt. %)
-Pu/HM @ T0 (PWR)    5   10
-Pu/HM @ T0 (SFR)    13  22
-Pu-238/TRU  0   10
-Pu-239/TRU  25  90
-Pu-240/TRU  10  40
-Pu-241/TRU  0   25
-Pu-242/TRU  0   30
-Am-241/TRU  0   10
-
-Each user can use a different plutonium vector as long as it is included inside this range
-
+\begin{table}[h]
+\centering
+\begin{tabular}{ |l|l|l| }
+  \hline
+  Isotope & Min. Mass Fr. (wgt. \%) & Max. Mass Fr. (wgt. \%) \\
+  \hline
+  Pu-238/TRU & 0  & 10 \\
+  \hline
+  Pu-239/TRU & 25 & 90 \\
+  \hline
+  Pu-240/TRU & 10 & 40 \\
+  \hline
+  Pu-241/TRU & 0  & 25 \\
+  \hline
+  Pu-242/TRU & 0  & 30 \\
+  \hline
+  Am-241/TRU & 0  & 10 \\
+  \hline
+\end{tabular}
+\label{Tab:PuVector}
+\caption{Minimum and maximum mass fraction in weight \% for plutonium vector at reactor beginning of cycle used in the framework of this work}
+\end{table}
 
 % -----------------------------------------------------------------------------------------
 \subsection{Methodology}
