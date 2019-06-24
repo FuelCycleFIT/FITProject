@@ -6,48 +6,47 @@
 % -----------------------------------------------------------------------------------------
 \subsection{Description of the tested functionality}
 
-In the present work, we focus on the impact of using a \gls{FLM} or a \gls{FF}
+The present work focuses on the impact of using a \gls{FLM} or a \gls{FF}
 approach. 
 
 A \gls{FLM} approach consists to adapt the fresh fuel composition according to
-the reactor requirements and the available isotopes. A \gls{FLM} means there is a
-process that connects the fresh fuel composition to the available materials,
-whatever the complexity of the model. For instance, the fissile fraction is
+the reactor requirements and the available material isotopic compositions. A
+\gls{FLM} connects the fresh fuel composition to the available materials,
+regardless to the complexity of the model. For instance, the fissile fraction is
 calculated from the fissile stock quality in order to reach the required burn-up
 of the reactor. A \gls{FLM} could be based on neural network, Plutonium
 equivalence model, analytic functions, built-in depletion, etc. A \gls{FLM} is
 usually built from physics constraints and reactor physics calculations. 
 
-A \gls{FF} approach consists in using the same constant fissile
-fraction at each fresh fuel loading whatever the isotopic vector of the
-available fissile material is. Using a PWR MOX which is always loaded with a
+A \gls{FF} model consists in using the same constant fissile fraction at each
+fresh fuel loading regardless of the isotopic composition of the available
+fissile material. Using a \gls{PWR} \gls{MOX} which is always loaded with a
 fresh fuel that contains 7\% of plutonium regardless the $^{239}$Pu content is a
 \gls{FF} approach. 
 
 The present work aims to quantify the impact of using \gls{FLM} versus \gls{FF}
-approach considering this last one as the reference. In a fuel cycle code, the
-\gls{FF} approach is the easiest method to handle fresh fuel loading in a reactor. The
-user simply define explicitly the fuel composition that is used in all the
-simulation. Developing \gls{FLM} may be an important development process that
-may require time and effort. Testing the impact of using \gls{FLM} rather than
-\gls{FF} approach aims to show applications that need \gls{FLM} and study that can be
-solved with \gls{FF} approach.
+approach considering this later as the reference, as it should have more physics
+refinement. In a fuel cycle simulator, the \gls{FF} approach is the cheapest
+method to deal with fresh reprocessed fuel fabrication. Developing \gls{FLM}
+may be an important development process requiring time and effort.
+Testing the impact of using \gls{FLM} rather than \gls{FF} aims to identify the
+study that require \gls{FLM} and the one solvable with \gls{FF}.
 
 \subsection{Output of interest}
 
-Fuel fabrication models can impacts fuel cycle simulation in different ways.
+Fuel fabrication models can impact fuel cycle simulation in many different ways.
 This exercise aims to understand some of their impacts on an overall fuel cycle
-calculation. Change in the plutonium content in a newly built MOX fuel will
-impacts the fuel cycle in 3 majors ways:
+calculation. Change in the plutonium content in a \gls{MOX} fuel could impacts
+the fuel cycle in 3 majors ways:
 
 \begin{itemize}
     \item the global amount of plutonium in the simulation, variation in the
-        plutonium content in the MOX fuel, might lead in a increase of the
-        amount of plutonium burnt in the PWR reactor, or a change in the
-        breeding/burning ratio in a SFR reactor, impacting the overall amount of
+        plutonium content in the \gls{MOX} fuel, might lead in a increase of the
+        amount of plutonium burnt in the \gls{PWR} reactor, or a change in the
+        breeding/burning ratio in a \gls{SFR} reactor, impacting the overall amount of
         plutonium in the simulation.
     \item the location of the plutonium, indeed the amount of plutonium in the
-        MOX fuel will shift the localization of the plutonium form the front-end
+        \gls{MOX} fuel will shift the localization of the plutonium form the front-end
         the back-end of the cycle, which could change its availability for
         other use (deployment of new reactor, fabrication of other fuels\ldots),
     \item the variation of the global amount of plutonium relative to the amount
@@ -58,7 +57,7 @@ impacts the fuel cycle in 3 majors ways:
 This might not be exhaustive list of fuel fabrication models impact on a fuel
 cycle, but this work will only focus on them and will not consider potential
 consequence on the fuel composition change after depletion due to
-over/under-estimate the amount of plutonium in the MOX fuel.
+over/under-estimate the amount of plutonium in the \gls{MOX} fuel.
 
 In order to investigate those impacts across multiple fuel cycle simulation tool
 and associated models, the following experience has been designed.
@@ -73,7 +72,7 @@ The schematic representation of the fuel cycle is shown on
 Figure~\ref{fig:FuelCycle}. The fuel cycle includes a fissile stock that
 contains enough plutonium to operate one reactor cycle and a fertile stock
 filled of depleted uranium. A fresh fuel fabrication plant that uses the heavy
-elements of the stocks build the fresh fuel of the reactor (PWR or SFR)
+elements of the stocks build the fresh fuel of the reactor (PWR or \gls{SFR})
 according the its technical requirements. The reactor spent fuel is sent to a
 dedicated stock.
 
@@ -98,7 +97,7 @@ requirements. To avoid plutonium isotopes decay, the fabrication time is zero
 and the reactor is thus loaded instantaneously. A complete fuel cycle is run and
 the spent fuel is sent to stock when the required BU is reached.
 
-Concerning the plutonium vector used to build the MOX fuel, a large range has
+Concerning the plutonium vector used to build the \gls{MOX} fuel, a large range has
 been imposed for plutonium isotopes. Indeed, the impact of a \gls{FLM} in
 relation to \gls{FF} approach on a fuel cycle calculation will increase with the
 plutonium fraction deviation from a reference case. To take an example, let
@@ -114,9 +113,9 @@ approach.
 A wide range of scenario applications is considered here. For instance, the
 plutonium vector produced from a small burn-up discharge CANDU is characterized
 by a high fissile fraction~\cite{Guillemin_2010}. The multi-recycling of the
-plutonium into PWR may produce a high even isotopes fraction in the plutonium
+plutonium into \gls{PWR} may produce a high even isotopes fraction in the plutonium
 vector~\cite{Courtin_2016}. Very specific plutonium isotopic fraction can be
-seen from scenarios involving SFR reactors. Also, industrial parameters, such
+seen from scenarios involving \gls{SFR} reactors. Also, industrial parameters, such
 has spent fuel cooling time, may have a strong impact on $^{241}$Pu fraction.
 For those reasons, the plutonium isotopic range has been chosen very large to be
 representative of a wide range of applications although being realistic enough.
@@ -201,7 +200,7 @@ mass in a specific stock can be compensated in another facility.
 \subsubsection{Estimator 1}
 
 The first estimator aims to measure the difference on the plutonium enrichment
-in the MOX fuel between the \gls{FLM} and \gls{FF}. This estimator directly
+in the \gls{MOX} fuel between the \gls{FLM} and \gls{FF}. This estimator directly
 impacts the amount of plutonium present in the back-end part of the fuel cycle
 and is then a local estimator. The estimator 1 has been defined as:
 
@@ -238,7 +237,7 @@ where $\frac{\Delta M}{M}_{i}$ is defined as:
 
 Estimator 2 represents a global effect since the plutonium consumption speed has
 an impact on total plutonium mass. This estimator is suitable for reactor
-simulations characterized by plutonium decrease and is used for PWR analysis.
+simulations characterized by plutonium decrease and is used for \gls{PWR} analysis.
 
 \subsubsection{Estimator 2b}
 
@@ -269,6 +268,6 @@ where $\frac{\Delta M}{T}_{i}$ is defined as:
     M_{Pu}^{EOC}(i)}{T}
 \end{equation}
 
-Estimator 3 characterizes a global effect and is used in the case of PWR
+Estimator 3 characterizes a global effect and is used in the case of \gls{PWR}
 simulations analysis.
 
