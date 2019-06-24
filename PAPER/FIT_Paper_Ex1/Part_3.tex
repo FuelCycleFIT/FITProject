@@ -145,10 +145,10 @@ estimators have been defined.
 From output data of interest, estimators are built to compare simulations run from \gls{FF} and \gls{FLM}. Inside a fuel cycle, two effects are dissociated. The first effect concerns global outputs which is a data estimated on the entire fuel cycle. This could be the total inventory of plutonium or minor actinides for for instance. The second effect concerns local outputs and is associated to the inventory in a specific facility or disposal unit. This could be the plutonium mass in a strategic stock. A measured global effect necessarily induces a local effect. Indeed, if the total plutonium mass at a specific time calculated from \gls{FLM} approach is higher than the \gls{FF} approach, that means that one or more facilities are affected. On the contrary, a local effect does not necessarily mean there is a global effect. A deviation in plutonium mass in a specific stock can be compensated in another facility.
 
 \subsubsection{Estimator 1}
-The first estimator aims to the difference on the plutonium enrichment in the MOX
-fuel between the \gls{FLM} and \gls{FF} which directly impacts the amount of
-plutonium present in the back-end part of the fuel cycle. The estimator 1 has
-been defined as:
+The first estimator aims to measure the difference on the plutonium enrichment in the MOX
+fuel between the \gls{FLM} and \gls{FF}. This estimator directly impacts the amount of
+plutonium present in the back-end part of the fuel cycle and is then a local estimator. The estimator 1 has been defined as:
+
 \begin{equation}
     \delta{\lambda}(i) =
         \frac{\left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FML}
@@ -157,11 +157,11 @@ been defined as:
 \end{equation}
 
 where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
-\gls{EOC} for the plutonium composition $i$ for the \gls{FLM} or the \gls{FF}.
+\gls{EOC} for the plutonium composition $i$ for the \gls{FLM} or the \gls{FF}. The higher the estimator 1 is, the higher the plutonium fraction at \gls{BOC} is for the \gls{FLM} compared to \gls{FF}. This estimator is used in the case of \gls{PWR} and \gls{SFR} analysis.
 
 \subsubsection{Estimator 2}
-The second estimator aims to relative speed of plutonium amount evolution in the
-reactor between the \gls{FLM} and the \gls{FF}. The estimator 2 is defined as:
+
+The second estimator aims to estimate the relative speed of plutonium consumption in the reactor between the \gls{FLM} and the \gls{FF} approach. The estimator 2 is defined as:
 \begin{equation}
     \delta{\frac{\Delta M}{M}}(i) =
         \frac{\left(\frac{\Delta M}{M}(i)\right)_{FML}
@@ -173,6 +173,24 @@ where $\frac{\Delta M}{M}_{i}$ is defined as:
     \frac{\Delta M}{M}(i) = \frac{M_{Pu}^{BOC}(i) -
     M_{Pu}^{EOC}(i)}{M_{Pu}^{BOC}(i)}
 \end{equation}
+
+Estimator 2 represents a global effect since the plutonium consumption speed has an impact on total plutonium mass. This estimator is suitable for reactor simulations characterized by plutonium decrease and is used for PWR analysis.
+
+\subsubsection{Estimator 2b}
+
+
+
+
+
+The third estimator is related to the absolute slope of the reactor evolution. we define :
+
+$\frac{\Delta M}{\Delta t}(Pu_i) = \frac{M^{BOC}(Pu_i) - M^{EOC}(Pu_i)}{\Delta t}$
+
+The estimateur 3 is then the relative difference of this observable : 
+
+$\delta \frac{\Delta M}{\Delta t}(Pu_i) = \frac{\frac{\Delta M}{\Delta t}(Pu_i)_{FLM} - \frac{\Delta M}{\Delta t}(Pu_i)_{FF}}{\frac{\Delta M}{\Delta t}(Pu_i)_{FF}}$
+
+
 
 
 \subsubsection{Estimator 3}
