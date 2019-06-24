@@ -162,6 +162,7 @@ where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
 \subsubsection{Estimator 2}
 
 The second estimator aims to estimate the relative speed of plutonium consumption in the reactor between the \gls{FLM} and the \gls{FF} approach. The estimator 2 is defined as:
+
 \begin{equation}
     \delta{\frac{\Delta M}{M}}(i) =
         \frac{\left(\frac{\Delta M}{M}(i)\right)_{FML}
@@ -178,23 +179,17 @@ Estimator 2 represents a global effect since the plutonium consumption speed has
 
 \subsubsection{Estimator 2b}
 
+The estimator 2 can tend toward infinity if reactor is iso-breeder. To avoid such a behavior, an estimator 2b has been defined as following : 
 
+\begin{equation}
+    \delta \frac{\Delta M}{M}(Pu_i) = \frac{\Delta M}{M}(Pu_i)_{FLM} - \frac{\Delta M}{M}(Pu_i)_{FF}
+\end{equation}
 
-
-
-The third estimator is related to the absolute slope of the reactor evolution. we define :
-
-$\frac{\Delta M}{\Delta t}(Pu_i) = \frac{M^{BOC}(Pu_i) - M^{EOC}(Pu_i)}{\Delta t}$
-
-The estimateur 3 is then the relative difference of this observable : 
-
-$\delta \frac{\Delta M}{\Delta t}(Pu_i) = \frac{\frac{\Delta M}{\Delta t}(Pu_i)_{FLM} - \frac{\Delta M}{\Delta t}(Pu_i)_{FF}}{\frac{\Delta M}{\Delta t}(Pu_i)_{FF}}$
-
-
-
+Estimator 2b measures a global effect and will be used for \gls{SFR} results.
 
 \subsubsection{Estimator 3}
 
+The third estimator shows the absolute speed of plutonium consumption in the reactor between the \gls{FLM} and the \gls{FF} approach and is defined as following :
 
 \begin{equation}
     \delta{\frac{\Delta M}{T}}(i) =
@@ -207,6 +202,8 @@ where $\frac{\Delta M}{T}_{i}$ is defined as:
     \frac{\Delta M}{T}(i) = \frac{M_{Pu}^{BOC}(i) -
     M_{Pu}^{EOC}(i)}{T}
 \end{equation}
+
+Estimator 3 characterizes a global effect and is used in the case of PWR simulations analysis.
 
 % -----------------------------------------------------------------------------------------
 \subsection{Output observables}
