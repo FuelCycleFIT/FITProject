@@ -1,10 +1,10 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Exercise design}
+\section{Exercise design \label{sec:ex_design}}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Description of the tested functionality}
+\subsection{Description of the tested functionality\label{subsec:func_desc}}
 
 In the present work, we focus on the impact of using a \gls{FLM} or a \gls{FF} approach. 
 
@@ -32,7 +32,7 @@ may require time and effort. Testing the impact of using \gls{FLM} rather than
 \gls{FF} approach aims to show applications that need \gls{FLM} and study that can be
 solved with \gls{FF} approach.
 
-\subsection{Output of interest}
+\subsection{Output of interest\label{subsec:OutOfI}}
 
 Fuel fabrication models can impacts fuel cycle simulation in different ways.
 This exercise aims to understand some of their impacts on an overall fuel cycle
@@ -63,7 +63,7 @@ In order to investigate those impacts across multiple fuel cycle simulation tool
 and associated models, the following experience has been designed.
 
 % -----------------------------------------------------------------------------------------
-\subsection{Exercise specifications}
+\subsection{Exercise specifications\label{subsec:ex_spec}
 
 The exercise is divided in two independent parts related to the reactor involved. \gls{PWR} and \gls{SFR} will be considered in this work.
 
@@ -113,7 +113,7 @@ A wide range of scenario applications is considered here. For instance, the plut
 \end{table}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Methodology}
+\subsection{Method\label{subsec:method}}
 
 In order to investigate the influence of fuel fabrication models on fuel cycle
 simulations, the following experiment have been designed. Following the FIT
@@ -143,8 +143,8 @@ loading models on the global amount of plutonium in the simulation, the location
 of the plutonium and the speed of variation of the plutonium inventory, three
 estimators have been defined.
 
-\subsection{Estimators}
-\subsubsection{Estimator 1}
+\subsection{Estimators\label{subsec:estimator}}
+\subsubsection{Estimator 1\label{subsubsec:est1}}
 The first estimator aims to the difference on the plutonium enrichment in the MOX
 fuel between the \gls{FLM} and \gls{FF} which directly impacts the amount of
 plutonium present in the back-end part of the fuel cycle. The estimator 1 has
@@ -159,7 +159,7 @@ been defined as:
 where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
 \gls{EOC} for the plutonium composition $i$ for the \gls{FLM} or the \gls{FF}.
 
-\subsubsection{Estimator 2}
+\subsubsection{Estimator 2\label{subsubsec:est2}}
 The second estimator aims to relative speed of plutonium amount evolution in the
 reactor between the \gls{FLM} and the \gls{FF}. The estimator 2 is defined as:
 \begin{equation}
@@ -175,7 +175,7 @@ where $\frac{\Delta M}{M}_{i}$ is defined as:
 \end{equation}
 
 
-\subsubsection{Estimator 3}
+\subsubsection{Estimator 3\label{subsubsec:est3}}
 
 
 \begin{equation}
@@ -191,6 +191,6 @@ where $\frac{\Delta M}{T}_{i}$ is defined as:
 \end{equation}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Output observables}
+\subsection{Output observables\label{subsec:est1}}
 
 
