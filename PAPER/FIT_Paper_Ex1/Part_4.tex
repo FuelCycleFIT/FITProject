@@ -17,7 +17,7 @@ Actually, our work aims to give conclusions about the usage of \gls{FF} model.
 
 Figure~\ref{fig:PWR_MOX_FLM_Pu} presents the plutonium fraction at \gls{BOC} predicted
 by each \gls{FLM} and the plutonium fraction at \gls{EOC} deduced by each software. As all
-FLM are different, the \gls{BOC} plutonium fractions differ from a software from
+FLM are different, and as the sampling for all codes are different, the \gls{BOC} plutonium fractions differ from a software from
 another. The widest prediction is given by the CLASS code that predicts plutonium
 fraction from 4\% until more that 15\%. This range is a direct consequence of
 the plutonium sampling used for this work. 15\% is clearly unrealistic but some
@@ -37,8 +37,8 @@ plutonium is consumed during irradiation like it should be in \gls{PWR}s. For AN
 and for TR\_EVOL however, some calculations show configurations where the
 plutonium fraction is higher at \gls{EOC} than it is at \gls{BOC}. This unrealistic
 result may be explained by the very wide plutonium isotopic composition range.
-ANICCA and TR\_EVOL were not conceived to simulate evolution of such a wide range
-of composition. This strange behavior may be attributed to the depletion
+ANICCA and TR\_EVOL were not conceived to simulate evolutions of such a wide range
+of compositions. This strange behavior may be attributed to the depletion
 calculation of those extreme fuels. Results about estimator 2 and 3 evaluating
 plutonium consumption should then be handled carefully with TR\_EVOL and ANICCA
 results.   
@@ -83,9 +83,10 @@ mass of reprocessed spent fuel for the \gls{MOX} fuel fabrication.
 	\begin{center}
 		\begin{tabular}{|c||c||c||c|}
 			\hline 
-				CLASS & ANICCA & TR\_EVOL & CYCLUS \\
+				ANICCA & CLASS & TR\_EVOL & CYCLUS \\
 			\hline
-				XX & YY & ZZ & TT \\
+				28\% & 33\% & 41\% & 20\% \\
+			\hline
 		\end{tabular}
 	\end{center}
 	\label{table:Est1_PWR}
@@ -98,8 +99,8 @@ plutonium mass at \gls{BOC}. It measures the proportion of plutonium burnt
 during irradiation. Estimator 2 distribution gives an evaluation of the total
 inventory precision estimation, regardless the location of the plutonium.
 Figure~\ref{fig:Est2_PWR} represents the different distributions of this estimator
-for the 4 codes used in this work. There are two trends in this plot: CYCLUS and
-CLASS shows limited bias (with a standard deviation of approximately XX as it
+for the 4 codes used in this part. There are two trends in this plot: CYCLUS and
+CLASS shows limited bias (with a standard deviation of 12\% and 8\% respectively as it
 can be seen in table~\ref{table:Est2_PWR}), whereas TR\_EVOL and ANICCA
 calculates very strong biases. From this different behaviors, it is impossible
 to conclude on the \gls{FLM} relevance for total inventory estimation. A limited bias
@@ -120,9 +121,10 @@ necessary.
 	\begin{center}
 		\begin{tabular}{|c||c||c||c|}
 			\hline 
-				CLASS & ANICCA & TR\_EVOL & CYCLUS \\
+				ANICCA & CLASS & TR\_EVOL & CYCLUS \\
 			\hline
-				XX & YY & ZZ & TT \\
+				59\% & 12\% & 71\% & 9\% \\
+			\hline
 		\end{tabular}
 	\end{center}
 	\label{table:Est2_PWR}
@@ -146,8 +148,8 @@ so, it measures the biases induced by a \gls{FF} for plutonium enrichment at
 rate.  Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA,
 TR\_EVOL and CYCLUS. Similar conclusion can be drawn as previous section. CLASS
 and CYCLUS are in agreement as shows that the impact of using a \gls{FF} may be
-limited, introducing $10\%$ bias on the total plutonium consumption rate. On the
-contrary ANICCA and TR\_EVOL are also in agreement showing a much larger bias.
+limited, introducing between $11\%$ for CYCLUS and $18\%$ for CLASS bias on the total plutonium consumption rate. On the
+contrary ANICCA and TR\_EVOL are also in agreement showing a much larger bias ($105\%$ and $108\%$ respectively).
 The same caution of previous section should be pointed out: depletion
 calculation of the latest software are out of validity domain adding some
 uncertainty to the bias calculated by the use of \gls{FLM}.       
@@ -206,9 +208,10 @@ for \gls{PWR}.
 	\begin{center}
 		\begin{tabular}{|c||c||c|}
 			\hline 
-				JOSETTE & TR\_EVOL & CLASS \\
+				CLASS & JOSETTE & TR\_EVOL \\
 			\hline
-				XX & YY & ZZ \\
+				9\% & 12\% & 13\% \\
+			\hline
 		\end{tabular}
 	\end{center}
 	\label{table:Est1Dev_SFR}
