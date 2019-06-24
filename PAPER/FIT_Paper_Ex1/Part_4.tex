@@ -39,7 +39,7 @@ plutonium fraction is higher at EOC than it is at \gls{BOC}. This unrealistic
 result may be explained by the very wide plutonium isotopic composition range.
 ANICCA and TrEVOL were not conceived to simulate evolution of such a wide range
 of composition. This strange behavior may be attributed to the depletion
-calculation of those extrem fuels. Results about estimator 2 and 3 evaluating
+calculation of those extreme fuels. Results about estimator 2 and 3 evaluating
 plutonium consumption should then be handled carefully with TrEVOL and ANICCA
 results.   
 
@@ -47,7 +47,7 @@ results.
 \subsubsection{Estimator's calculation}
 
 Figure~\ref{fig:Est1_PWR}, figure~\ref{fig:Est2_PWR} and
-figure~\ref{fig:Est3_PWR} represent, for the \gls{PWR}, the dsitribution of the
+figure~\ref{fig:Est3_PWR} represent, for the \gls{PWR}, the distribution of the
 different estimators defined in the section\ref{subsec:estimator}. 
 
 \paragraph{Plutonium fraction at \gls{BOC}}
@@ -56,7 +56,7 @@ Estimator 1 aims to quantify bias introduced by the use of a \gls{FF} model on
 the plutonium enrichment calculation for fresh fuel. It measures the amount of
 plutonium used for \gls{MOX} fuel fabrication. An important positive bias means
 that the \gls{FF} model underestimate the mass of spent fuel to be processed for
-the MOX fuel fabrication. As the \gls{FF} was tuned on a standart plutonium
+the MOX fuel fabrication. As the \gls{FF} was tuned on a standard plutonium
 composition, in the middle of the isotopic space used for sampling,
 Figure~\ref{fig:Est1_PWR} presents some histograms almost centered on 0.
         
@@ -94,10 +94,10 @@ mass of reprocessed spent fuel for the \gls{MOX} fuel fabrication.
 \paragraph{Ratio between plutonium consumption and plutonium at \gls{BOC}}
 
 Estimator 2 aims to quantify the amount of plutonium consumption regarding the
-plutonium mass at \gls{BOC}. It measures the proportion of plutonium which is burnt
-during irradiation. Estimator 2 biases give an estimation of the total inventory
-precision calculation, no matter the location of the plutonium.
-Figure~\ref{fig:Est2_PWR} represents the different histograms of this estimator
+plutonium mass at \gls{BOC}. It measures the proportion of plutonium burnt
+during irradiation. Estimator 2 distribution gives an evaluation of the total
+inventory precision estimation, regardless the location of the plutonium.
+Figure~\ref{fig:Est2_PWR} represents the different distributions of this estimator
 for the 4 codes used in this work. There are two trends in this plot: CYCLUS and
 CLASS shows limited bias (with a standard deviation of approximately XX as it
 can be seen in table~\ref{table:Est2_PWR}), whereas TR\_EVOL and ANICCA
@@ -128,29 +128,29 @@ necessary.
 	\label{table:Est2_PWR}
 \end{table}
 
-It has to be pointed out the fact that this estimator calculation (as for
-estimator 3 shown in the next paragraph) needs a depletion calculation.
-Figure~\ref{fig:PWR_MOX_FLM_Pu} shows that this depletion calculation is
-questionable for some plutonium isotopic compositions with ANICCA and TR\_EVOL.
-Those two software are used behond their validity domain and this is reflected
-in the very wide distribution of Estimator 2. The depletion calculation,
-inaccurate for composition outside of the validity domain, adds some biases to
-the one brought by the \gls{FF} model uses. The conclusions made with ANICCA and
-TR\_EVOL has then to be consider with caution
+It has to be pointed out that this estimator (as for estimator 3 shown in the
+next paragraph) needs a depletion calculation.  Figure~\ref{fig:PWR_MOX_FLM_Pu}
+shows that this depletion calculation is questionable for some plutonium
+isotopic compositions with ANICCA and TR\_EVOL.  Those two software may be used
+beyond their validity domain and this might be reflected in the very wide
+distribution of Estimator 2. The depletion calculation, inaccurate for
+composition outside of the validity domain, adds some biases to the one brought
+by the \gls{FF} model uses. The conclusions made with ANICCA and TR\_EVOL has
+then to be consider with caution.
 
 \paragraph{Plutonium consumption rate}
 
 Estimator 3 measures biases on the plutonium consumption rate calculation. As
-so, it measures the biases induced by a \gls{FF} for plutonium enrichment at \gls{BOC} on a
-global scale. It aims to quantify the global inventory evolution rate.
-Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA, TR\_EVOL and
-CYCLUS. Similar conclusion can be drawn as previous section. CLASS and CYCLUS
-are in agreement as shows that the impact of using a \gls{FF} may be limited,
-introducing 10\% bias on the total plutonium consumption rate. On the contrary
-ANICCA and TR\_EVOL are also in agreement showing a much larger bias. The same
-caution of previous section should be pointed out: depletion calculation of the
-latest software are out of validity domain adding some uncertainty to the bias
-calculated by the use of \gls{FLM}.       
+so, it measures the biases induced by a \gls{FF} for plutonium enrichment at
+\gls{BOC} on a global scale. It aims to quantify the global inventory evolution
+rate.  Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA,
+TR\_EVOL and CYCLUS. Similar conclusion can be drawn as previous section. CLASS
+and CYCLUS are in agreement as shows that the impact of using a \gls{FF} may be
+limited, introducing $10\%$ bias on the total plutonium consumption rate. On the
+contrary ANICCA and TR\_EVOL are also in agreement showing a much larger bias.
+The same caution of previous section should be pointed out: depletion
+calculation of the latest software are out of validity domain adding some
+uncertainty to the bias calculated by the use of \gls{FLM}.       
 
 \begin{figure}[h]
 	\begin{center}
@@ -185,13 +185,13 @@ importance of \gls{FLM} in fuel cycle simulators.
 \paragraph{Plutonium fraction at \gls{BOC}}
 
 Figure~\ref{fig:Est1_SFR} represents the estimator 1 calculated for Sodium
-Cooled Fast Reactors calculated with JOSETTE, TrEVOL and CLASS. Like for \gls{PWR}, it
-shows the relative difference of plutonium enrichment with the use of a \gls{FLM} in
-regards to a \gls{FF}. Standard deviations of the difference distribution is given in
-Table~\ref{table:Est1Dev_SFR} for the different codes. All codes are in
-agreement even if CLASS slightly underestimate the \gls{FF} impact on the plutonium
-needed for a SFR. The typical bias produced by the use of a \gls{FF} is smaller than
-25\% and is much lower than for \gls{PWR}.   
+Cooled Fast Reactors calculated with JOSETTE, TrEVOL and CLASS. Like for
+\gls{PWR}, it shows the relative difference of plutonium enrichment with the use
+of a \gls{FLM} in regards to a \gls{FF}. Standard deviations of the difference
+distribution is given in Table~\ref{table:Est1Dev_SFR} for the different codes.
+All codes are in agreement even if CLASS slightly underestimate the \gls{FF}
+impact on the plutonium needed for a SFR. The typical bias produced by the use
+of a \gls{FF} is smaller than 25\% and is much lower than for \gls{PWR}.   
 
 \begin{figure}[h]
 	\begin{center}
