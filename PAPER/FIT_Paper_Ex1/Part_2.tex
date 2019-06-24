@@ -25,7 +25,6 @@ provide enlightened advices to politics. For those reasons, a fuel cycle tool
 can be seen as a decision making tool since results and analyses are directly or
 indirectly used by industrial and political worlds.
 
-
 A fuel cycle simulation is based on a computer simulator used to model and
 compute the evolution of isotopes of interest in nuclear facilities, strategic
 stocks and waste disposal. An important effort in tool development concerns
@@ -40,7 +39,6 @@ physics phenomena and industrial practices requires a large effort in software
 development. For this reason, fuel cycle tools includes many modeling 
 simplifications.
 
-
 Bias or uncertainties in fuel cycle outputs are difficult to quantify as
 multiple level of simplifications are imposed by the complexity of the simulated
 system. While comparison with operated nuclear fleets are complex, such a
@@ -52,7 +50,6 @@ descriptions, implying a use of biased neutronic data in such simulators
 \cite{Somaini_2017}.  At the simulation scale, simplifications are also
 required, somethings without an accurate estimation of their impact on the
 simulation. 
-
 
 Some international effort \cite{NEA2016} focus on benchmarking fuel cycle
 simulators comparing output metrics at the scale of an operated nuclear fleet.
@@ -79,37 +76,33 @@ the complexity of the simulation tool by developing new functionalities. A fuel
 cycle functionality is the translation of a physical or technical process,
 related to nuclear facilities, into computer software language. The
 Table\ref{Tab:Funct} lists a set of functionalities that could be implemented
-in addition of the default model of the simulator.
+in addition/replacement of the default model of the simulator.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{ |p{0.5\textwidth}|p{0.5\textwidth}| }
   \hline
-  Reference & Functionality to develop \\
-  \hline
-  At each reactor loading, the reactor fresh fuel composition is constant & At
-  each reactor loading, the reactor fresh fuel composition depends on available
-  material isotopic composition \\
-  \hline
-  The reactor load factor is constant over the reactor lifetime & The reactor
-  load factor takes into account precise industrial constraints, such as partial
-  refueling \\
-  \hline
-  The mean cross sections used to perform the fuel evolution in reactor are
-  calculated at BOC and kept constant during the cycle & The mean cross sections
-  used to perform the fuel evolution in reactor are updated according to fuel
-  composition \\
-  \hline
-  The reactor first cycles composition is not taken into account and is assumed
-  to be the steady states composition & The exact reactor first cycles
-  composition is used \\
+  Reference & Functionality to develop 
+  \\ \hline
+  Fix fresh fuel composition for each fuel batch loading 
+  & Update fuel fuel composition with regards of the available material
+  composition 
+  \\ \hline
+  Averaged thermal-power over the cycles 
+  & Dynamic thermal-power follow up
+  \\ \hline
+  Use of fixed/averaged macroscopic cross section for fuel depletion
+  & Time/\gls{BU}-dependent cross sections
+  \\ \hline
+  Steady state reactor start (no starting batches)
+  & Fuel starting batches modelisation \\
   \hline
 \end{tabular}
 \label{Tab:Funct}
 \caption{Examples of simplified and more complex functionalities.}
 \end{table}
 
-The FIT project approach consists of isolating a functionality effect from a
+The FIT project approach consists in isolating a functionality effect from a
 simple basic exercise designed for this purpose. The effect of the functionality
 is then quantified by specific estimators that are computed with the
 functionality enabled and the reference case. Each participant propose a
