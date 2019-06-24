@@ -1,13 +1,56 @@
-Since the 1990's, many different nuclear fuel cycle simulation codes have been developed by several institutions.
+Since the 1990's, many different nuclear fuel cycle simulation codes have been
+developed by several institutions.
 
-A fuel cycle code aims to models an entire nuclear fleet including main facilities, like nuclear reactors, fuel fabrication plants, reprocessing plants, cooling pool and waste disposal. Those tools help to identify drivers and interactions between parameters in fuel cycle physic. For that, they often implement physic models for different key points of the cycle like fuel fabrication or burn up depletion calculations. 
+A fuel cycle code aims to models an entire nuclear fleet including main
+facilities, like nuclear reactors, fuel fabrication plants, reprocessing plants,
+cooling pool and waste disposal. Those tools help to identify drivers and
+interactions between parameters in fuel cycle physic. For that, they often
+implement physic models for different key points of the cycle like fuel
+fabrication or burn up depletion calculations. 
 
-Fuel cycle simulation codes are used worldwide for different purposes. Fuel cycle tools can be used to study current nuclear fleet for industrial operation optimization. Those tools can also be used to assess the future of nuclear energy and provide then informations for political decision process. Finally, those tools may be used for Research and Development training as they give an access to key point data related to the fuel cycle. 
+Fuel cycle simulation codes are used worldwide for different purposes. Fuel
+cycle tools can be used to study current nuclear fleet for industrial operation
+optimization. Those tools can also be used to assess the future of nuclear
+energy and provide then informations for political decision process. Finally,
+those tools may be used for Research and Development training as they give an
+access to key point data related to the fuel cycle. 
 
-The different institutions that use fuel cycle simulations pursue different goals. Consequently, their computational tools vary in term of complexity. The level of complexity of each software has to be coherent in regards to the different studies it is used for. To improve confidence in the results, institutions are tempted to increase the complexity of their software even if this complexity might not be necessary.
+The different institutions that use fuel cycle simulations pursue different
+goals. Consequently, their computational tools vary in term of complexity. The
+level of complexity of each software has to be coherent in regards to the
+different studies it is used for. To improve confidence in the results,
+institutions are tempted to increase the complexity of their software even if
+this complexity might not be necessary.
 
-As an example, the neutron and gamma doses calculation requires the precise knowledge of each material isotopic composition in each facilities whereas uranium consumption calculation does not require this degree of detail. As a consequence, some software functionality may not be necessary regarding the technical question the code assesses. In other words, to solve a given technical question associated to a targeted precision, some functionality are needed while some others are not. Knowing the importance of each ones helps to choose an appropriate software or to engage code developments to solve the question. Also, some technical issues are assessed by numerous studies performed with different software and it is often difficult to compare them. Knowing the impact of functionality on different simulation outputs helps to estimate the confidence level of studies.
+As an example, the neutron and gamma doses calculation requires the precise
+knowledge of each material isotopic composition in each facilities whereas
+uranium consumption calculation does not require this degree of detail. As a
+consequence, some software functionality may not be necessary regarding the
+technical question the code assesses. In other words, to solve a given technical
+question associated to a targeted precision, some functionality are needed while
+some others are not. Knowing the importance of each ones helps to choose an
+appropriate software or to engage code developments to solve the question. Also,
+some technical issues are assessed by numerous studies performed with different
+software and it is often difficult to compare them. Knowing the impact of
+functionality on different simulation outputs helps to estimate the confidence
+level of studies.
 
-The FIT (Functionality Isolation Test) Project has been conceived for this purpose. The project goal is to determine the minimum level of details in fuel cycle simulations that has to be taken into account according to the type of study and the wanted confidence level. Among different functionality of interest, this first work focuses on the ability of fuel cycle software to adapt the fresh fuel composition regarding to the available material for fuel fabrication.
+The FIT (Functionality Isolation Test) Project has been conceived for this
+purpose. The project goal is to determine the minimum level of details in fuel
+cycle simulations that has to be taken into account according to the type of
+study and the wanted confidence level. Among different functionality of
+interest, this first work focuses on the ability of fuel cycle software to adapt
+the fresh fuel composition regarding to the available material for fuel
+fabrication.
 
-The first part of the paper describes the FIT project, its philosophy and the participant with their own software. It explains how each code is used with and without the feature to test in order to quantify its impact on fuel cycle observables and why this is not a traditional benchmark. This part ends by the description of the particular feature tested in this work which is the fuel loading management. The second part presents the design of experiment used to test this particular feature: input simulation descriptions, technical specificities and finally output metrics used to quantify the impact of the use of fuel loading management in fuel cycle studies are detailed. Finally, the third part is dedicated to the different results of each software involved in this first exercise and some conclusion are withdrawn.
+The first part of the paper describes the FIT project, its philosophy and the
+participant with their own software. It explains how each code is used with and
+without the feature to test in order to quantify its impact on fuel cycle
+observables and why this is not a traditional benchmark. This part ends by the
+description of the particular feature tested in this work which is the fuel
+loading management. The second part presents the design of experiment used to
+test this particular feature: input simulation descriptions, technical
+specificities and finally output metrics used to quantify the impact of the use
+of fuel loading management in fuel cycle studies are detailed. Finally, the
+third part is dedicated to the different results of each software involved in
+this first exercise and some conclusion are withdrawn.
