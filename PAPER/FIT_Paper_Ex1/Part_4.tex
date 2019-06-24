@@ -74,12 +74,20 @@ Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA, TR_EVOL and 
 	\end{center}
 \end{figure}
 
-
-
 \subsection{Fast Sodium cooled Reactor}
+\subsubsection{Output analyses}
+Figure~\ref{SFR_MOX_FLM_Pu} represents the plutonium enrichment distribution at BOC (in black) and at EOC (in red) simulated with CLASS, JOSETTE and TR_EVOL. The different reactor models used for the different software explain the different behavior. CLASS simulates a breeder whereas TR_EVOL a simulate a burner and JOSETTE a break-even reactor. Plutonium mass evolution is then different for all those software. The purpose of this paper is not to compare software but to compare the use or not for each of those software. The fact that the reactor models shows different behavior reinforces conclusions drawn for the importance of FLM in fuel cycle simulators.     
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 0.99\textwidth]{../../Feature_1/RAW_DATA/FIG/SFR_MOX_FLM_Pu.pdf}
+		\caption{Code outputs for PWR scenario's calculations}
+		\label{fig:SFR_MOX_FLM_Pu}
+	\end{center}
+\end{figure}
 
-Figure~\ref{fig:Est1_SFR} represents the estimator 1 calculated for Sodium Cooled Fast Reactors calculated with JOSETTE, TrEVOL and CLASS. Like for PWR, it shows the relative difference of plutonium enrichment with the use of a FLM in regards to a FF. Standard deviations of the difference distribution is given in Table~\ref{table:Est1Dev_SFR} for the different codes. 
-All codes are in agreement even if CLASS slightly underestimate the FF impact on the plutonium needed for a SFR. The typical biais produced by the use of a FF is smaller than 25\% and is much lower than for PWR.  
+\subsubsection{Estimator's calculation}
+\paragraph{Plutonium fraction at BOC}
+Figure~\ref{fig:Est1_SFR} represents the estimator 1 calculated for Sodium Cooled Fast Reactors calculated with JOSETTE, TrEVOL and CLASS. Like for PWR, it shows the relative difference of plutonium enrichment with the use of a FLM in regards to a FF. Standard deviations of the difference distribution is given in Table~\ref{table:Est1Dev_SFR} for the different codes. All codes are in agreement even if CLASS slightly underestimate the FF impact on the plutonium needed for a SFR. The typical bias produced by the use of a FF is smaller than 25\% and is much lower than for PWR.   
 
 \begin{figure}[h]
 	\begin{center}
@@ -100,6 +108,11 @@ All codes are in agreement even if CLASS slightly underestimate the FF impact on
 	\end{center}
 	\label{table:Est1Dev_SFR}
 \end{table}
+
+The estimation of spent fuel mass that have to be reprocessed for SFR fresh fuel composition using a FF for plutonium enrichment is then estimated with a bias smaller than 10\% no matter the SFR behavior (breeder, burner or break-even).  
+
+\paragraph{Ratio between plutonium consumption and plutonium at BOC}
+Estimator 2.b aims to calculate the plutonium production or consumption on the global level of the fleet. It estimates the absolute difference on breeding ratio when simulation are made with a FF or with a FLM. CLASS and TR_EVOL shows similar results and calculate biases induced by the FF method up to 0.1. JOSETTE calculations shows a narrower distribution, probably due to the fact that SFR simulated with JOSETTE are all break-even.   
 
 \begin{figure}[h]
 	\begin{center}
