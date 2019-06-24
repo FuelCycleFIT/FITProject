@@ -1,7 +1,7 @@
 % coucou
 
 \section{Results}
-This section presents the different calculation results obtained by the different codes and the estimators distribution defined in the previsous section. The assumption made here is to suppose that introducing a physic model like a FLM into a fuel cycle simulation represents better the reality than no model like a FF for all plutonium fresh compositions. Our calculations don't validate any model and the purpose of this work is not to compare FLMs between them and select one. It tries to assess the need of FLM for some local or global conclusion in fuel cycle studies by estimating bias on elementary calculations. Actually, our work aims to give conclusions on the use of FF model.   
+This section presents the different calculation results obtained by the different codes and the estimators distribution defined in the previous section. The assumption made here is to suppose that introducing a physic model like a FLM into a fuel cycle simulation represents better the reality than no model like a FF for all plutonium fresh compositions. Our calculations don't validate any model and the purpose of this work is not to compare FLMs between them and select one. It tries to assess the need of FLM for some local or global conclusion in fuel cycle studies by estimating bias on elementary calculations. Actually, our work aims to give conclusions on the use of FF model.   
 
 \subsection{Pressurized Water Reactor}
 
@@ -34,11 +34,23 @@ Estimator 1 aims to quantify bias introduced by the use of a FF model on the plu
 	\end{center}
 \end{figure}
 
-The standard deviation of the distribution is also a relevant quantity as it quantifies the dispersion of the calculation bias. A small standard deviation implies a narrow distribution and means small calculation biases due to the use of FF model. As we can see on the plot, none of the used software for this work shows a small standard deviation. This means that, in the range of the plutonium composition sampled, the use of a FF model induce strong calculation bias in the fresh MOX fuel plutonium fraction, hence strong bias in the mass of spent fuel that have to be reprocessed for the MOX fuel fabrication.
+The standard deviation of the distribution is also a relevant quantity as it quantifies the dispersion of the calculation bias. They are presented in table~\ref{table:Est1_PWR} A small standard deviation implies a narrow distribution and means small calculation biases due to the use of FF model. As we can see on the plot, none of the used software for this work shows a small standard deviation. This means that, in the range of the plutonium composition sampled, the use of a FF model induce strong calculation bias in the fresh MOX fuel plutonium fraction, hence strong bias in the mass of spent fuel that have to be reprocessed for the MOX fuel fabrication.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c||c||c||c|}
+			\hline 
+				CLASS & ANICCA & TR\_EVOL & CYCLUS \\
+			\hline
+				XX & YY & ZZ & TT \\
+		\end{tabular}
+	\end{center}
+	\label{table:Est1_PWR}
+\end{table}
 
 \paragraph{Ratio between plutonium consumption and plutonium at BOC}
 Estimator 2 aims to quantify the amount of plutonium consumption regarding the plutonium mass at BOC. It measures the proportion of plutonium which is burnt during irradiation. Estimator 2 biases give an estimation of the total inventory precision calculation, no matter the location of the plutonium. 
-Figure~\ref{fig:Est2_PWR} represents the different histograms of this estimator for the 4 codes used in this work. There are two trends in this plot: CYCLUS and CLASS shows limited biais (with a standard deviation of approximately XX as it can be seen in table~\ref{table:Est2_PWR}), whereas TR_EVOL and ANICCA calculates very strong biases. From this different behaviours, it is impossible to conclude on the FLM relevance for total inventory estimation. A limited biais (as seen with CYCLUS and CLASS) means that the use of a FF for plutonium enrichment at BOC may be sufficient for global inventory estimation. On the opposite, results from ANICCA and TR_EVOL tends to show that a FLM is necessary. 
+Figure~\ref{fig:Est2_PWR} represents the different histograms of this estimator for the 4 codes used in this work. There are two trends in this plot: CYCLUS and CLASS shows limited bias (with a standard deviation of approximately XX as it can be seen in table~\ref{table:Est2_PWR}), whereas TR\_EVOL and ANICCA calculates very strong biases. From this different behaviors, it is impossible to conclude on the FLM relevance for total inventory estimation. A limited bias (as seen with CYCLUS and CLASS) means that the use of a FF for plutonium enrichment at BOC may be sufficient for global inventory estimation. On the opposite, results from ANICCA and TR\_EVOL tends to show that a FLM is necessary. 
 
 \begin{figure}[h]
 	\begin{center}
@@ -48,23 +60,23 @@ Figure~\ref{fig:Est2_PWR} represents the different histograms of this estimator 
 	\end{center}
 \end{figure}
 
-begin{table}[h]
+\begin{table}[h]
 	\begin{center}
-		\begin{tabular}{|c||c||c|}
+		\begin{tabular}{|c||c||c||c|}
 			\hline 
-				CLASS & ANICCA & TR_EVOL & CYCLUS \\
+				CLASS & ANICCA & TR\_EVOL & CYCLUS \\
 			\hline
-				XX & YY & ZZ && TT\\
+				XX & YY & ZZ & TT \\
 		\end{tabular}
 	\end{center}
 	\label{table:Est2_PWR}
 \end{table}
 
-It has to be pointed out the fact that this estimator calculation (as for estimator 3 shown in the next paragraph) needs a depletion calculation. Figure~\ref{fig:PWR_MOX_FLM_Pu} shows that this depletion calculation is questionnable for some plutonium isotopic compositions with ANICCA and TR_EVOL. Those two software are used behond their validity domain and this is reflected in the very wide distribution of Estimator 2. The depletion calculation, innacurate for composition outside of the validity domain, adds some biases to the one brought by the FF model uses. The conclusions made with ANICCA and TR_EVOL has then to be consider with caution
+It has to be pointed out the fact that this estimator calculation (as for estimator 3 shown in the next paragraph) needs a depletion calculation. Figure~\ref{fig:PWR_MOX_FLM_Pu} shows that this depletion calculation is questionable for some plutonium isotopic compositions with ANICCA and TR\_EVOL. Those two software are used behond their validity domain and this is reflected in the very wide distribution of Estimator 2. The depletion calculation, inaccurate for composition outside of the validity domain, adds some biases to the one brought by the FF model uses. The conclusions made with ANICCA and TR\_EVOL has then to be consider with caution
 
 \paragraph{Plutonium consumption rate}
 Estimator 3 measures biases on the plutonium consumption rate calculation. As so, it measures the biases induced by a FF for plutonium enrichment at BOC on a global scale. It aims to quantify the global inventory evolution rate. 
-Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA, TR_EVOL and CYCLUS. Similar conclusion can be drawn as preivous section. CLASS and CYCLUS are in agreement as shows that the impact of using a FF may be limited, introducting 10\% bias on the total plutonium consumption rate. On the contrary ANICCA and TR_EVOL are also in agreement showing a much larger bias. The same caution of previous section should be pointed out: depletion calculation of the latest software are out of validity domain adding some uncertainty to the bias calculated by the use of FLM.       
+Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA, TR\_EVOL and CYCLUS. Similar conclusion can be drawn as previous section. CLASS and CYCLUS are in agreement as shows that the impact of using a FF may be limited, introducing 10\% bias on the total plutonium consumption rate. On the contrary ANICCA and TR\_EVOL are also in agreement showing a much larger bias. The same caution of previous section should be pointed out: depletion calculation of the latest software are out of validity domain adding some uncertainty to the bias calculated by the use of FLM.       
 
 \begin{figure}[h]
 	\begin{center}
@@ -76,7 +88,7 @@ Figure~\ref{fig:Est3_PWR} represents estimator 3 for CLASS, ANICCA, TR_EVOL and 
 
 \subsection{Fast Sodium cooled Reactor}
 \subsubsection{Output analyses}
-Figure~\ref{SFR_MOX_FLM_Pu} represents the plutonium enrichment distribution at BOC (in black) and at EOC (in red) simulated with CLASS, JOSETTE and TR_EVOL. The different reactor models used for the different software explain the different behavior. CLASS simulates a breeder whereas TR_EVOL a simulate a burner and JOSETTE a break-even reactor. Plutonium mass evolution is then different for all those software. The purpose of this paper is not to compare software but to compare the use or not for each of those software. The fact that the reactor models shows different behavior reinforces conclusions drawn for the importance of FLM in fuel cycle simulators.     
+Figure~\ref{SFR_MOX_FLM_Pu} represents the plutonium enrichment distribution at BOC (in black) and at EOC (in red) simulated with CLASS, JOSETTE and TR\_EVOL. The different reactor models used for the different software explain the different behavior. CLASS simulates a breeder whereas TR\_EVOL a simulate a burner and JOSETTE a break-even reactor. Plutonium mass evolution is then different for all those software. The purpose of this paper is not to compare software but to compare the use or not for each of those software. The fact that the reactor models shows different behavior reinforces conclusions drawn for the importance of FLM in fuel cycle simulators.     
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width = 0.99\textwidth]{../../Feature_1/RAW_DATA/FIG/SFR_MOX_FLM_Pu.pdf}
@@ -112,7 +124,7 @@ Figure~\ref{fig:Est1_SFR} represents the estimator 1 calculated for Sodium Coole
 The estimation of spent fuel mass that have to be reprocessed for SFR fresh fuel composition using a FF for plutonium enrichment is then estimated with a bias smaller than 10\% no matter the SFR behavior (breeder, burner or break-even).  
 
 \paragraph{Ratio between plutonium consumption and plutonium at BOC}
-Estimator 2.b aims to calculate the plutonium production or consumption on the global level of the fleet. It estimates the absolute difference on breeding ratio when simulation are made with a FF or with a FLM. CLASS and TR_EVOL shows similar results and calculate biases induced by the FF method up to 0.1. JOSETTE calculations shows a narrower distribution, probably due to the fact that SFR simulated with JOSETTE are all break-even.   
+Estimator 2.b aims to calculate the plutonium production or consumption on the global level of the fleet. It estimates the absolute difference on breeding ratio when simulation are made with a FF or with a FLM. CLASS and TR\_EVOL shows similar results and calculate biases induced by the FF method up to 0.1. JOSETTE calculations shows a narrower distribution, probably due to the fact that SFR simulated with JOSETTE are all break-even.   
 
 \begin{figure}[h]
 	\begin{center}
