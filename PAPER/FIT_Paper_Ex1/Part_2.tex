@@ -95,38 +95,49 @@ in addition/replacement of the default model of the simulator.
   & Time/\gls{BU}-dependent cross sections
   \\ \hline
   Steady state reactor start (no starting batches)
-  & Fuel starting batches modelisation \\
+  & Fuel starting batches modeling \\
   \hline
 \end{tabular}
 \label{Tab:Funct}
-\caption{Examples of simplified and more complex functionalities.}
+\caption{Examples of simplified/complex functionality couples.}
 \end{table}
 
-The FIT project approach consists in isolating a functionality effect from a
-simple basic exercise designed for this purpose. The effect of the functionality
-is then quantified by specific estimators that are computed with the
-functionality enabled and the reference case. Each participant propose a
-resolution for the exercise and some conclusions can be built according to the
-level of agreement of participants.
+The FIT project approach consists in isolating a functionality impacts on fuel
+cycle simulations. Each functionality impacts will be assessed using a set of
+simple basic exercises specifically designed for this purpose, called
+``functionality isolation``. Each exercise of a functionality isolation will be
+focused on a subset of output metrics related to a type of problem covered by
+the fuel cycle study.  
 
-With this methodology, the FIT project could give informations on which
-functionalities are required according to the question that needs to be answered
-and the precision level to reach. A fuel cycle code user starts from a technical
-question, such as "In a PWR fleet in which plutonium from spent UOX fuel is
-reprocessed in MOX fuel, what is the PWR-MOX fraction that perfectly balances
-the plutonium produced by PWR-UOX?". The user identify then the set of output
-data needed to answer the technical question. In the example above, the user
-needs to assess the plutonium inventory contained in facilities between the UOX
-spent fuel and the PWR MOX fuel. The user can then use the FIT project results
-to decide what are the code required functionalities or which functionalities
-will produce non reliable result. 
+For instance, the total mass of plutonium or the isotopic composition of
+plutonium will be used as output of interest for fuel cycle studies dealing with 
+nuclear fuels recycling. Minor actinides production could be added to the
+analyses to take into account fuel cycle studies concerned by radio-protection.
+Once the choice of output of interest is made, the effect of the functionality
+will be quantified by specific estimators computed with the functionality
+enabled and the reference case. Each participant can submit a resolution for the
+exercise and conclusions can be drawn according to the level of agreement
+of participants.
+
+With this methodology, the FIT project could provide informations about which
+functionalities are required regarding a specific question and an associated
+precision/confidence.  A fuel cycle simulation tool user starts from a technical
+question, such as "In a \gls{PWR} fleet, considering spent \gls{UOX} fuel plutonium
+reprocessing, what is the optimum \gls{PWR} \gls{UOX}-\gls{MOX} ratio that allow no/low plutonium
+accumulation ?". The user then identify the set of output metrics required to
+answer the technical question. In the example above, the user needs to assess
+the plutonium inventory contained in facilities between the \gls{UOX} spent fuel and
+the \gls{PWR} \gls{MOX} fuel. The user can then use the FIT project results to decide what
+are the code required functionalities or which functionalities will produce non
+reliable result. 
 
 % -----------------------------------------------------------------------------------------
 \subsection{Fuel cycle tools and institutions}
 
 The originality and the efficiency of the FIT project lies in the large number
-of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution
-with used fuel cycle code.
+of fuel cycle tools participating in a set of exercises of a specific
+functionality isolation. The Table~\ref{Tab:Code} presents participating
+institution with used fuel cycle code.
 
 \begin{table}[h]
 \centering
@@ -158,7 +169,8 @@ with used fuel cycle code.
 \end{table}
 
 FIT project aims to be built on exercises related to test a specific
-functionality. Some tools can be used to test a functionality if they are
+functionality isolation. Some tools can be used to test a functionality if they are
 designed for. The participation to an exercise also depends on the availability
-of participants. For those reasons, not all the codes and institutions are
-involved in an exercise.
+of participants. For those reasons, some simulators and or institution might not
+be participating in some functionality isolation exercises, or might only
+participate partially.
