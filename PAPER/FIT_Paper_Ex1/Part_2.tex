@@ -10,20 +10,73 @@ precisely describe and to present the framework of the project.
 % -----------------------------------------------------------------------------------------
 \subsection{Nuclear fuel cycle dynamic simulation tool}
 
-Fuel cycle simulation codes~\cite{NEA2016} are developed since many years by several research and engineering institutions or consulting firms for many purposes. In the case of research and engineering institutions in charge of supporting the operated nuclear installations, fuel cycle codes are used to help and to optimize the industrial operations. For research and engineering institutions concerned by energetic transition, fuel cycle tools are used to study and analyze future trajectories for prospective reflexions on the electric component of the transition. Also, for institutions in charge of educational and training purposes in the nuclear field, this kind of tool helps understanding the physics that drive a nuclear fleet and can be used as an educational support. Consulting firms develop and use those tool to provide enlightened advices to politics. For those reasons, a fuel cycle tool can be seen as a decision making tool since results and analyses are directly or indirectly used by industrial and political worlds.
+Fuel cycle simulation codes~\cite{NEA2016} are developed since many years by
+several research and engineering institutions or consulting firms for many
+purposes. In the case of research and engineering institutions in charge of
+supporting the operated nuclear installations, fuel cycle codes are used to help
+and to optimize the industrial operations. For research and engineering
+institutions concerned by energetic transition, fuel cycle tools are used to
+study and analyze future trajectories for prospective reflexions on the electric
+component of the transition. Also, for institutions in charge of educational and
+training purposes in the nuclear field, this kind of tool helps understanding
+the physics that drive a nuclear fleet and can be used as an educational
+support. Consulting firms develop and use those tool to provide enlightened
+advices to politics. For those reasons, a fuel cycle tool can be seen as a
+decision making tool since results and analyses are directly or indirectly used
+by industrial and political worlds.
 
-A fuel cycle simulation is based on a computer code used to model and calculate the evolution of isotopes of interest in nuclear facilities, strategic stocks and waste disposal. An important effort in tool development concerns physics model that aims to reproduce complex physics or industrial processes. A nuclear fuel cycle is then a very complex system in which isotopes evolution can be impacted by various parameters such as reactor technology deployment, fuel reprocessing strategies, etc. A fuel cycle code calculates radio-nuclides evolution in nuclear facilities from the description of a nuclear fleet. The material evolution is estimated during the irradiation process in reactors and during cooling phases is other facilities. Taking into account all the physics phenomena and industrial practices requires a huge effort in code development. For this reason, fuel cycle tools integrates many simulation simplifications.
+A fuel cycle simulation is based on a computer code used to model and calculate
+the evolution of isotopes of interest in nuclear facilities, strategic stocks
+and waste disposal. An important effort in tool development concerns physics
+model that aims to reproduce complex physics or industrial processes. A nuclear
+fuel cycle is then a very complex system in which isotopes evolution can be
+impacted by various parameters such as reactor technology deployment, fuel
+reprocessing strategies, etc. A fuel cycle code calculates radio-nuclides
+evolution in nuclear facilities from the description of a nuclear fleet. The
+material evolution is estimated during the irradiation process in reactors and
+during cooling phases is other facilities. Taking into account all the physics
+phenomena and industrial practices requires a huge effort in code development.
+For this reason, fuel cycle tools integrates many simulation simplifications.
 
-Bias or uncertainties in fuel cycle outputs are difficult to quantify because of the multiple level of simplifications imposed by the complexity of the simulated system. If comparison with operated nuclear fleet is complex, such a process of validation is not possible for prospective study based on innovative reactors. Uncertainty or bias come from many sources. Nuclear data uncertainty has an impact on reactor calculation output used to tune fuel cycle codes~\cite{Krivtchik_2014}. Also, fuel cycle codes reactor management is usually based on simplified reactor calculations that produces a bias on neutronic data produced and used by fuel cycle simulators~\cite{Somaini_2017}. At the scale of the scenario, simplifications are also required too without always knowing precisely the precise impact of the simplification. 
+Bias or uncertainties in fuel cycle outputs are difficult to quantify because of
+the multiple level of simplifications imposed by the complexity of the simulated
+system. If comparison with operated nuclear fleet is complex, such a process of
+validation is not possible for prospective study based on innovative reactors.
+Uncertainty or bias come from many sources. Nuclear data uncertainty has an
+impact on reactor calculation output used to tune fuel cycle
+codes~\cite{Krivtchik_2014}. Also, fuel cycle codes reactor management is
+usually based on simplified reactor calculations that produces a bias on
+neutronic data produced and used by fuel cycle simulators~\cite{Somaini_2017}.
+At the scale of the scenario, simplifications are also required too without
+always knowing precisely the precise impact of the simplification. 
 
-Some international effort~\cite{NEA2016} propose to benchmark fuel cycle codes in order to compare output data at the scale of an operated nuclear fleet. Results produced in the framework of those works are decisive to test the ability of multiple codes to be in agreement. Nevertheless, comparison are focused on aggregated data and deviations between codes may be hard to interpret. The FIT project is built in complementarity with international benchmarks and aims to provide informations to improve confidence in data produced by fuel cycle tools.
+Some international effort~\cite{NEA2016} propose to benchmark fuel cycle codes
+in order to compare output data at the scale of an operated nuclear fleet.
+Results produced in the framework of those works are decisive to test the
+ability of multiple codes to be in agreement. Nevertheless, comparison are
+focused on aggregated data and deviations between codes may be hard to
+interpret. The FIT project is built in complementarity with international
+benchmarks and aims to provide informations to improve confidence in data
+produced by fuel cycle tools.
 
 % -----------------------------------------------------------------------------------------
 \subsection{Goals and intended impact of the FIT project}
 
-The FIT Project was initiated in 2017 and aims to improve the confidence into data produced by fuel cycle tools. The first goal is to animate a community of fuel cycle specialists focused on the question of the confidence in outputs. The second goal is to determine the minimum level of details a fuel cycle simulator should have according to the type of study and the required confidence level. The project relies on the wide variety of fuel cycle simulators with a wide range of complexity level are developed
+The FIT Project was initiated in 2017 and aims to improve the confidence into
+data produced by fuel cycle tools. The first goal is to animate a community of
+fuel cycle specialists focused on the question of the confidence in outputs. The
+second goal is to determine the minimum level of details a fuel cycle simulator
+should have according to the type of study and the required confidence level.
+The project relies on the wide variety of fuel cycle simulators with a wide
+range of complexity level are developed
 
-Increasing the ability to reproduce an operated nuclear fleet involves increasing the complexity of the simulation tool by developing new functionalities. A fuel cycle code functionality is the translation into computer software language of a physical or technical process related to nuclear facilities. The Table\ref{Tab:Funct} lists some examples of functionalities that could be developed in replacement of a reference treatment represented by the fuel cycle code current state.
+Increasing the ability to reproduce an operated nuclear fleet involves
+increasing the complexity of the simulation tool by developing new
+functionalities. A fuel cycle code functionality is the translation into
+computer software language of a physical or technical process related to nuclear
+facilities. The Table\ref{Tab:Funct} lists some examples of functionalities that
+could be developed in replacement of a reference treatment represented by the
+fuel cycle code current state.
 
 \begin{table}[h]
 \centering
@@ -31,27 +84,53 @@ Increasing the ability to reproduce an operated nuclear fleet involves increasin
   \hline
   Reference & Functionality to develop \\
   \hline
-  At each reactor loading, the reactor fresh fuel composition is constant & At each reactor loading, the reactor fresh fuel composition depends on available material isotopic composition \\
+  At each reactor loading, the reactor fresh fuel composition is constant & At
+  each reactor loading, the reactor fresh fuel composition depends on available
+  material isotopic composition \\
   \hline
-  The reactor load factor is constant over the reactor lifetime & The reactor load factor takes into account precise industrial constraints, such as partial refueling \\
+  The reactor load factor is constant over the reactor lifetime & The reactor
+  load factor takes into account precise industrial constraints, such as partial
+  refueling \\
   \hline
-  The mean cross sections used to perform the fuel evolution in reactor are calculated at BOC and kept constant during the cycle & The mean cross sections used to perform the fuel evolution in reactor are updated according to fuel composition \\
+  The mean cross sections used to perform the fuel evolution in reactor are
+  calculated at BOC and kept constant during the cycle & The mean cross sections
+  used to perform the fuel evolution in reactor are updated according to fuel
+  composition \\
   \hline
-  The reactor first cycles composition is not taken into account and is assumed to be the steady states composition & The exact reactor first cycles composition is used \\
+  The reactor first cycles composition is not taken into account and is assumed
+  to be the steady states composition & The exact reactor first cycles
+  composition is used \\
   \hline
 \end{tabular}
 \label{Tab:Funct}
 \caption{Examples of simplified and more complex functionalities.}
 \end{table}
 
-The FIT project approach consists of isolating a functionality effect from a simple basic exercise designed for this purpose. The effect of the functionality is then quantified by specific estimators that are computed with the functionality enabled and the reference case. Each participant propose a resolution for the exercise and some conclusions can be built according to the level of agreement of participants.
+The FIT project approach consists of isolating a functionality effect from a
+simple basic exercise designed for this purpose. The effect of the functionality
+is then quantified by specific estimators that are computed with the
+functionality enabled and the reference case. Each participant propose a
+resolution for the exercise and some conclusions can be built according to the
+level of agreement of participants.
 
-With this methodology, the FIT project could give informations on which functionalities are required according to the question that needs to be answered and the precision level to reach. A fuel cycle code user starts from a technical question, such as "In a PWR fleet in which plutonium from spent UOX fuel is reprocessed in MOX fuel, what is the PWR-MOX fraction that perfectly balances the plutonium produced by PWR-UOX?". The user identify then the set of output data needed to answer the technical question. In the example above, the user needs to assess the plutonium inventory contained in facilities between the UOX spent fuel and the PWR MOX fuel. The user can then use the FIT project results to decide what are the code required functionalities or which functionalities will produce non reliable result. 
+With this methodology, the FIT project could give informations on which
+functionalities are required according to the question that needs to be answered
+and the precision level to reach. A fuel cycle code user starts from a technical
+question, such as "In a PWR fleet in which plutonium from spent UOX fuel is
+reprocessed in MOX fuel, what is the PWR-MOX fraction that perfectly balances
+the plutonium produced by PWR-UOX?". The user identify then the set of output
+data needed to answer the technical question. In the example above, the user
+needs to assess the plutonium inventory contained in facilities between the UOX
+spent fuel and the PWR MOX fuel. The user can then use the FIT project results
+to decide what are the code required functionalities or which functionalities
+will produce non reliable result. 
 
 % -----------------------------------------------------------------------------------------
 \subsection{Fuel cycle tools and institutions}
 
-The originality and the efficiency of the FIT project lies in the large number of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution with used fuel cycle code.
+The originality and the efficiency of the FIT project lies in the large number
+of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution
+with used fuel cycle code.
 
 \begin{table}[h]
 \centering
@@ -82,4 +161,8 @@ The originality and the efficiency of the FIT project lies in the large number o
 \caption{List of institutions and fuel cycle codes involved in FIT project.}
 \end{table}
 
-FIT project aims to be built on exercises related to test a specific functionality. Some tools can be used to test a functionality if they are designed for. The participation to an exercise also depends on the availability of participants. For those reasons, not all the codes and institutions are involved in an exercise.
+FIT project aims to be built on exercises related to test a specific
+functionality. Some tools can be used to test a functionality if they are
+designed for. The participation to an exercise also depends on the availability
+of participants. For those reasons, not all the codes and institutions are
+involved in an exercise.
