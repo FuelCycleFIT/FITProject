@@ -184,17 +184,12 @@ defined.
 
 From output data produced by the different simulators, three estimators have
 been design to measure the impact of using a \gls{FF} model over a \gls{FLM}.
-Inside a fuel cycle, two effects are dissociated.  The first effect concerns
-global outputs which is a data estimated on the entire fuel cycle. This could be
-the total inventory of plutonium or minor actinides for for instance. The second
-effect concerns local outputs and is associated to the inventory in a specific
-facility or disposal unit. This could be the plutonium mass in a strategic
-stock. A measured global effect necessarily induces a local effect. Indeed, if
-the total plutonium mass at a specific time calculated from \gls{FLM} approach
-is higher than the \gls{FF} approach, that means that one or more facilities are
-affected. On the contrary, a local effect does not necessarily mean there is a
-global effect. A deviation in plutonium mass in a specific stock can be
-compensated in another facility.
+Inside a fuel cycle, two scales of effect can dissociated the global effect impacting
+the overall simulation, such as total amount of some elements in the simulations
+(plutonium, minor actinides\ldots) and the local effect corresponding to the
+amount of those element in a specific facility or storage. While global effects
+are necessary associated with one or multi local effects, the local effects do
+not necessary have a global impact, as an other local effect can compensate it.
 
 
 \subsubsection{Estimator 1}
@@ -242,7 +237,7 @@ simulations characterized by plutonium decrease and is used for \gls{PWR} analys
 \subsubsection{Estimator 2b}
 
 The estimator 2 can tend toward infinity if reactor is iso-breeder. To avoid
-such a behavior, an estimator 2b has been defined as following : 
+such a behavior, a variation of it, the estimator 2b, has been defined as following : 
 
 \begin{equation}
     \delta \frac{\Delta M}{M}(Pu_i) = \frac{\Delta M}{M}(Pu_i)_{FLM} - \frac{\Delta M}{M}(Pu_i)_{FF}
