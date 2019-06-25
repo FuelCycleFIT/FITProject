@@ -1,79 +1,85 @@
 \section{Conclusions and perspectives}
 
-This paper presents the FIT project that aims to test different fuel cycle
-simulators functionalities for confidence estimation. Today numerous software
-for fuel cycle studies are developed by different institutions for different
-type of studies and different goals. Fuel cycle simulators can be used to assess
-different questions that requires different level of precision. To increase the
-confidence level of studies, all institutions are willing to increase the level
-of complexity of the software even if it does not necessary improve the
-precision of the calculations. 
+Substantial resources have been invested in a variety of Nuclear Fuel Cycle
+tools, whether to serve specific purposes, or as they expanded to more general
+purpose, but confidence in each new analysis remains fragile because of a lack
+of generic ability to develop confidence in such tools.
+Fuel cycle simulators can be used to answer different questions that requires
+different level of precision. To increase the confidence level of studies, all
+institutions are willing to increase the level of complexity of the software
+even if it does not necessary improve the precision of the calculations. 
 
-The FIT project gathers several institutions worldwide to face the dilemma
-between fuel cycle complexity, confidence level of the produced output and code
-development needed to achieve the wanted precision. The FIT project approach
-consists in testing code functionality by an intra-code comparison of
-calculation with and without the feature. The FIT project is not a benchmark and
-there is no code to code comparison. The success of the FIT project relies on
-the number of different codes that are implies in the functionality test. The
-more software are implied, the stronger conclusions on the impact on
-functionalities are.   
+This paper presents the FIT project which aims to provide a rigorous scientific
+tools allowing researchers/developers/analysts to determine whether or not a
+feature, a functionality, a model refinement is required to perform a nuclear
+fuel cycle study within a certain precision goal.
 
-With this methodology, the FIT project could give informations on which
-functionalities are required according to the question that needs to be answered
-and the precision level to reach.
+The FIT project approach consists in testing code functionality by an intra-code
+comparison of calculation with and without the feature. The FIT project is not a
+benchmark and there is no inter-simulator comparison but aims to perform
+intra-simulator comparison, comparing the simulator output obtained with a single
+simulator, with and without the feature/functionality to test. The strength of
+this project relies on the diversity of simulator used to solve the different
+problems allowing to reach nearly simulator-agnostic conclusion. Following this
+principle, the FIT project will provide informations about which functionalities
+are required according to the question that needs to be answered and the
+precision level to reach.
 
-The work presented here is dedicated fuel cycle simulators ability to adapt
-fresh fuel compositions to the available material. Two treatments are
-considered: a fixed enrichment for fresh fuel, whatever the isotopic composition
-or an enrichment calculation to adapt the fresh fuel composition in accordance
-to the isotopic composition. The first exercise treated here focuses on
-potentiality studies to recycle plutonium and the estimators built are
-consistent with this kind of studies.  
+The work presented here is dedicated fuel cycle simulators ability to vary fresh
+fuel compositions according to the available materials. Two treatments have been
+considered: a fixed enrichment for fresh fuel, regardless of the isotopic
+composition, and a model to adjust the fresh fuel composition in accordance
+to the isotopic composition. In this first exercise, the output estimators focus
+on availability of the plutonium in the fuel cycle, so will probably be more
+valuable for fuel cycle study involving plutonium recycling.
 
-In agreement with the FIT philosophy all calculations were performed with a
+In agreement with the FIT philosophy, all calculations were performed with a
 fixed fraction and with the use of a model that calculate fissile enrichment for
-fresh fuels. No code to code comparison are done here but each code is tested
-with and without a fixed fraction. The importance of adapting fresh fuel
-compositions is tested here for 3 main questions : the global plutonium
-inventory estimation, the global plutonium inventory evolution rate and the
-local plutonium inventory in spent fuel to be reprocessed. 4 different codes are
-tested for PWR (CLASS, ANICCA, TR\_EVOL and CYCLUS) and 3 for SFR (CLASS,
-TR\_EVOL and JOSETTE). 
+fresh fuels. Inter-software comparison have been done but each code is tested
+against itself, \gls{FF} vs \gls{FLM} on 2 different reactors, across 5 different
+simulators, (CLASS, ANICCA, TR\_EVOL and CYCLUS) for the \gls{PWR} and (CLASS,
+TR\_EVOL, JOSETTE) for the \gls{SFR}. The importance of adjusting fresh fuel
+compositions have been tested around 3 main questions : 
+\begin{itemize}
+    \item the global plutonium inventory estimation and its evolution rate,
+    \item the local plutonium inventories.
+\end{itemize}
 
-Results shows that the FF calculations leads to bias for the BOC plutonium
-enrichment between 21\% and 40\% compared to FLM calculations for PWR. Biases
-for SFR calculation are observed between ZZ\% and TT\%. The BOC plutonium
+Results shows that the \gls{FF} calculations leads to difference between
+\gls{FF} and the \gls{FLM} calculation between $21\%$ and $40\%$ for the fresh
+\gls{PWR}-\gls{MOX} fuel plutonium enrichment. Differences for \gls{SFR}
+calculation are observed between $9\%$ and $13\%$.  The \gls{BOC} plutonium
 enrichment is directly related to the amount of spent fuel reprocessing fuel for
-MOX fuel fabrication. Then the use of fixed enrichment for plutonium recycling
+MOX fuel fabrication. Thus the use of fixed enrichment for plutonium recycling
 studies may bring similar bias for reprocessing rate calculation and plutonium
 inventories in stocks. 
 
-Bias of FF use on global inventory and global evolution rate are estimated by
-calculating the plutonium consumption ratio and consumption rate during reactor
-operations. Those imply depletion calculations in fuel cycle studies which add
-uncertainties to our estimations. In the case of SFR, conclusions depends on
-reactor breeding ratio. For break-even reactors, FF does not bring any bias on
-the plutonium production of incineration whereas for plutonium burner or breeder
-reactor, biases on breeding ratio are in between XX\% and YY\%. For PWR, two
-tendencies are observed : ANICCA and TR\_EVOL shows respective typical biases of
-59\% and 71\% on the plutonium incineration ratio whereas CLASS and CYCLUS shows
-respective biases of 12\% and 8\%. This burning ratio is directly linked to the
-global inventory of plutonium in the fuel cycle. ANICCA and TR\_EVOL suggest
-that a fixed fraction for plutonium enrichment in fresh MOX fuel may bring
-consequent uncertainties on plutonium calculations. It should be pointed out
-that the plutonium isotopic composition range is very wide and ANICCA and
-TR\_EVOL shows some evolution close plutonium iso-breeding. This may be
-explained by the fact that ANICCA and TR\_EVOL are used here for depletion
-calculations outside of their validity domain.        
+Bias of \gls{FF} use on plutonium global inventory and variation are estimated
+by calculating the plutonium consumption ratio and consumption rate during
+reactor operations. Those imply depletion calculations in fuel cycle studies
+which add a new level uncertainties to our estimations. In the case of
+\gls{SFR}, conclusions are tide with the reactor breeding ratio. For break-even
+reactors, \gls{FF} does not bring any bias on the plutonium production of
+incineration whereas for plutonium burner or breeder reactor, differences on
+breeding ratio are in between $0.02$ and $0.05$. For PWR, two tendencies are
+observed : ANICCA and TR\_EVOL shows respective typical biases of 59\% and 71\%
+on the plutonium incineration ratio whereas CLASS and CYCLUS shows respective
+biases of 12\% and 8\%. This burning ratio is directly linked to the global
+inventory of plutonium in the fuel cycle. ANICCA and TR\_EVOL suggest that a
+fixed fraction for plutonium enrichment in fresh MOX fuel may bring consequent
+uncertainties on plutonium calculations. It should be pointed out that the
+plutonium isotopic composition range is very wide and ANICCA and TR\_EVOL shows
+some evolution close plutonium iso-breeding. This may be explained by the fact
+that ANICCA and TR\_EVOL are used here for depletion calculations outside of
+their validity domain.        
 
-All the results presented here aims to estimate biases induced by a FF for
+All the results presented here aims to estimate biases induced by a \gls{FF} for
 plutonium enrichment for fresh-fuel composition. They don't give any clues about
-FLM accuracy and relevance. To qualify FLM, benchmarks and comparison with full
-core calculations are needed. Those are out of the FIT project scope and are the
-responsibility of each software developers. The observable treated here is
-linked to plutonium inventories for reprocessing studies. FF induced bias on
-other observables for other applications should be assessed in the future within
-other exercises designed on purpose.   
+\gls{FLM} accuracy and relevance. To qualify \gls{FLM}, benchmarks and
+comparison with full core calculations are needed. Those are out of the FIT
+project scope and are the responsibility of each software developers. The
+observable treated here is linked to plutonium inventories for reprocessing
+studies. \gls{FF} induced bias on other observables for other applications
+should be assessed in the future within other exercises designed on purpose.   
 
 \section{acknowledgment}
