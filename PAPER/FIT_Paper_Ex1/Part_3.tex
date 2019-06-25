@@ -120,7 +120,7 @@ More over the defined isotopic space as been designed to cover a wide range of
 fuel history: a CANDU fuel with low discharge burn-up (high fissile
 fraction~\cite{Guillemin_2010}), \gls{PWR} multi-recycled MOX fuel (high even
 isotopes fraction in the plutonium~\cite{Courtin_2016}), long cooling time (low
-$^{241}$Pu fraction). The Table~\ref{Tab:PuVector} presents plutonium isotopic
+$^{241}$Pu fraction). The Table~\ref{tab:PuVector} presents plutonium isotopic
 space covered in this work.
 
 \begin{table}[h]
@@ -142,7 +142,7 @@ space covered in this work.
   Am-241/TRU & 0  & 10 \\
   \hline
 \end{tabular}
-\label{Tab:PuVector}
+\label{tab:PuVector}
 \caption{Minimum and maximum mass fraction in weight \% for plutonium vector at
         reactor beginning of cycle used in the framework of this work}
 \end{table}
@@ -152,28 +152,26 @@ space covered in this work.
 
 In order to investigate the influence of using a \gls{FLM} rather than a
 \gls{FF} model on fuel cycle simulations, the following experiment have been
-designed. Following the FIT project spirit, no code to code comparison will be
+designed. Following the FIT project principle, no inter-code comparison will be
 done. For each simulator used to solve this problem, fuel models will be
 compared within the same simulator, allowing to evaluate difference between two
 almost identical simulation: same simulator, reactor description, depletion
-algorithm, \ldots the only difference being the method used to build the fresh fuel.
+algorithm, \ldots The only difference being the method used to build the fresh fuel.
 
 The experiment consists in running a small fuel cycle calculation according to
 specifications defined above. We use a method that we call "Wide Parametric
-Sweeping" method. The principle of this method is to fill from a random 
-sampling method the plutonium isotopic space defined in the Table~\ref{
-Tab:PuVector}. The global set of plutonium isotopic vectors that will be run 
-is called the design of experiment. Each plutonium isotopic vector will be run 
-twice. One using a \gls{FLM} approach for which the plutonium fraction at 
-reactor \gls{BOC} directly depends on the plutonium isotopic composition. The 
-second run uses \gls{FF} approach for which the plutonium fraction at \gls{BOC}
-is always the same. 
+Sweep" method. The principle is to randomly populate the pre-defined isotopic
+space (see in the Table~\ref{tab:PuVector}. For each random plutonium
+composition the simulation will be ran twice, once using the \gls{FF} model,
+i.e. the fraction of plutonium in the fuel is fixed regardless to its isotopic
+composition, and once with the \gls{FLM} model adapting its fraction in the fuel
+accordingly to its isotopic composition. 
 
 Each code produces for each reactor, \gls{PWR} and \gls{SFR}, two sets of output
 data representing \gls{FLM} and \gls{FF} runs. For each case, the output of
 interest are the mass of plutonium at \gls{BOC} $M_{Pu}^{BOC}$ and \gls{EOC}
 $M_{Pu}^{BOC}$ and the plutonium fraction $\lambda_{\mathrm{Pu}}^{BOC}$ at
-\gls{BOC}. Future works will be dedicated to extend the range of output, up to
+\gls{BOC}. Future works will be dedicated to extend the range of output, to
 plutonium isotopic composition or minor actinides production. 
 
 In order to measure the influence of the use of \gls{FF} versus \gls{FLM} on the
