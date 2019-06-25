@@ -69,58 +69,59 @@ The exercise is divided in two independent parts related to the reactor
 involved. \gls{PWR} and \gls{SFR} will be considered in this work.
 
 The schematic representation of the fuel cycle is shown on
-Figure~\ref{fig:FuelCycle}. The fuel cycle includes a fissile stock that
-contains enough plutonium to operate one reactor cycle and a fertile stock
-filled of depleted uranium. A fresh fuel fabrication plant that uses the heavy
-elements of the stocks build the fresh fuel of the reactor (\gls{PWR}  or \gls{SFR})
-according the its technical requirements. The reactor spent fuel is sent to a
-dedicated stock.
+Figure~\ref{fig:FuelCycle}. The simulation includes a infinite (enough to build
+stream of materials, one plutonium stream and one depleted uranium stream. Both
+stream feed a fuel fabrication plant which build the MOX fuel for the reactor
+(\gls{PWR}  or \gls{SFR}) according the its technical requirements. The reactor
+spent fuel is sent away to a storage or to the waste and not considered in
+this work.
 
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width = 0.99\textwidth]{FIG/FuelCycleDiagram.pdf}
-        \caption{Representation of the simulated fuel cycle facilities.}
+        \caption{Schematic representation of the simulated fuel cycle facilities.}
         \label{fig:FuelCycle}
     \end{center}
 \end{figure}
 
-The time frame of the simulation corresponds to the reactor cycle. From the
-relation between the fuel cycle time $\Delta t$, the reactor thermal power
-$P_{th}$, the heavy nuclide mass $M$ and the reactor burn-up $BU$, we have : 
+The simulation last a the reactor cycle. 
+%From the
+%relation between the fuel cycle time $\Delta t$, the reactor thermal power
+%$P_{th}$, the heavy nuclide mass $M$ and the reactor burn-up $BU$, we have : 
+%
+%\begin{equation}
+%    \Delta t = \frac{BU \; M}{P_{th}}
+%\end{equation}
+At t = 0, the fabrication plant produces the fresh fuel according to reactor
+requirements. To avoid radioactive decay, the fabrication process and the
+reactor fuel loading are simultaneous and instantaneous. The MOX-fuel stays in
+the reactor for a complete cycle (it reaches it designed \gls{BU} and is then
+send to the back-end storage.
 
-\begin{equation}
-    \Delta t = \frac{BU \; M}{P_{th}}
-\end{equation}
 
-At t = 0, the fabrication plant builds the fresh fuel according to reactor
-requirements. To avoid plutonium isotopes decay, the fabrication time is zero
-and the reactor is thus loaded instantaneously. A complete fuel cycle is run and
-the spent fuel is sent to stock when the required BU is reached.
+As it is expected that, for a set reactor, the MOX-fuel plutonium content should depend on the
+plutonium isotopic composition, a large rage of plutonium isotopic composition
+have been considered, allowing to highlight the different between \gls{FLM} and
+\gls{FF} modeling.
+%Concerning the plutonium vector used to build the \gls{MOX} fuel, a large range has
+%been imposed for plutonium isotopes. Indeed, the impact of a \gls{FLM} in
+%relation to \gls{FF} approach on a fuel cycle calculation will increase with the
+%plutonium fraction deviation from a reference case. To take an example, let
+%consider a small fissile content plutonium. A \gls{FF} approach would for
+%instance load the fuel at 6\% of plutonium in the fresh fuel since a \gls{FLM}
+%approach would give 12\%. On the other hand, if the plutonium vector used to
+%build the fuel is very close from the reference plutonium used to design the
+%\gls{FF} approach, \gls{FF} and \gls{FLM} would produce similar results.
+%Perfectly well tuned scenario for which plutonium stocks are well known and
+%approximately constant with time can be properly solved with a \gls{FF}
+%approach. 
 
-Concerning the plutonium vector used to build the \gls{MOX} fuel, a large range has
-been imposed for plutonium isotopes. Indeed, the impact of a \gls{FLM} in
-relation to \gls{FF} approach on a fuel cycle calculation will increase with the
-plutonium fraction deviation from a reference case. To take an example, let
-consider a small fissile content plutonium. A \gls{FF} approach would for
-instance load the fuel at 6\% of plutonium in the fresh fuel since a \gls{FLM}
-approach would give 12\%. On the other hand, if the plutonium vector used to
-build the fuel is very close from the reference plutonium used to design the
-\gls{FF} approach, \gls{FF} and \gls{FLM} would produce similar results.
-Perfectly well tuned scenario for which plutonium stocks are well known and
-approximately constant with time can be properly solved with a \gls{FF}
-approach. 
-
-A wide range of scenario applications is considered here. For instance, the
-plutonium vector produced from a small burn-up discharge CANDU is characterized
-by a high fissile fraction~\cite{Guillemin_2010}. The multi-recycling of the
-plutonium into \gls{PWR} may produce a high even isotopes fraction in the plutonium
-vector~\cite{Courtin_2016}. Very specific plutonium isotopic fraction can be
-seen from scenarios involving \gls{SFR} reactors. Also, industrial parameters, such
-has spent fuel cooling time, may have a strong impact on $^{241}$Pu fraction.
-For those reasons, the plutonium isotopic range has been chosen very large to be
-representative of a wide range of applications although being realistic enough.
-The Table~\ref{Tab:PuVector} present minimum and maximum isotopic fraction of
-plutonium isotopes used in the framework of this work.
+More over the defined isotopic space as been designed to cover a wide range of
+fuel history: a CANDU fuel with low discharge burn-up (high fissile
+fraction~\cite{Guillemin_2010}), \gls{PWR} multi-recycled MOX fuel (high even
+isotopes fraction in the plutonium~\cite{Courtin_2016}), long cooling time (low
+$^{241}$Pu fraction). The Table~\ref{Tab:PuVector} presents plutonium isotopic
+space covered in this work.
 
 \begin{table}[h]
 \centering
