@@ -35,26 +35,30 @@ with different software and it is often difficult to compare them. Knowing the
 impact of functionalities on different simulation outputs helps to estimate the
 level of confidence of the different fuel cycle studies.
 
-The FIT (Functionality Isolation Test) Project has been conceived to understand
+The \gls{FIT} Project has been conceived to understand
 the circumstances under which the choice of algorithm and/or model influences
-the conclusions that one might draw from such a fuel cycle simulation. The
-project aims to determine the minimum level of details in fuel cycle simulations
-required as a function of the study and the wanted confidence level. Among
-different functionality of interest, this first work focuses on the ability of
-fuel cycle software to build fresh fuel regarding to the available material for
-fuel fabrication and the reactors requirements.
+the conclusions that one might draw from a fuel cycle simulation. The
+project aims to characterize the relationship between model fidelity and desired 
+confidence level in the context of many differing research questions.
+Among functionalities of interest, this first \gls{FIT} focuses on the ability of
+fuel cycle software to build fresh fuel in accordance with the available material 
+and with associated reactor requirements.
 
-The first part of the paper describes the FIT project, its philosophy and the
-participants and associated simulators. It explains why the FIT project is not a
-traditional benchmark and does not aim to do inter-simulator comparison, but
-focuses on intra-simulators comparison, evaluating differences between
-simulation results, produced by the same simulator, enabling and disabling  the
-features to test. In order to build confidence in the conclusion, such
-comparison will be done across multiple simulators. This part ends with the
-description of the particular feature tested in this work which is the fuel
-loading management. The second part presents the design of experiment used to
-test this particular feature: input simulation descriptions, technical
-specificities and finally output metrics used to quantify the impact of the use
-of fuel loading management in fuel cycle studies are detailed. Finally, the
-third part is dedicated to the different results of each software involved in
-this first exercise and some conclusion are withdrawn.
+
+Section \ref{sec:framework} describes the \gls{FIT} project, its philosophy, the
+participants, and associated simulators. It explains how the \gls{FIT} project 
+is not a traditional benchmark. That is, \gls{FIT}does not aim to do 
+inter-simulator comparison, but focuses on intra-simulator comparison, 
+evaluating differences between simulation results produced by the same 
+simulator, enabling and disabling isolated features. In order to build 
+confidence in the conclusion, such comparison will be done across multiple 
+simulators. Section \ref{sec:framework} ends with the description of the 
+particular feature tested in this work, the fuel loading management model. 
+Section \ref{sec:exercise} then presents the numerical experiment used to test 
+this particular feature, including simulation input parameter descriptions and 
+other technical specifics necessary to perform the test. Additionally, this 
+section details output metrics which quantify the impact of the use of fuel 
+loading management in fuel cycle studies. Next, Section \ref{sec:results} is 
+dedicated to the discussion of results acheived by each software tool involved 
+in this first exercise. Finally, in Section \ref{sec:conclusion} some 
+conclusions are drawn.
