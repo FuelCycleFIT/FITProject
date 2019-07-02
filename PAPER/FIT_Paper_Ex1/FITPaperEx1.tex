@@ -1,0 +1,131 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno,hyperref}
+\modulolinenumbers[5]
+
+\journal{To Discuss With FIT Collaboration}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+\usepackage[acronym]{glossaries}
+\input{acronyms}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Impact of the Fresh Fuel Loading Management in Fuel Cycle Simulators In The Framework Of The FIT Project}
+%\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+
+%% Group authors per affiliation. 
+% Rules for Author List : Two groups 
+% Group 1 = Main contributors (calculations and/or significative helping writing)
+% Group 2 = Other membre of the FIT Project
+% Main writer is Corresponding Autor
+
+% Group 1
+
+\author[IPNO]{X.~Doligez}
+\author[BUD]{M.~Halasz}
+\author[MAULE]{I.~Merino}
+\author[MAD]{B.~Mouginot}
+\author[CIEMAT]{A.V.~Skarbeli}
+
+\author[SUB]{N. Thiolli\`ere \corref{cor1}}
+\ead{nicolas.thiolliere@subatech.in2p3.fr}
+
+% Group 2
+\author[CIEMAT]{F.~Alvarez-Velarde}
+\author[ORNL]{E.~E.~Davidson}
+\author[TRACT]{H.~Druenne}
+\author[IPNO]{M.~Ernoult}
+\author[ANL]{B.~Feng}
+\author[INL]{R.~Hays}
+\author[UI]{K.~Huff}
+\author[BUD]{M.~Szieberth}
+\author[TRACT]{B.~Vermeeren}
+\author[CIEMAT]{A.~Villacorta}
+\author[MAD]{P.~Wilson}
+
+\cortext[cor1]{Corresponding author}
+
+\address[IPNO]{Institut de Physique Nucléaire d’Orsay, CNRS-IN2P3/Univ, Paris-Sud, France}
+\address[BUD]{Budapest University of Technology and Economics (BME), Institute of Nuclear Techniques, 1111 Budapest, Müegyetem rkp. 3-9, Hungary}
+\address[MAULE]{Catholic University of the Maule, Av. San Miguel 3605, Talca, Chile}
+\address[MAD]{Univ. of Wisconsin Madison, Department of Nuclear Engineering and Engineering Physics, Madison, WI, United States}
+\address[CIEMAT]{CIEMAT, Avda. Complutense, 40, 28040 Madrid, Spain}
+\address[SUB]{Subatech, IMTA-IN2P3/CNRS-Universit\'e, Nantes, F-44307, France}
+
+\address[ORNL]{Oak Ridge National Laboratory, Building 5700, Mail Stop 6172, Oak Ridge, TN 37831, United States}
+\address[TRACT]{Tractebel Engie, Boulevard Simón Bolívar 34-36, 1000 Brussels, Belgium}
+\address[ANL]{Argonne National Laboratory, 9700 Cass Ave., Lemont, IL 60439, USA}
+\address[INL]{Idaho National Laboratory, 2525 Fremont Ave., Idaho Falls, ID 83402, USA}
+\address[UI]{University of Illinois, Department of Nuclear, Plasma, and Radiological Engineering, United States}
+
+%\address[SCK]{Studiecentrum voor kernenergie - Centre d'étude de l'énergie nucléaire (SCK-CEN), Boeretang 200, Mol, Belgium}
+
+\begin{abstract}
+
+TBD
+
+\end{abstract}
+
+\begin{keyword}
+
+TBD 
+
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+% #########################################################################################
+% #########################################################################################
+% #########################################################################################
+
+\include{Part_1}
+\include{Part_2}
+\include{Part_3}
+\include{Part_4}
+\include{Part_5}
+
+% #########################################################################################
+% #########################################################################################
+% #########################################################################################
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

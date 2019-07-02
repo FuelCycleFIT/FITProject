@@ -1,0 +1,60 @@
+Since the 1990's, many different nuclear fuel cycle simulators have been
+developed by several institutions.
+
+A fuel cycle simulator aims to models an entire nuclear fleet including main
+facilities, such as nuclear reactors, fuel fabrication plants, reprocessing
+plants, cooling pool and/or waste disposal. Those tools help to identify drivers
+and interactions between parameters in fuel cycle. They implement physic models
+for different key points of the cycle such as fuel fabrication or burn up
+depletions, with various level of complexicity. 
+
+Fuel cycle simulator are used worldwide for wide range of applications:
+optimisation of the industrial operation of a existing nuclear fleet, assessing
+the future of nuclear energy and providing valuable informations required for
+the political decision, evaluation/verification of the operation of an exisiting
+nuclear fleet by national or international safety authorities. Moreover, those
+tools are used for Research and Development training as access point to key
+datas related to the fuel cycle. 
+
+The different institutions that use fuel cycle simulators pursue different
+goals. Consequently, the level of rafinment of each software pieces has been
+developed in adequation to the institution simulation's goals. To improve
+confidence in the results, institutions are tempted to increase the complexity
+of their software even if this complexity might not be necessary.
+
+As an example, the neutron and gamma doses calculation requires the precise
+knowledge of each material isotopic composition in each facilities whereas
+uranium consumption calculation does not require the same degree of detail. As a
+consequence, some software functionality may not be necessary regarding the
+technical question the code assesses: solving a given technical question
+associated with a targeted precision will required a limited set of
+functionality. Knowing the importance of each ones helps to choose an
+appropriate software or to engage code developments to solve a specific
+question. Also, some technical issues are assessed by numerous studies performed
+with different software and it is often difficult to compare them. Knowing the
+impact of functionalities on different simulation outputs helps to estimate the
+level of confidence of the different fuel cycle studies.
+
+The FIT (Functionality Isolation Test) Project has been conceived to understand
+the circumstances under which the choice of algorithm and/or model influences
+the conclusions that one might draw from such a fuel cycle simulation. The
+project aims to determine the minimum level of details in fuel cycle simulations
+required as a function of the study and the wanted confidence level. Among
+different functionality of interest, this first work focuses on the ability of
+fuel cycle software to build fresh fuel regarding to the available material for
+fuel fabrication and the reactors requirements.
+
+The first part of the paper describes the FIT project, its philosophy and the
+participants and associated simulators. It explains why the FIT project is not a
+tradictionnal benchmark and does not aim to do inter-simulator comparison, but
+focuces on intra-simulators comparison, evaluating differences between
+simulation results, produced by the same simulator, enabling and disabling  the
+features to test. In order to build confidence in the conclusion, such
+comparison will be done accross multiple simulators. This part ends with the
+description of the particular feature tested in this work which is the fuel
+loading management. The second part presents the design of experiment used to
+test this particular feature: input simulation descriptions, technical
+specificities and finally output metrics used to quantify the impact of the use
+of fuel loading management in fuel cycle studies are detailed. Finally, the
+third part is dedicated to the different results of each software involved in
+this first exercise and some conclusion are withdrawn.
