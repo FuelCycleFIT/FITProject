@@ -1,6 +1,6 @@
 # FIT Project Description
 
-The repository contains work related to FIT (Functionnality Isolation Test) project.
+The repository contains work related to FIT (Functionality Isolation Test) project.
 
 [//]: # (-------------------------------------------------------------------------------------------------------)
 [//]: # (-------------------------------------------------------------------------------------------------------)
@@ -80,7 +80,7 @@ From that point you can fork the repository from github web site and define upst
     git remote set-url origin https://github.com/[YourAccount]/FITProject.git
     git remote add upstream https://github.com/FuelCycleFIT/FITProject.git
 
-If your repo is properly defined, you should have folowing remotes :
+If your repo is properly defined, you should have the following remotes :
 
     git remote -v
     origin  https://github.com/[YourAccount]/FITProject.git (fetch)
