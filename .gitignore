@@ -22,7 +22,7 @@
 *.mtc1
 *.out
 *.pdf
-*.ipynb
+*.ipynb*
 *.synctex.gz
 .DS_Store
 ~$*
