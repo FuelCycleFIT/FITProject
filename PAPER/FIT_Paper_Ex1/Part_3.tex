@@ -1,87 +1,186 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Exercise definition}
+\section{Exercise design}
+\label{sec:exercise}
+% -----------------------------------------------------------------------------------------
+\subsection{Description of the tested functionality}
 
-\subsection{Philosophy}
+The present work focuses on the impact of using a \gls{FLM} or a \gls{FF} approach. 
 
-Fuel fabrication models can impacts fuel cycle simulation in different ways.
-This exercise aims to understand some of their impacts on an overall fuel cycle
-calculation. Change in the plutonium content in a newly built MOX fuel will
-impacts the fuel cycle in 3 majors ways:
+A \gls{FLM} adapts the fresh fuel composition according to the reactor requirements and the isotopic compositions of available materials.
+For example, it adjusts the fissile fraction depending on the fissile stock quality in order to reach the required burn-up of the reactor.
+It adjusts the fresh fuel composition to the available materials, a \gls{FLM} use a model that can be of various complexity.
+It could be based on neural networks, Plutonium equivalence model, analytic functions, built-in depletion, etc.
+A \gls{FLM} is usually built from physics constraints and reactor physics calculations.
+
+A \gls{FF} model uses the same constant fissile fraction at each fresh fuel loading regardless of the isotopic composition of the available fissile materials.
+Using a \gls{PWR} \gls{MOX} which is always loaded with a fresh fuel that contains 7\% of plutonium regardless the $^{239}$Pu content is a \gls{FF} approach.
+
+The present work aims to quantify the impact of using \gls{FLM} versus \gls{FF} approach. The \gls{FLM} is used as the reference, as one expect it to take into account more physics.
+The \gls{FF} approach is the cheapest method to deal with fresh reprocessed fuel fabrication, both in development and calculation time.
+Testing the impact of using \gls{FLM} rather than \gls{FF} aims to identify the studies that require dedicating time and effort in a \gls{FLM} and the one solvable with \gls{FF}.
+
+\subsection{Output of interest}
+
+Fuel fabrication models can impact fuel cycle simulation in several ways.
+This exercise aims to understand some of their impacts on an overall fuel cycle calculation.
+Change in the plutonium content in a \gls{MOX} fuel could impact the fuel cycle in 3 majors ways:
+
 \begin{itemize}
-    \item the global amount of plutonium in the simulation, variation in the
-        plutonium content in the MOX fuel, might lead in a increase of the
-        amount of plutonium burnt in the PWR reactor, or a change in the
-        breeding/burning ratio in a SFR reactor, impacting the overall amount of
-        plutonium in the simulation.
-    \item the location of the plutonium, indeed the amount of plutonium in the
-        MOX fuel will shift the localisation of the plutonium form the front-end
-        the back-end of the cycle, which could change its availability for
-        other use (deployment of new reactor, fabrication of other fuels\ldots),
-    \item the variation of the global amount of plutonium relative to the amount
-        loaded in the fuel, the breeding/burning ratio of the plutonium will
-        change the amount of plutonium in reactor.
+    \item total amount of plutonium: variation in the plutonium content in the \gls{MOX} fuel might lead in an increase of the amount of plutonium burnt in the \gls{PWR} reactor and/or a change in the breeding/burning ratio in a \gls{SFR} reactor, impacting overtime the overall amount of plutonium in the simulation.
+    \item location of the plutonium: the amount of plutonium in the \gls{MOX} fuel will shift the location of the plutonium from the front-end the back-end of the cycle, which could change its availability for other uses (deployment of new reactors, fabrication of other fuels\ldots),
+    \item variation of plutonium quantity during irradiation: variation in initial plutonium content might change the breeding/burning ratio and thus the amount of plutonium at the reactor unload.
 \end{itemize}
+This is not an exhaustive list of fuel fabrication model impacts on a fuel cycle studies, but this work will only focus on them and will not consider potential consequences on the fuel composition change after depletion due to over/under-estimate the amount of plutonium in the \gls{MOX} fuel.
 
-This might not be exhaustive list of fuel fabrication models impact on a fuel
-cycle, but this work will only focus on them and will not consider potential
-consequence on the fuel composition change after depletion due to
-over/under-estimate the amount of plutonium in the MOX fuel.
-
-In order to investigate those impacts across multiple fuel cycle simulation tool
-and associated models, the following experience has been designed.
+In order to investigate those impacts across multiple fuel cycle simulation tool and associated models, the following experience has been designed.
 
 % -----------------------------------------------------------------------------------------
-\subsection{Specification}
+\subsection{Exercise specifications}
+
+The exercise is divided in two independent parts related to the reactor involved.
+\gls{PWR} and \gls{SFR} will be considered in this work.
+
+The schematic representation of the fuel cycle is shown on Figure~\ref{fig:FuelCycle}.
+The simulation includes infinite streams of materials (large enough to build all the fuels in all options), one plutonium stream and one depleted uranium stream.
+Both streams feed a fuel fabrication plant, which build the MOX fuel for the reactor (\gls{PWR}  or \gls{SFR}) according its technical requirements.
+The reactor spent fuel is sent away to a storage facility or to the waste and is thereafter not considered anymore.
+
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width = 0.99\textwidth]{FIG/FuelCycleDiagram.pdf}
+        \caption{Schematic representation of the simulated fuel cycle facilities.}
+        \label{fig:FuelCycle}
+    \end{center}
+\end{figure}
+
+The simulation last one single the reactor cycle.
+At t = 0, the fabrication plant produces the fresh fuel according to reactor requirements.
+To avoid radioactive decay, the fabrication process and the reactor fuel loading are simultaneous and instantaneous.
+The MOX-fuel stays in the reactor for a full cycle (it reaches it designed \gls{BU}) and is then sent to the back-end storage.
+It is expected that, for a set reactor, the MOX-fuel plutonium content needed to achieve a given \gls{BU} depend on the plutonium isotopic composition.
+To highlight the different between \gls{FLM} and \gls{FF} modeling, a large range of plutonium isotopic compositions have been considered.
+
+Moreover the defined isotopic space as been designed to cover a wide range of fuel history: a CANDU fuel with low discharge burn-up (high fissile fraction~\cite{Guillemin_2010}), \gls{PWR} multi-recycled MOX fuel (high even isotopes fraction in the plutonium~\cite{Courtin_2016}), long cooling time (low $^{241}$Pu fraction).
+
+The performance of the models is expected to depend widely of the plutonium used to build the fresh fuel.
+Therefore, the conclusion of this work is not transposable to a study where a only narrow plutonium isotopic space is encountered, in this case difference between a \gls{FF} model  and a \gls{FLM} would probably be far smaller and a \gls{FF} could be sufficient.
+The Table~\ref{tab:PuVector} presents plutonium isotopic space covered in this work.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ |l|l|l| }
+  \hline
+  Isotope & Min. Mass Fr. (wgt. \%) & Max. Mass Fr. (wgt. \%) \\
+  \hline
+  Pu-238/TRU & 0  & 10 \\
+  \hline
+  Pu-239/TRU & 25 & 90 \\
+  \hline
+  Pu-240/TRU & 10 & 40 \\
+  \hline
+  Pu-241/TRU & 0  & 25 \\
+  \hline
+  Pu-242/TRU & 0  & 30 \\
+  \hline
+  Am-241/TRU & 0  & 10 \\
+  \hline
+\end{tabular}
+\label{tab:PuVector}
+\caption{Minimum and maximum mass fraction in weight \% for plutonium vector at
+        reactor beginning of cycle used in the framework of this work}
+\end{table}
 
 % -----------------------------------------------------------------------------------------
-\subsection{Method}
-In order to investigate the influence of fuel fabrication models on fuel cycle
-simulations, the following experiment have been designed. Following the FIT
-project spirit, no code to code comparison will be done. For each simulator used
-to solve this problem, fuel models will be compared within the same simulator,
-allowing to evaluate difference between two almost identical simulation: same
-simulator, reactor description, depletion algorithm, \ldots the only difference
-being the fuel fabrication model used.
+\subsection{Problem-solving methodology}
 
-The experiment consists in running a small fuel cycle, composed by a infinite
-plutonium source, a fuel fabrication and a reactor, for multiple plutonium
-isotopic compositions (about 1000). Each plutonium isotopic will be run twice,
-one using a fuel fabrication model using a fixed fraction, always the same
-defined in the experiment specification, and a second one using an advanced fuel
-loading model (based on plutonium equivalent theory\ref{} or pre-trained neural
-networks). 
+In order to investigate the impact of using a \gls{FLM} rather than a \gls{FF} model on fuel cycle simulations, the following experiment have been designed.
+Following the FIT project principle, no inter-code comparison will be performed.
+For each simulator, the two fuel fabrication models will be compared within the same simulator, allowing the evaluation of the difference between two almost identical simulations: same simulator, reactor description, depletion algorithm, \ldots
+The only difference being the method used to build the fresh fuel.
 
-The different plutonium composition are sampled uniformly on a predefined
-user-space (that may vary depending of the simulator used). Moreover, even if
-it is understood that an largely under/over-estimated plutonium content in the
-MOX fuel, may compromise the reactor well operation, it is assumed in the
-following that all fuel loading models used (fixed fraction or more complex fuel
-loaded models), will produced proper MOX fuels.
+The experiment consists in running numerous small fuel cycle calculations according to specifications laid down above.
+We use a method that we call "Wide Parametric Sweep" method. The principle is to randomly populate the pre-defined isotopic space (see in the Table~\ref{tab:PuVector}.
+For each random plutonium composition the simulation will be ran twice, once using the \gls{FF} model, i.e. the fraction of plutonium in the fuel is fixed regardless to its isotopic composition, and once with the \gls{FLM} model adapting plutonium fraction in the fuel to its isotopic composition.
 
-In order to measure the influence of the used of fixed fraction versus a fuel
-loading models on the global amount of plutonium in the simulation, the location
-of the plutonium and the speed of variation of the plutonium inventory, three
-estimators have been defined.
+Each code produces for each reactor, \gls{PWR} and \gls{SFR}, two sets of output data representing \gls{FLM} and \gls{FF} runs.
+For each case, the output of interest are the mass of plutonium at \gls{BOC} $M_{Pu}^{BOC}$ and \gls{EOC} $M_{Pu}^{BOC}$ and the plutonium fraction $\lambda_{\mathrm{Pu}}^{BOC}$ in the \gls{MOX} fuel the at \gls{BOC}.
+Future works will be dedicated to extend the range of output, to plutonium isotopic composition or minor actinides production.
 
-\subsection{Estimators}
+In order to measure the influence of using a \gls{FF} versus \gls{FLM} on the total amount of plutonium in the simulation, the location of the plutonium and the speed of variation of the plutonium inventory, three estimators have been defined.
+
+\subsection{Estimators\label{subsec:estimator}}
+
+From output data produced by the different simulators, three estimators have been design to measure the impact of using a \gls{FF} model over a \gls{FLM}.
+Within a fuel cycle, two scales of effect can dissociated the global effect impacting the overall simulation, such as total amount of some elements in the simulations (plutonium, minor actinides\ldots) and the local effect corresponding to the amount of those elements in a specific facility or storage.
+While global effects are necessary associated with one or multi local effects, the local effects do not necessary have a global impact, as another local effect can compensate it.
+
 \subsubsection{Estimator 1}
-The first estimator aims to the difference on the plutonium enrichment in the MOX
-fuel between the \gls{FLM} and \gls{FF} which directly impacts the amount of
-plutonium present in the back-end part of the fuel cycle. The estimator 1 has
-been defined as:
+
+The first estimator aims to measure the difference on the plutonium enrichment in the \gls{MOX} fuel between the \gls{FLM} and \gls{FF}.
+This estimator is a local estimator that measures local effet at each reactor loading that directly impacts the amount of plutonium present in the back-end part of the fuel cycle.
+The estimator 1 has been defined as:
+
 \begin{equation}
-    \delta{\lambda_{i}} =
-        \frac{\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FML} 
-              - \left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}}
-             {\left(\lambda_{\mathrm{Pu}_i}^{BOC}\right)_{FF}},
+    \delta{\lambda}(i) =
+        \frac{\left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FML}
+                - \left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FF}}
+             {\left(\lambda_{\mathrm{Pu}}^{BOC}(i)\right)_{FF}},
+\end{equation}
+where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at \gls{EOC} for the plutonium composition $i$ for the \gls{FLM} or the \gls{FF}.
+The higher the estimator 1 is, the higher the plutonium fraction at \gls{BOC} is for the \gls{FLM} compared to \gls{FF}.
+This estimator is used for both \gls{PWR} and \gls{SFR} analysis.
+
+\subsubsection{Estimator 2}
+
+The second estimator aims to estimate the relative speed of plutonium consumption in the reactor between the \gls{FLM} and the \gls{FF} approach.
+The estimator 2 is defined as:
+
+\begin{equation}
+    \delta{\frac{\Delta M}{M}}(i) =
+        \frac{\left(\frac{\Delta M}{M}(i)\right)_{FML}
+              - \left(\frac{\Delta M}{M}(i)\right)_{FF}}
+             {\left(\frac{\Delta M}{M}(i)\right)_{FF}},
 \end{equation}
 
-where $\lambda_i$ represents the fraction of plutonium at \gls{BOC} or at
-\gls{EOC} for the plutonium compisiton $i$ for the \gls{FLM} or the \gls{FF}. 
+where $\frac{\Delta M}{M}_{i}$ is defined as:
+\begin{equation}
+    \frac{\Delta M}{M}(i) = \frac{M_{Pu}^{BOC}(i) -
+    M_{Pu}^{EOC}(i)}{M_{Pu}^{BOC}(i)}
+\end{equation}
+Estimator 2 measure a global effect since the plutonium consumption speed is calculated from evolution of the total plutonium mass.
+This estimator is suitable for reactor simulations characterized by plutonium decrease and is used for \gls{PWR} analysis.
 
-% -----------------------------------------------------------------------------------------
-\subsection{Output observables}
+\subsubsection{Estimator 2b}
+
+The estimator 2 can tend toward infinity if reactor is break-even.
+To avoid such behavior, a variation of it, the estimator 2b, has been defined as following:
+
+\begin{equation}
+    \delta \frac{\Delta M}{M}(Pu_i) = \frac{\Delta M}{M}(Pu_i)_{FLM} - \frac{\Delta M}{M}(Pu_i)_{FF}
+\end{equation}
+
+Estimator 2b measures a global effect and will be used for \gls{SFR} results.
+
+\subsubsection{Estimator 3}
+
+The third estimator measures the absolute speed of plutonium consumption in the reactor between the \gls{FLM} and the \gls{FF} approach.
+It is calculated as following:
+
+\begin{equation}
+    \delta{\frac{\Delta M}{T}}(i) =
+        \frac{\left(\frac{\Delta M}{T}(i)\right)_{FML}
+              - \left(\frac{\Delta M}{T}(i)\right)_{FF}}
+             {\left(\frac{\Delta M}{T}(i)\right)_{FF}},
+\end{equation}
+where $\frac{\Delta M}{T}_{i}$ is defined as:
+\begin{equation}
+    \frac{\Delta M}{T}(i) = \frac{M_{Pu}^{BOC}(i) -
+    M_{Pu}^{EOC}(i)}{T}
+\end{equation}
+and $T$ is the cycle time.
 
 
+Estimator 3 characterizes a global effect and is used for \gls{PWR} analysis.

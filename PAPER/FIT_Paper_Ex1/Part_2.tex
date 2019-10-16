@@ -1,91 +1,107 @@
 % #########################################################################################
 % #########################################################################################
 % #########################################################################################
-\section{Presentation Of The FIT Project}
+\section{Framework and Description Of The FIT Project}
+\label{sec:framework}
+The FIT (Functionality Isolation Test) Project is an international effort devoted to improve confidence in fuel cycle tools.
+This section aims to precisely describe and to present the framework of the project.
 
-The FIT (Functionality Isolation Test) Project is an international effort
-devoted to improve the fuel cycle tools confidence. This section aims to
-precisely describe the project.
+% -----------------------------------------------------------------------------------------
+\subsection{Nuclear fuel cycle dynamic simulation tool}
+
+Fuel cycle simulators~\cite{NEA2016} development started many years ago by several research and engineering institutions or consulting firms for many wide range of applications.
+For research and engineering institutions in charge of supporting the operated nuclear installations, fuel cycle simulators are used to facilitate and optimize the industrial operations.
+For research and engineering institutions studying energetic transition, fuel cycle simulators are used to study and analyze future trajectories for prospective reflections on the electric component of the transition.
+Also, for institutions in charge of educational and training purposes in the nuclear field, such tools help understand the physics mechanisms that drive a nuclear fleet and can be used as an educational support.
+Consulting firms develop and use those tools to provide enlightened advice to politics.
+For those reasons, a fuel cycle simulator can be seen as a decision-making tool since results and analyses are directly or indirectly used by industrial and political worlds.
+
+A fuel cycle simulator is based on a computer software used to model and compute the evolution of isotopes of interest in nuclear facilities, strategic stocks and waste disposal.
+A large effort in tool development concerns physics driven modeling that aims to describe complex physics or industrial processes.
+A nuclear fuel cycle is then simulated as a very complex system in which isotopes evolution can be impacted by various parameters such as reactor technology deployment, fuel reprocessing strategies,...
+A fuel cycle simulator computes radionuclides and elements evolution in all the nuclear facilities from the defined nuclear fleet.
+The material evolution is estimated during the irradiation process in reactors and during cooling phases is other facilities.
+Taking into account all the physics phenomena and industrial practices would require a large effort in software development and would lead to codes consuming large amount of calculation power and create outputs consuming large storage space.
+For these reasons, fuel cycle simulators includes many modeling simplifications.
+
+Bias or uncertainties in fuel cycle simulators outputs are difficult to quantify due to the multiple levels of simplifications imposed by the complexity of the simulated system. They come from many sources.
+Nuclear data uncertainty has an impact on reactor calculation output used to tune fuel cycle codes~\cite{Krivtchik_2014}.
+Moreover, reactor models rely on simplified reactor descriptions, implying a use of biased neutronic data in such simulators \cite{Somaini_2017}.
+At the fuel cycle scale, simplifications are also required, somethings without an accurate estimation of their impact on the simulation.
+
+While comparisons with operated nuclear fleets are possible, there are complex and often require the use of sensitive industrial data, which makes them really difficult. For prospective simulations involving innovative reactors, it is completely impossible.
+Evaluation of these biases and uncertainties must therefor rely almost entirely on comparison between codes and models.
+
+Some international effort \cite{NEA2016} focus on benchmarking fuel cycle simulators comparing output metrics at the scale of an operated nuclear fleet.
+Results produced in the framework of those works are decisive to test the ability of multiple simulators to be in agreement.
+Nevertheless, such comparison are focused on aggregated data and deviations between simulators may be hard to interpret.
+The FIT project is designed in complementarity with those international benchmarks and aims to provide information allowing greater trust in the data produced by fuel cycle simulators.
 
 
 % -----------------------------------------------------------------------------------------
-\subsection{Goals of the projet}
+\subsection{Goals and intended impact of the FIT project}
 
-A nuclear fuel cycle is a very complex system in which isotopes evolution can be
-impacted by various parameters such as reactor technology deployment, fuel
-reprocessing strategies, etc. A fuel cycle code calculates radio-nuclides
-evolution in nuclear facilities from the description of a nuclear fleet. The
-material evolution is estimated during the irradiation process in reactors and
-during cooling phases is other facilities. Taking into account all the physics
-phenomena and industrial practices requires a huge effort in code development.
-For this reason, fuel cycle tools integrates many simulation simplifications. A
-lot of fuel cycle tools are developed and used worldwide~\cite{COSI6_2015,
-VanDenDurpel2015, Huff2016} with large level of complexity or range of
-applications. The FIT Project was initiated in 2017 and aims to improve the
-quality of data produced by fuel cycle tools. 
+The FIT Project was initiated in 2017. It aims to improve the confidence in the
+data produced by fuel cycle simulation tools. The first goal is to gather the
+community of fuel cycle specialists around the question of the confidence in
+simulation outputs. The second goal is to determine the optimum level of details
+a fuel cycle simulator needs relative to the type of study and the required
+confidence level. The project relies on the wide variety of fuel cycle
+simulators with a large range of complexity level are developed.
 
-Increasing the ability to reproduce an operated nuclear fleet involves
-increasing the complexity if the simulation tool by developing new
-functionalities. We call fuel cycle code functionality a computer translation of
-a physical or a technical process observed in a nuclear fleet. The
-Table\ref{Tab:Funct} lists some examples of functionalities that could be
-developed in replacement of a reference treatment, which is the fuel cycle code
-current state.
+Improving the ability to reproduce an operated nuclear fleet involves increasing
+the complexity of the simulation tool by developing new functionalities. A fuel
+cycle functionality is the translation of a physical or technical process,
+related to nuclear facilities, into computer software language. The
+Table\ref{Tab:Funct} lists a set of functionalities that could be implemented
+in addition/replacement of the default model of the simulator.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{ |p{0.5\textwidth}|p{0.5\textwidth}| }
   \hline
-  Reference & Functionality to develop \\
-  \hline
-  At each reactor loading, the reactor fresh fuel composition is constant & At each reactor loading, the reactor fresh fuel composition depends on available material isotopic composition \\
-  \hline
-  The reactor load factor is constant over the reactor lifetime & The reactor load factor takes into account precise industrial constraints, such as partial refueling \\
-  \hline
-  The mean cross sections used to perform the fuel evolution in reactor are calculated at BOC and kept constant during the cycle & The mean cross sections used to perform the fuel evolution in reactor are updated according to fuel composition \\
-  \hline
-  The reactor first cycles composition is not taken into account and is assumed to be the steady states composition & The exact reactor first cycles composition is used \\
+  Simplified  & Complex
+  \\ \hline
+  Fix fresh fuel composition for each fuel batch loading 
+  & Update fuel fuel composition with regards of the available material
+  composition 
+  \\ \hline
+  Averaged thermal-power over the cycles 
+  & Dynamic thermal-power follow up
+  \\ \hline
+  Use of fixed/averaged macroscopic cross section for fuel depletion
+  & Time/\gls{BU}-dependent cross sections
+  \\ \hline
+  Steady state reactor start (no starting batches)
+  & Fuel starting batches modeling \\
   \hline
 \end{tabular}
 \label{Tab:Funct}
-\caption{Examples of simplified and more complex functionalities.}
+\caption{Examples of simplified/complex functionality couples.}
 \end{table}
 
-The FIT project goals is to determine which functionalities are required
-according to the question that needs to be answered and the precision level to
-reach. Indeed, the starting point of a fuel cycle study is a technical question
-such as "In a PWR fleet in which plutonium from spent UOX fuel is reprocessed in
-MOX fuel, what is the PWR-MOX fraction that perfectly balances the plutonium
-produced by PWR-UOX?". The user identify then the set of output data needed to
-answer the technical question. In the example above, the user needs to assess
-the plutonium inventory contained in facilities between the UOX spent fuel and
-the PWR MOX fuel. For illustrating, we use the first functionality of the
-Table~\ref{Tab:Funct}. The FIT project would provide in this case the impact of
-using a model to calculate the reactor fresh fuel composition versus using a
-constant fresh fuel composition. According to this impact, the user can decide
-if a new functionality devoted to the fresh fuel composition assessment is
-needed or not. The user can also decide to use another tool that already include
-this functionality. In addition, FIT project results could also be used to
-evaluate if a functionality not present in a study could have an impact on the
-observable that is used to solve the question.
 
-The FIT project approach is very different from fuel cycle code benchmarks, as
-for example the NEA benchmark~\cite{NEA2016}, since there is no code to code
-comparison. The specificity here is to take advantage of the multiple tools
-developed since many years with different approaches. A functionality effect is
-isolated from a simple basic exercise designed for this purpose. Comparisons are
-done between the exercise resolution obtained from the reference case and from
-the functionality enabled. The impact of the functionality is calculated for
-each participant code. This methodology provide various quantification of a
-functionality impact on the fuel cycle. Some practical conclusions can be built
-if there is an agreement between results.
+The FIT project consists in isolating the impact of a functionality on fuel cycle simulations.
+The impact of each functionality is assessed using a set of simple basic exercises specifically designed for this purpose, called ``functionality isolation``.
+Each exercise of a functionality isolation will be focused on a subset of output metrics related to a category of problems covered by the fuel cycle study.
+
+For example, the total mass of plutonium is used as output of interest for fuel cycle studies dealing with nuclear fuels recycling.
+Minor actinides production could be added to the analyses to take into account fuel cycle studies concerned by radio-protection.
+Once the choice of output of interest is made, the effect of the functionality is quantified by specific estimators computed with the functionality enabled and the reference case.
+Each participant submit a resolution for the exercise and conclusions can be drawn according to the level of agreement of participants.
+
+With this methodology, the FIT project provides information about which functionalities are required to answer a specific question with an associated precision or confidence.
+When starting a new fuel cycle study, the fuel cycle simulator user starts from a technical question.
+One example can be: "In a \gls{PWR} fleet, considering spent \gls{UOX} fuel plutonium reprocessing, what is the optimum \gls{PWR} \gls{UOX}-\gls{MOX} ratio that allow no/low plutonium accumulation ?".
+The user then identify the set of output metrics required to answer the technical question and the precision needed for each of them.
+In the example above, the user needs to assess the plutonium inventory contained in facilities between the \gls{UOX} spent fuel and the \gls{PWR} \gls{MOX} fuel.
+The user can then use the FIT project results to decide what are the code required functionalities to produce a reliable result.
+
 
 % -----------------------------------------------------------------------------------------
-\subsection{Fuel cycle tools and institutions}
+\subsection{Fuel cycle Simulators and institutions}
 
-The originality and the efficiency of the FIT project lies in the large number
-of fuel cycle tools. The Table~\ref{Tab:Code} presents participating institution
-with used fuel cycle code.
+The originality and the efficiency of the FIT project lies in the large number of fuel cycle simulators participating in a set of exercises of a specific functionality isolation. It is the guarantee that the impact calculated is the impact of the functionality and not an artifact from hidden code options. The Table~\ref{Tab:Code} presents participating institutions with used fuel cycle code.
 
 \begin{table}[h]
 \centering
@@ -93,61 +109,29 @@ with used fuel cycle code.
   \hline
   Fuel cycle code & Institution \\
   \hline
-  CLASS\cite{} & CNRS / IN2P3 (FRA) \\
+  ANICCA\cite{} & TRACTEBEL (BEL) \\
+   & Univ. Católica del Maule (CHL) \\
+  \hline
+  CLASS\cite{Thiolliere_2018} & CNRS / IN2P3 (FRA) \\
   \hline
   CYCLUS\cite{} & Univ. of Wisconsin Madison (USA) \\
   & Univ. of Illinois (USA) \\
   \hline
   DYMOND\cite{} & Argonne National Lab (USA) \\
   \hline
-  ORION\cite{} & Oak Ridge National Lab (USA) \\
+  JOSSETTE\cite{} & BME (HUN) \\
   \hline
-  VISION\cite{} & Idaho National Lab (USA) \\
+  ORION\cite{} & Oak Ridge National Lab (USA) \\
   \hline
   Tr\_Evol\cite{} & CIEMAT (ESP) \\
   \hline
-  ANICCA\cite{} & TRACTEBEL (BEL) \\
-   & Univ. Católica del Maule (CHL) \\
-  \hline
-  JOSSETTE\cite{} & BME (HUN) \\
+  VISION\cite{jacobson2009vision} & Idaho National Lab (USA) \\
   \hline
 \end{tabular}
 \label{Tab:Code}
 \caption{List of institutions and fuel cycle codes involved in FIT project.}
 \end{table}
 
-FIT project aims to be built on exercises related to test a specific
-functionality. Some tools can be used to test a functionality if they are
-designed for. The participation to an exercise also depends on the availability
-of participants. For this reasons, not all the codes and institutions are
-involved in an exercise.
-
-% -----------------------------------------------------------------------------------------
-\subsection{Description of the tested feature}
-
-In the present work, we focus on the impact of using a \gls{FLM} or a \gls{FF} approach. 
-
-A \gls{FLM} approach consists to adapt the fresh fuel composition according to
-the reactor requirements and the available isotopes. A \gls{FLM} means there is a
-process that connects the fresh fuel composition to the available materials,
-whatever the complexity of the model. For instance, the fissile fraction is
-calculated from the fissile stock quality in order to reach the required burn-up
-of the reactor. A \gls{FLM} could be based on neural network, Plutonium
-equivalence model, analytic functions, built-in depletion, etc. A \gls{FLM} is
-usually built from physics constraints and reactor physics calculations. 
-
-A \gls{FF} approach consists in using the same constant fissile
-fraction at each fresh fuel loading whatever the isotopic vector of the
-available fissile material is. Using a PWR MOX which is always loaded with a
-fresh fuel that contains 7\% of plutonium regardless the $^{239}$Pu content is a
-\gls{FF} approach. 
-
-The present work aims to quantify the impact of using \gls{FLM} versus \gls{FF}
-approach considering this last one as the reference. In a fuel cycle code, the
-\gls{FF} approach is the easiest method to handle fresh fuel loading in a reactor. The
-user simply define explicitly the fuel composition that is used in all the
-simulation. Developing \gls{FLM} may be an important development process that
-may require time and effort. Testing the impact of using \gls{FLM} rather than
-\gls{FF} approach aims to show applications that need \gls{FLM} and study that can be
-solved with \gls{FF} approach.
-
+The aim of the FIT project is to assemble set of exercises, each testing a specific functionality isolation.
+IF each set of exercise aims to have the highest number of participating simulators as possible, some simulators and or institution might not be participating in some  exercises, or might only participate partially.
+The participation to an exercise also depends on the availability of participants and on the ability of each simulator to activate and deactivate the tested functionality.
