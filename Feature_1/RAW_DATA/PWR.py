@@ -31,7 +31,7 @@ plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 # 
 #######################################################################
 
-codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TrEvol']
+codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 
 #######################################################################
 # 
@@ -53,13 +53,13 @@ codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TrEvol']
 #    - Neural network prediction of the k$_{inf}$
 #    - k$_{threshold}$ is 1.034
 
-# Tr_Evol
+# TR_EVOL
 #### Reactor
-#    - Thermal_power_(GW) : 3.0
-#    - Electrical_power_(GW) : 1.0
-#    - Load_factor : 0.9
-#    - Core_mass_(tHM) : 72.0
-#    - Burn_up_(GWd/tHM) : 41
+#    - Thermal_power_(GW) : 1.130
+#    - Electrical_power_(GW) : 0.350
+#    - Load_factor : 0.8
+#    - EFDP(days) : 1470
+#    - Burn_up_(GWd/tHM) : 40
 #### FLM
 #    - Baker \& Ross
 
@@ -140,7 +140,7 @@ def load_anica_pwr_data(fml_file = 'ANICCA_SCK/PWR_MOX_FLM',  ff_file = 'ANICCA_
 def load_TrEvol_pwr_data(file = 'TREVOL_CIEMAT/MOX_raw.txt'):
    
     M_TrEvol = np.loadtxt(file)
-    total_mass =  24
+    total_mass = np.sum(M_TrEvol[0,1:5])
 
     M_TrEvol = M_TrEvol[(M_TrEvol[:,21] > 0.8*total_mass)]
 
@@ -258,7 +258,7 @@ M_FLM_BOC_MUPu = {}
 
 M_FLM_BOC_FPu['ANICCA'], M_FLM_EOC_FPu['ANICCA'], M_FF_BOC_FPu['ANICCA'], M_FF_EOC_FPu['ANICCA'], M_FLM_BOC_PuDOE['ANICCA'], M_FF_BOC_PuDOE['ANICCA'] = load_anica_pwr_data()
 M_FLM_BOC_FPu['CLASS'], M_FLM_EOC_FPu['CLASS'], M_FF_BOC_FPu['CLASS'], M_FF_EOC_FPu['CLASS'], M_FLM_BOC_PuDOE['CLASS'], M_FF_BOC_PuDOE['CLASS'] = load_class_pwr_data()    
-M_FLM_BOC_FPu['TrEvol'], M_FLM_EOC_FPu['TrEvol'], M_FF_BOC_FPu['TrEvol'], M_FF_EOC_FPu['TrEvol'], M_FLM_BOC_PuDOE['TrEvol'], M_FF_BOC_PuDOE['TrEvol'] = load_TrEvol_pwr_data()
+M_FLM_BOC_FPu['TR_EVOL'], M_FLM_EOC_FPu['TR_EVOL'], M_FF_BOC_FPu['TR_EVOL'], M_FF_EOC_FPu['TR_EVOL'], M_FLM_BOC_PuDOE['TR_EVOL'], M_FF_BOC_PuDOE['TR_EVOL'] = load_TrEvol_pwr_data()
 M_FLM_BOC_FPu['CYCLUS'], M_FLM_EOC_FPu['CYCLUS'], M_FF_BOC_FPu['CYCLUS'], M_FF_EOC_FPu['CYCLUS'], M_FLM_BOC_PuDOE['CYCLUS'], M_FF_BOC_PuDOE['CYCLUS'] = load_cyclus_pwr_data()
 M_FLM_BOC_FPu['ORION'], M_FLM_EOC_FPu['ORION'], M_FF_BOC_FPu['ORION'], M_FF_EOC_FPu['ORION'], M_FLM_BOC_PuDOE['ORION'], M_FF_BOC_PuDOE['ORION'] = load_efmc_pwr_data()
 M_FLM_BOC_FPu['DYMOND'], M_FLM_EOC_FPu['DYMOND'], M_FF_BOC_FPu['DYMOND'], M_FF_EOC_FPu['DYMOND'], M_FLM_BOC_PuDOE['DYMOND'], M_FF_BOC_PuDOE['DYMOND'] = load_dymond_pwr_data()
@@ -267,7 +267,7 @@ M_FLM_BOC_FPu['COSI6'], M_FLM_EOC_FPu['COSI6'], M_FF_BOC_FPu['COSI6'], M_FF_EOC_
 PWR_MASS = {}
 PWR_MASS['CLASS'] = 72
 PWR_MASS['ANICCA'] = 101.7
-PWR_MASS['TrEvol'] = 23
+PWR_MASS['TR_EVOL'] = 23
 PWR_MASS['CYCLUS'] = 72
 PWR_MASS['ORION'] = 1
 PWR_MASS['DYMOND'] = 72
@@ -276,7 +276,7 @@ PWR_MASS['COSI6'] = 1
 PWR_CYCLE = {}
 PWR_CYCLE['CLASS'] = 3
 PWR_CYCLE['ANICCA'] = 1390/0.85/365.25
-PWR_CYCLE['TrEvol'] = 41 / (3*0.9) *72.0 /365.25
+PWR_CYCLE['TR_EVOL'] = 41 / (3*0.9) *72.0 /365.25
 PWR_CYCLE['CYCLUS'] = 41.09 /2.7 *72 /365.25
 PWR_CYCLE['ORION'] = 3.6
 PWR_CYCLE['DYMOND'] = 3
@@ -286,7 +286,7 @@ colors = {}
 colors['CLASS'] = "black"
 colors['ANICCA'] = "crimson"
 colors['CYCLUS'] = "royalblue"
-colors['TrEvol'] = "limegreen"
+colors['TR_EVOL'] = "limegreen"
 colors['ORION'] = "darkorange"
 colors['DYMOND'] = "violet"
 colors['COSI6'] = "cyan"
@@ -298,13 +298,13 @@ colors['COSI6'] = "cyan"
 #######################################################################
 
 ESTIMATOR_1 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TrEvol']
+# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     ESTIMATOR_1[code] = (M_FLM_BOC_FPu[code] - M_FF_BOC_FPu[code] ) / M_FF_BOC_FPu[code]
 
 ESTIMATOR_2 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TrEvol']
+# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     _fml = (M_FLM_BOC_FPu[code] -  M_FLM_EOC_FPu[code])/M_FLM_BOC_FPu[code]
@@ -312,7 +312,7 @@ for code in _codes:
     ESTIMATOR_2[code] = (_fml - _ff)/_ff
 
 ESTIMATOR_3 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TrEvol']
+# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     _fml = (M_FLM_BOC_FPu[code] -  M_FLM_EOC_FPu[code])* PWR_MASS[code]/PWR_CYCLE[code]
