@@ -24,5 +24,7 @@
 *.pdf
 *.ipynb*
 *.synctex.gz
+*.pdf
+*ipynb*
 .DS_Store
 ~$*
