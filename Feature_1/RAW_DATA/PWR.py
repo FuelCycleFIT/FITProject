@@ -298,13 +298,11 @@ colors['COSI6'] = "cyan"
 #######################################################################
 
 ESTIMATOR_1 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     ESTIMATOR_1[code] = (M_FLM_BOC_FPu[code] - M_FF_BOC_FPu[code] ) / M_FF_BOC_FPu[code]
 
 ESTIMATOR_2 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     _fml = (M_FLM_BOC_FPu[code] -  M_FLM_EOC_FPu[code])/M_FLM_BOC_FPu[code]
@@ -312,7 +310,6 @@ for code in _codes:
     ESTIMATOR_2[code] = (_fml - _ff)/_ff
 
 ESTIMATOR_3 = {}
-# _codes = ['ANICCA', 'CLASS', 'COSI6', 'CYCLUS', 'DYMOND', 'ORION', 'TR_EVOL']
 _codes = codes
 for code in _codes:
     _fml = (M_FLM_BOC_FPu[code] -  M_FLM_EOC_FPu[code])* PWR_MASS[code]/PWR_CYCLE[code]
