@@ -22,6 +22,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.pdf
+*ipynb*
 .DS_Store
 ~$*
-FITPaperEx1.pdf
