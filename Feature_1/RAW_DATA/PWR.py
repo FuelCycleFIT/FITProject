@@ -426,11 +426,47 @@ def print_std_estimator(code,est):
 # 
 #######################################################################
 
+# Plutonium
 bins = [75, 75, 75, 75, 75, 75, 75]
 
 plot_pu(M_FLM_BOC_FPu, M_FLM_EOC_FPu, bins=bins, labels=codes, range=(0,0.20))
 
+# Estimators
 
+bins = [50, 50, 50, 50, 50, 50, 50]
+plot_estimator(ESTIMATOR_1, bins=bins, labels=codes, title_label='PWR_MOX_Estimator_1', x_label='$\delta F(Pu)$', y_label='Density',range=(-1.4,1.4))
+
+bins = [50, 50, 50, 50, 50, 50, 50]
+plot_estimator(ESTIMATOR_2, bins=bins, labels=codes, title_label='PWR_MOX_Estimator_2', x_label='$\delta F(Pu)$', y_label='Density',range=(-2.0,1.4))
+
+bins = [50, 50, 50, 50, 50, 50, 50]
+plot_estimator(ESTIMATOR_3, bins=bins, labels=codes, title_label='PWR_MOX_Estimator_3', x_label='$\delta F(Pu)$', y_label='Density',range=(-2.0,3.0))
+
+#######################################################################
+# 
+# Priting
+# 
+#######################################################################
+
+for code in codes:
+    print_means_pu(code)
+for code in codes:
+    print_std_pu(code)
+
+for code in codes:
+    print_means_estimator(code,ESTIMATOR_1)
+for code in codes:
+    print_std_estimator(code,ESTIMATOR_1)    
+
+for code in codes:
+    print_means_estimator(code,ESTIMATOR_2)
+for code in codes:
+    print_std_estimator(code,ESTIMATOR_2)    
+
+for code in codes:
+    print_means_estimator(code,ESTIMATOR_3)
+for code in codes:
+    print_std_estimator(code,ESTIMATOR_3)    
 
 
 
