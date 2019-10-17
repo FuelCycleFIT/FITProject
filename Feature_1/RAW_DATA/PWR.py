@@ -463,7 +463,9 @@ for code in codes:
 for code in codes:
     print_means_estimator(code,ESTIMATOR_3)
 for code in codes:
-    print_std_estimator(code,ESTIMATOR_3)    
+    print_std_estimator(code,ESTIMATOR_3)  
+
+print("last one")  
 
 
 
