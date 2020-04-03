@@ -21,6 +21,8 @@
 *.mtc
 *.mtc1
 *.out
+*.pdf
+*.ipynb*
 *.synctex.gz
 *.pdf
 *ipynb*
